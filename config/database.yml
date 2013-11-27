@@ -19,7 +19,6 @@ development:
   encoding: unicode
   database: gaicd10rails_development
   pool: 5
-  username: gaicd10rails
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,7 +47,6 @@ test:
   encoding: unicode
   database: gaicd10rails_test
   pool: 5
-  username: gaicd10rails
   password:
 
 production:
@@ -56,5 +54,4 @@ production:
   encoding: unicode
   database: gaicd10rails_production
   pool: 5
-  username: gaicd10rails
   password:
