@@ -1,0 +1,36 @@
+<h1>Listing tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Owner</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+    <% if task.user == current_user %>
+      <tr>
+        <td><%= task.step %></td>
+        <td><%= task.title %></td>
+        <td><%= task.description %></td>
+        <td><%= task.user.email if task.user %></td>
+        <td><%= task.status %></td>
+       <td><a href='/tasks/<%= task.id %>/status_change'>Change Status</a></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+ <%= link_to 'New Task', new_task_path %> <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+
+
+

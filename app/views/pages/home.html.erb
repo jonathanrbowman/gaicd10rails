@@ -1,2 +1,31 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% if user_signed_in?%>
+		
+<table>
+<th></th>
+<th></th>
+
+<tr>
+<td><%= link_to "View Tasks", tasks_path%></td>
+</tr>
+
+<tr>
+<td><%= link_to "Edit Account", edit_user_registration_path %></td>
+<td><%= link_to "Sign out", destroy_user_session_path, method: :delete %></td>
+</tr>
+
+
+<% else %>
+
+<th></th>
+<th></th>
+
+<tr>
+<td><%= link_to "Sign in", new_user_session_path %></td>
+<td><%= link_to "Sign up", new_user_registration_path %></td>
+</tr>
+
+<% end %>
+
+</table>
+
+</div>

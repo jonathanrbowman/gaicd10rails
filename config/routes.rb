@@ -1,8 +1,17 @@
 Gaicd10rails::Application.routes.draw do
  
-  devise_for :users
-  # You can have the root of your site routed with "root"
+  
+  resources :tasks do
+    member do 
+      post 'status_change'
+    end
+end
+
+  devise_for :users, :controllers => {:registrations => "registrations", :devise => "devise"}
+  
    root 'pages#home'
+   
+   get '/tasks/:id/status_change' => "tasks#status_change"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
