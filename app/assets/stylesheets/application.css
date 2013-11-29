@@ -11,3 +11,92 @@
  *= require_self
  *= require_tree .
  */
+
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #64918b;
+	margin: 0;
+	padding: 0;
+}
+
+textarea {
+	resize: none;
+	padding: 10px;
+	min-height: 100px;
+}
+
+a, p, h1, h2, h3, h4, label, input, form, button, td {
+	font-family: 'Raleway', sans-serif;
+	color: #FFFFFF;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+	text-decoration: none;
+	-webkit-appearance: none;
+}
+
+#headerControlsWrapper {
+	border-collapse: collapse;
+	position: fixed;
+	top: -125px;
+	right: 0;
+	padding: 10px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	text-align: center;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+#headerSignOut {
+	background-color: rgba(225,93,106, 1);
+	opacity: .7;
+	display: block;
+	padding: 10px;
+}
+
+#headerSignOut:hover {
+	opacity: 1;
+}
+
+#headerModify {
+	background-color: rgba(105,157,200, .7);
+	opacity: .7;
+	display: block;
+	padding: 10px;
+}
+
+#headerModify:hover {
+	background-color: rgba(105,157,200, 1);
+	opacity: 1;
+}
+
+#headerViewAll {
+	background-color: rgba(110,190,82, .7);
+	opacity: .7;
+	display: block;
+	padding: 10px;
+}
+
+#headerViewAll:hover {
+	background-color: rgba(110,190,82, 1);
+	opacity: 1;
+}
+
+#signedInAs {
+	background-color: rgba(255,255,255,.3);
+	width: 100%;
+	height: 50px;
+	vertical-align: middle;
+}

@@ -8,6 +8,10 @@
 </head>
 <body>
 	
+	<% if user_signed_in?%>
+	<%= render "layouts/navController" %>
+	<% end%>
+	
 	<% flash.each do |name, msg| %>
      <%= content_tag(:div, msg, class: "alert alert-info") %>
 <% end %>

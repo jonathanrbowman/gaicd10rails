@@ -1,9 +1,10 @@
-<% if user_signed_in?%>
-		
 <table>
 <th></th>
 <th></th>
-
+<tr>
+<td><%= link_to "Sign in", new_user_session_path %></td>
+</tr>
+<% if user_signed_in?%>
 <tr>
 <td><%= link_to "View Tasks", tasks_path%></td>
 </tr>
@@ -13,19 +14,13 @@
 <td><%= link_to "Sign out", destroy_user_session_path, method: :delete %></td>
 </tr>
 
-
-<% else %>
-
-<th></th>
-<th></th>
+<% if current_user.admin? %>
 
 <tr>
-<td><%= link_to "Sign in", new_user_session_path %></td>
 <td><%= link_to "Sign up", new_user_registration_path %></td>
 </tr>
 
 <% end %>
 
 </table>
-
-</div>
+<% end %>

@@ -1,0 +1,14 @@
+<table id="headerControlsWrapper">
+	<tr>
+		<td><%= link_to "Sign out?", destroy_user_session_path, method: :delete, id: "headerSignOut" %></td>
+	</tr>
+	<tr>
+		<td><%= link_to "Modify Account", edit_user_registration_path, id: "headerModify" %></td>
+	</tr>
+		<tr>
+		<td><%= link_to "View My Tasks", tasks_path, id: "headerViewAll" %></td>
+	</tr>
+	<tr>
+		<td id="signedInAs"> + Signed in as <%= current_user.email %> </td>
+	</tr>
+</table>
