@@ -10,7 +10,7 @@ class TasksController < ApplicationController
   end
 
   # GET /tasks/new
-  def new    
+  def new
     @task = Task.new
   end
 
@@ -22,20 +22,21 @@ class TasksController < ApplicationController
   def create
     @task_list = Task.where('step >= ?', params[:task][:step])
     @task_id = @task_list.pluck(:id)
+    @user_list = User.all
+    @user_id = @user_list.pluck(:id)
 
     @task_id.each do |x|
-        y = Task.find(x).step
-        y = y + 1
-        Task.find(x).update_attributes(:step => y)
-    end   
-    
-    @task = Task.new(task_params)    
+      y = Task.find(x).step
+      y = y + 1
+      Task.find(x).update_attributes(:step => y)
+    end
 
-      if @task.save
-        redirect_to @task, notice: "Task was successfully created."
-      else
-        render action: 'new'
-      end
+    @user_id.each do |x|
+      Task.create(:step =>  params[:task][:step], :title =>  params[:task][:title], :description =>  params[:task][:description], :user_id => x)
+    end
+    
+      redirect_to tasks_path, notice: "Task was successfully created."
+      
   end
 
   # PATCH/PUT /tasks/1

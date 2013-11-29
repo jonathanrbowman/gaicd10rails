@@ -8,15 +8,21 @@ class User < ActiveRecord::Base
 
   after_create :generate_tasks
   
-  def generate_tasks    
+  def generate_tasks
     
-    @user = User.last.id
+    @task_count = Task.all.pluck(:description).uniq.count
+    @task_title = Task.all.pluck(:title).uniq
+    @task_step = Task.all.pluck(:step).uniq
+    @task_description = Task.all.pluck(:description).uniq
+    @task_user = User.last.id
+
+    @task_iterator = 0
+
+    while @task_iterator < @task_count
+      Task.create(:step =>  @task_step[@task_iterator], :title =>  @task_title[@task_iterator], :description =>  @task_description[@task_iterator], :user_id => @task_user)
+      @task_iterator += 1
+    end
     
-    Task.create(:step => 1, :title => "First task", :description => "First task description", :user_id => @user )
-    Task.create(:step => 2, :title => "Second task", :description => "Second task description", :user_id => @user )
-    Task.create(:step => 3, :title => "Third task", :description => "Third task description", :user_id => @user )
-    Task.create(:step => 4, :title => "Fourth task", :description => "Fourth task description", :user_id => @user )
-    Task.create(:step => 5, :title => "Fifth task", :description => "Fifth task description", :user_id => @user )
   end
 
 end
