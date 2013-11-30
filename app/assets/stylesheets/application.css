@@ -22,7 +22,6 @@ html {
 body {
 	width: 100%;
 	height: 100%;
-	background-color: #64918b;
 	margin: 0;
 	padding: 0;
 }
@@ -35,7 +34,6 @@ textarea {
 
 a, p, h1, h2, h3, h4, label, input, form, button, td {
 	font-family: 'Raleway', sans-serif;
-	color: #FFFFFF;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;

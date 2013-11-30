@@ -49,3 +49,5 @@ gem 'rails_12factor', group: :production
 ruby "2.0.0"
 
 gem 'devise', '~> 3.1.1'
+
+gem 'acts_as_list'

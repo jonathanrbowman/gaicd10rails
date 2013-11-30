@@ -23,6 +23,8 @@
         <td><%= task.user.email if task.user %></td>
         <td><%= task.status %></td>
        <td><a href='/tasks/<%= task.id %>/status_change'>Change Status</a></td>
+       <td><%= link_to 'Modify', edit_task_path(task) %></td>
+       <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
     <% end %>

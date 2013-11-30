@@ -20,6 +20,12 @@ class TasksController < ApplicationController
 
   # POST /tasks
   def create
+
+    @task_number = Task.all.pluck(:step).uniq.count
+    @task_number_result = @task_number + 1
+    if params[:task][:step].to_i > 0 && params[:task][:step].to_i <= @task_number_result
+     
+
     @task_list = Task.where('step >= ?', params[:task][:step])
     @task_id = @task_list.pluck(:id)
     @user_list = User.all
@@ -35,27 +41,77 @@ class TasksController < ApplicationController
       Task.create(:step =>  params[:task][:step], :title =>  params[:task][:title], :description =>  params[:task][:description], :user_id => x)
     end
     
-      redirect_to tasks_path, notice: "Task was successfully created."
+    flash[:notice] = 'Successfully made'
+    redirect_to tasks_path
+    
+    else
       
+    flash[:notice] = 'Could not create'
+    redirect_to tasks_path
+
+    end
+
   end
 
   # PATCH/PUT /tasks/1
   def update
-    respond_to do |format|
-      if @task.update(task_params)
-        redirect_to @task, notice: 'Task was successfully updated.'
-      else
-        render action: 'edit'
-      end
+    @task_from = Task.find(params[:id]).step
+    @task_to = params[:task][:step]
+    
+    if @task_from > @task_to
+    @tasks_to_change = [@task_from...@task_to]    
+    @tasks_to_change.each do |x|
+      x = x + 1
+      self.update_attributes(:step => x)   
+      end   
     end
+    
+    if @task_from < @task_to
+      @tasks_to_change = [@task_to...@task_from]
+      @tasks_to_change.each do |x|
+      x = x - 1
+      self.update_attributes(:step => x)
+      end
+      end
+    
+    @task_list = Task.where('step >= ?', params[:task][:step])
+    @task_id = @task_list.pluck(:id)
+    @user_list = User.all
+    @user_id = @user_list.pluck(:id)
+
+    @task_id.each do |x|
+      y = Task.find(x).step
+      y = y - 1
+      Task.find(x).update_attributes(:step => y)
+    end
+
+    @user_id.each do |x|
+      Task.update_attributes(:step =>  params[:task][:step], :title =>  params[:task][:title], :description =>  params[:task][:description], :user_id => x)
+    end
+
+    redirect_to tasks_path
   end
 
   # DELETE /tasks/1
   def destroy
-    @task.destroy
-    respond_to do |format|
-      redirect_to tasks_url
+    @step_number = Task.where('id = ?', params[:id]).pluck(:step)
+    @task_list = Task.where('step >= ?', @step_number)
+    @task_id = @task_list.pluck(:id)
+    @user_list = User.all
+    @user_id = @user_list.pluck(:id)
+
+    @task_id.each do |x|
+      y = Task.find(x).step
+      y = y - 1
+      Task.find(x).update_attributes(:step => y)
     end
+
+    @user_id.each do
+      Task.destroy(params[:id])
+    end
+
+    redirect_to tasks_path
+
   end
 
   def status_change
