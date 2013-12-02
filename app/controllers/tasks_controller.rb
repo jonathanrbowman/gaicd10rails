@@ -54,11 +54,39 @@ class TasksController < ApplicationController
 
   # PATCH/PUT /tasks/1
   def update
+
+    @task_from = params[:task][:position_from].to_i
+    @task_to = params[:task][:position].to_i
+    @tasks_to_update = Task.where('position = ?', @task_from).pluck(:id)
+    @task_count = Task.all.pluck(:position).uniq.count
     
-    @task_from = params[:task][:position_from]
-    @task_to = params[:task][:position]
-    
+    if @task_to > 0 && @task_to <= @task_count
+
+    if @task_from > @task_to
+      @task_list_id = Task.where("position >= #{@task_to} AND position < #{@task_from}").pluck(:id)
+      @task_list_id.each do |x|
+        y = Task.find(x).position
+        Task.find(x).update_attributes(:position => y + 1)
+      end
+    elsif @task_from < @task_to
+      @task_list_id = Task.where("position <= #{@task_to} AND position > #{@task_from}").pluck(:id)
+      @task_list_id.each do |x|
+        y = Task.find(x).position
+        Task.find(x).update_attributes(:position => y - 1)
+      end
+    else
+    end
+
+    @tasks_to_update.each do |x|
+      Task.find(x).update_attributes(:position => @task_to, :title => params[:task][:title], :description => params[:task][:description])
+    end
+
     redirect_to tasks_path
+    
+    else
+      flash[:notice] = 'The step number can only be changed to a spot that already exists. Use New Task to add another step.'
+      redirect_to tasks_path
+    end
 
   end
 
@@ -69,16 +97,15 @@ class TasksController < ApplicationController
     @task_list = Task.where('position > ?', @position_number)
     @task_id = @task_list.pluck(:id)
     @tasks_to_destroy = Task.where('position = ?', @position_number).pluck(:id)
-    
 
-      @task_id.each do |x|
-        y = Task.find(x).position
-        Task.find(x).update_attributes(:position => y - 1)
-      end
-      
-      @tasks_to_destroy.each do |x|
-        Task.destroy(x)
-      end
+    @task_id.each do |x|
+      y = Task.find(x).position
+      Task.find(x).update_attributes(:position => y - 1)
+    end
+
+    @tasks_to_destroy.each do |x|
+      Task.destroy(x)
+    end
 
     redirect_to tasks_path
 
