@@ -1,17 +1,46 @@
-<h2>Sign in</h2>
+<% unless user_signed_in? %>
+<div class="inner_content">
+	<div id="ga_stars">
+		<img src="https://s3.amazonaws.com/gaicd10rails/galoginstars.png">
+		</div>
+	<div id="login_box_wrapper">
+		<p class="heading">
+			Log in
+		</p>
+		<div id="login_box">
+<div id="login_fields">
+			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			<div>
+				<%= f.label :email, class: "field_label" %>
+				<br />
+				<%= f.email_field :email, class: "field_input", :autofocus => true %>
+			</div>
+<br />
+			<div>
+				<%= f.label :password, class: "field_label" %>
+				<br />
+				<%= f.password_field :password, class: "field_input" %>
+			</div>
+			</div>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-<!--  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
--->
-  <div><%= f.submit "Sign in" %></div>
+			<!--  <% if devise_mapping.rememberable? -%>
+			<div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+			<% end -%>
+			-->
+			<div>
+				<%= f.submit "Sign in", class: "submit_btn" %>
+			</div>
+			<% end %>
+			<div>
+			<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Recover Password", new_password_path(resource_name), class: "cancel_btn" %><br />
+<% end -%>
+</div>
+			
+		</div>
+	</div>
+</div>
+<br />
+<% else %>
+<script type="text/javascript">window.location.href = "/"</script>
 <% end %>
-
-<%= render "devise/shared/links" %>

@@ -1,37 +1,13 @@
-<table>
-<th></th>
-<th></th>
-<% if user_signed_in?%>
-<tr>
-<td><%= link_to "View Tasks", tasks_path%></td>
-</tr>
+<% if user_signed_in? && current_user.admin? %>
 
-<tr>
-<td><%= link_to "Edit Account", edit_user_registration_path %></td>
-</tr>
-<tr>
-<td><%= link_to "Sign out", destroy_user_session_path, method: :delete %></td>
-</tr>
+<script type="text/javascript">window.location.href = "/admin_view"</script>
 
+<% elsif user_signed_in? %>
 
-<% if current_user.admin? %>
-
-<tr>
-<td><%= link_to "Sign up", new_user_registration_path %></td>
-</tr>
-<tr>
-<td><%= link_to "Admin View", admin_view_path %></td>
-</tr>
-
-<% end %>
+<script type="text/javascript">window.location.href = "/tasks"</script>
 
 <% else %>
 
-<tr>
-<td><%= link_to "Sign in", new_user_session_path %></td>
-</tr>
+<script type="text/javascript">window.location.href = "/users/sign_in"</script>
 
-
-
-</table>
 <% end %>

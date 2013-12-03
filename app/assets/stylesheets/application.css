@@ -12,6 +12,12 @@
  *= require_tree .
  */
 
+/* font-family: 'Cinzel', serif;
+ * font-family: 'Josefin Sans', sans-serif;
+ * Green - #65be6e
+ * Peach - #f79758
+ */
+
 html {
 	width: 100%;
 	height: 100%;
@@ -24,22 +30,43 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	background-color: #112C44;
+	background-image: url("https://s3.amazonaws.com/gaicd10rails/gaicd10bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-textarea {
-	resize: none;
-	padding: 10px;
-	min-height: 100px;
+a {
+	text-decoration: none;
 }
 
-a, p, h1, h2, h3, h4, label, input, form, button, td {
-	font-family: 'Raleway', sans-serif;
+a, p, h1, h2, h3, h4, input, button, form {
+	-webkit-font-smoothing: antialiased;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
-	text-decoration: none;
-	-webkit-appearance: none;
+}
+
+input, input:focus {
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	outline: none;
+}
+
+#logo {
+	width: 90%;
+	max-width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+
+#logo img {
+	width: 100%;
+	max-width: 300px;
 }
 
 #headerControlsWrapper {
@@ -99,17 +126,184 @@ a, p, h1, h2, h3, h4, label, input, form, button, td {
 	vertical-align: middle;
 }
 
-#ga-logo
-{
-	position:fixed;
-	width:400px;
-	top:50px;
-	left:35%;
-	margin-left:auto;
-	margin-right:auto;
+.notice, .alert {
+	opacity: 0;
+	width: 100%;
+	text-align: center;
+	color: black;
+	position: fixed;
+	top: -10px;
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
 }
 
-#ga-logo img
-{
-	width:400px;
+.heading {
+	font-family: 'Cinzel', serif;
+	color: #f79758;
+	font-size: 36px;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+.sub_heading {
+	font-family: 'Cinzel', serif;
+	color: #65BE6E;
+	text-align: center;
+	font-size: 35px;
+	padding: 0;
+	margin: 0;
+}
+
+.body_text {
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 400;
+	color: white;
+	text-align: left;
+	font-size: 19px;
+	width: 90%;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 22px;
+}
+
+.field_label {
+	font-family: 'Cinzel', serif;
+	color: #f79758;
+	font-size: 22px;
+}
+
+.field_input {
+	color: #333333;
+	font-family: 'Cinzel', serif;
+	height: 40px;
+	width: 380px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+	border: 2px solid #ffffff;
+	margin: 0;
+}
+
+.field_input:focus {
+	border: 2px solid #65BE6E;
+}
+
+.submit_btn {
+	font-family: 'Cinzel', serif;
+	font-size: 18px;
+	font-weight: 600;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 35px;
+	padding-right: 35px;
+	background-color: #65BE6E;
+	border: none;
+	border-bottom: 4px solid #37843f;
+	color: white;
+	margin: 0;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	cursor: pointer;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.submit_btn:hover {
+	border-bottom: 2px solid #37843f;
+	background-color: #5da860;
+}
+
+.submit_btn:active {
+	border-bottom: 0px solid #37843f;
+}
+
+.cancel_btn {
+	font-family: 'Cinzel', serif;
+	font-size: 18px;
+	font-weight: 600;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 35px;
+	padding-right: 35px;
+	background-color: #ba676b;
+	border: none;
+	border-bottom: 4px solid #82373e;
+	color: white;
+	margin: 0;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	cursor: pointer;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.cancel_btn:hover {
+	border-bottom: 2px solid #82373e;
+	background-color: #994a53;
+}
+.cancel_btn:active {
+	border-bottom: 0px solid #82373e;
+}
+
+#page_content {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.inner_content {
+	width: 840px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+/* ----------------------- LOG IN PAGE START ----------------------- */
+
+#login_box {
+	width: 394px;
+	height: 230px;
+	border: 3px solid #65BE6E;
+	margin: 0;
+	padding: 25px;
+	position: absolute;
+	left: 0;
+}
+
+#login_box_wrapper {
+	width: 400px;
+	height: 350px;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin: 0;
+	position: absolute;
+	right: 0;
+	top:200px;
+}
+
+#login_fields {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	width: 200px;
+}
+
+#ga_stars {
+	position:absolute;
+	left:0;
+	top:200px;
+}
+
+#ga_stars img {
+	width:270px;
 }

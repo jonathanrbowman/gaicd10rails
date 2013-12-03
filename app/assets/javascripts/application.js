@@ -12,5 +12,23 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+	
+setTimeout(function(){$(".notice, .alert").css({"opacity" : "1", "top" : "10px"});}, 300);	
+setTimeout(function(){$(".notice, .alert").css({"opacity" : "0", "top" : "-10px"});}, 3500);
+
+$("#headerControlsWrapper").mouseenter(function() {
+	$(this).css({"top" : "-2px"});
+});
+
+$("#headerControlsWrapper").mouseleave(function() {
+	$(this).css({"top" : "-125px"});
+});
+
+$('textarea').autosize();
+
+});

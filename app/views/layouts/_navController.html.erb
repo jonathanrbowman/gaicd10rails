@@ -5,9 +5,15 @@
 	<tr>
 		<td><%= link_to "Modify Account", edit_user_registration_path, id: "headerModify" %></td>
 	</tr>
-		<tr>
-		<td><%= link_to "View My Tasks", tasks_path, id: "headerViewAll" %></td>
+	<% if current_user.admin? %>
+	<tr>
+		<td><%= link_to "Hospital Overview", admin_view_path, id: "headerViewAll" %></td>
 	</tr>
+	<% else %>
+	<tr>
+		<td><%= link_to "Task List", tasks_path, id: "headerViewAll" %></td>
+	</tr>
+	<% end %>
 	<tr>
 		<td id="signedInAs"> + Signed in as <%= current_user.email %> </td>
 	</tr>
