@@ -12,6 +12,8 @@ end
    root 'pages#home'
    
    get '/tasks/:id/status_change' => "tasks#status_change"
+   get '/admin_view' => "tasks#admin_index"
+   get '/admin_detail' => "tasks#admin_hospital_detail"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

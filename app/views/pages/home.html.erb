@@ -1,9 +1,6 @@
 <table>
 <th></th>
 <th></th>
-<tr>
-<td><%= link_to "Sign in", new_user_session_path %></td>
-</tr>
 <% if user_signed_in?%>
 <tr>
 <td><%= link_to "View Tasks", tasks_path%></td>
@@ -22,8 +19,19 @@
 <tr>
 <td><%= link_to "Sign up", new_user_registration_path %></td>
 </tr>
+<tr>
+<td><%= link_to "Admin View", admin_view_path %></td>
+</tr>
 
 <% end %>
+
+<% else %>
+
+<tr>
+<td><%= link_to "Sign in", new_user_session_path %></td>
+</tr>
+
+
 
 </table>
 <% end %>

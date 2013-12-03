@@ -1,0 +1,27 @@
+<% if user_signed_in? && current_user.admin?%>
+<h1>Listing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hospital</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% User.all.pluck(:id).each do |x| %>
+      <tr>
+        <td><%= link_to User.find(x).email, admin_detail_path(:hospital_id => x) %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<% else %>
+
+<script type="text/javascript">window.location.href = "/"</script>
+
+<% end %>
+
+
+
