@@ -13,7 +13,7 @@
  */
 
 /* font-family: 'Cinzel', serif;
- * font-family: 'Josefin Sans', sans-serif;
+ * font-family: 'Mate', serif;
  * Green - #65be6e
  * Peach - #f79758
  */
@@ -40,8 +40,10 @@ a {
 	text-decoration: none;
 }
 
-a, p, h1, h2, h3, h4, input, button, form {
+a, p, h1, h2, h3, h4, input, button, form, td, th {
 	-webkit-font-smoothing: antialiased;
+	color: white;
+	font-family: 'Mate', serif;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
@@ -53,6 +55,7 @@ input, input:focus {
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
 	outline: none;
+	color: #333333;
 }
 
 #logo {
@@ -178,7 +181,8 @@ input, input:focus {
 
 .field_input {
 	color: #333333;
-	font-family: 'Cinzel', serif;
+	font-family: 'Mate', serif;
+	font-weight:700;
 	height: 40px;
 	width: 380px;
 	padding-left: 10px;
@@ -288,7 +292,7 @@ input, input:focus {
 	margin: 0;
 	position: absolute;
 	right: 0;
-	top:200px;
+	top: 200px;
 }
 
 #login_fields {
@@ -299,11 +303,11 @@ input, input:focus {
 }
 
 #ga_stars {
-	position:absolute;
-	left:0;
-	top:200px;
+	position: absolute;
+	left: 0;
+	top: 200px;
 }
 
 #ga_stars img {
-	width:270px;
+	width: 270px;
 }

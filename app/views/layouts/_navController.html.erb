@@ -9,6 +9,9 @@
 	<tr>
 		<td><%= link_to "Hospital Overview", admin_view_path, id: "headerViewAll" %></td>
 	</tr>
+	<tr>
+		<td><%= link_to "Sign Up", new_user_registration_path, id: "headerViewAll" %></td>
+	</tr>
 	<% else %>
 	<tr>
 		<td><%= link_to "Task List", tasks_path, id: "headerViewAll" %></td>
