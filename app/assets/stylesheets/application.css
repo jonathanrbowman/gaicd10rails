@@ -130,10 +130,11 @@ input, input:focus {
 }
 
 .notice, .alert {
+	font-family: 'Mate', serif;
 	opacity: 0;
 	width: 100%;
 	text-align: center;
-	color: black;
+	color: white;
 	position: fixed;
 	top: -10px;
 	-webkit-transition: .25s ease-in-out;
