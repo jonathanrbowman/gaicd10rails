@@ -73,7 +73,7 @@ input, input:focus {
 }
 
 #headerControlsWrapper, #headerControlsWrapperAdmin {
-	border-collapse:collapse;
+	border-collapse: collapse;
 	position: fixed;
 	top: -83px;
 	right: 0;
@@ -81,7 +81,7 @@ input, input:focus {
 	padding-top: 0px;
 	padding-bottom: 0px;
 	text-align: center;
-	z-index:9999;
+	z-index: 9999;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
@@ -89,7 +89,7 @@ input, input:focus {
 }
 
 #headerControlsWrapperAdmin {
-	top:-125px;
+	top: -125px;
 }
 
 #headerSignOut {
@@ -120,7 +120,6 @@ input, input:focus {
 	opacity: .8;
 	display: block;
 	padding: 10px;
-	
 }
 
 #headerViewAll:hover {
@@ -150,7 +149,7 @@ input, input:focus {
 	color: white;
 	position: fixed;
 	top: -10px;
-	z-index:99;
+	z-index: 99;
 	-webkit-transition: .25s ease-in-out;
 	-moz-transition: .25s ease-in-out;
 	-o-transition: .25s ease-in-out;
@@ -197,7 +196,7 @@ input, input:focus {
 .field_input {
 	color: #333333;
 	font-family: 'Mate', serif;
-	font-weight:700;
+	font-weight: 700;
 	height: 40px;
 	width: 380px;
 	padding-left: 10px;
@@ -307,7 +306,7 @@ input, input:focus {
 	margin: 0;
 	position: absolute;
 	right: 0;
-	top: 200px;
+	top: 100px;
 }
 
 #login_fields {
@@ -320,7 +319,7 @@ input, input:focus {
 #ga_stars {
 	position: absolute;
 	left: 0;
-	top: 200px;
+	top: 110px;
 }
 
 #ga_stars img {
@@ -328,39 +327,82 @@ input, input:focus {
 }
 
 .hospital_overview_wrapper {
-	width:100%;
-	border-top: 5px solid #65BE6E;
-	border-bottom: 5px solid #65BE6E;
-	margin-top:-5px;
+	width: 100%;
+	border-top: 3px solid #65BE6E;
+	border-bottom: 3px solid #65BE6E;
+	margin-top: -3px;
 }
 
 .hospital_overview_inner {
-	width:100%;
-	max-width:800px;
-	margin-left:auto;
-	margin-right:auto;
-	padding:25px;
-	position:relative;
+	width: 100%;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
 }
 
 .hospital_overview_name {
-	display:inline;
+	font-family: 'Cinzel', serif;
+	font-size: 20px;
+}
+
+.hospital_overview_name a {
+	display: block;
+	font-family: 'Cinzel', serif;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.hospital_overview_name a:hover {
+	color: #65be6e;
+	padding-left: 10px;
 }
 
 .hospital_overview_progress_outer {
-	width:40%;
-	height:100%;
+	width: 40%;
+	height: 100%;
 	background-color: rgba(101,190,110,.2);
-	position:absolute;
-	right:0;
-	top:0;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 .hospital_overview_progress_inner {
-	height:100%;
+	height: 100%;
 	background-color: rgba(101,190,110,.6);
-	border-right: 5px solid rgba(255,255,255,.1);
-	position:absolute;
-	left:0;
-	top:0;
+	border-right: 3px solid rgba(255,255,255,.1);
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.hospital_overview_header_out {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.hospital_overview_header_in {
+	width: 100%;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.hospital_overview_header_name {
+	font-family: 'Cinzel', serif;
+	color: #f79758;
+	font-size: 26px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.hospital_overview_header_progress {
+	font-family: 'Cinzel', serif;
+	color: #f79758;
+	font-size: 26px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }

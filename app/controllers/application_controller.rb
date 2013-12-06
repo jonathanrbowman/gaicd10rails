@@ -19,12 +19,10 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :username
+    devise_parameter_sanitizer.for(:sign_up) << :organization
     devise_parameter_sanitizer.for(:sign_up) << :u_state
-    devise_parameter_sanitizer.for(:sign_up) << :user_company
-    devise_parameter_sanitizer.for(:account_update) << :username
+    devise_parameter_sanitizer.for(:account_update) << :organization
     devise_parameter_sanitizer.for(:account_update) << :u_state
-    devise_parameter_sanitizer.for(:account_update) << :user_company
   end
 
   protect_from_forgery with: :exception

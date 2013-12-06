@@ -4,6 +4,16 @@
 <br />
 <br />
 <br />
+<div class="hospital_overview_header_out">
+	<div class="hospital_overview_header_in">
+		<div class="hospital_overview_header_name">
+			Organization
+		</div>
+		<div class="hospital_overview_header_progress">
+				Progress
+		</div>
+	</div>
+</div>
 <% User.all.pluck(:id).each do |x| %>
 <% if current_user.u_state == User.find(x).u_state && User.find(x).admin == false %>
 <% @true_count = User.find(x).tasks.where('status = ?', true).count %>
@@ -12,7 +22,7 @@
 <div class="hospital_overview_wrapper">
 	<div class="hospital_overview_inner">
 		<div class="hospital_overview_name">
-			<%= link_to User.find(x).email, admin_detail_path(:hospital_id => x) %>
+			<%= link_to User.find(x).organization, admin_detail_path(:hospital_id => x) %>
 		</div>
 		<div class="hospital_overview_progress_outer">
 			<div class="hospital_overview_progress_inner" style="width: <%= @progress_bar %>">
