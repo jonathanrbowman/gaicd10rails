@@ -10,8 +10,12 @@
 	</head>
 	<body>
 
-		<% if user_signed_in?%>
-		<%= render "layouts/navController" %>
+		<% if user_signed_in? %>
+			<% if current_user.admin? %>
+				<%= render "layouts/navControllerAdmin" %>
+			<% else %>
+				<%= render "layouts/navController" %>
+			<% end%>
 		<% end%>
 
 		<% flash.each do |name, msg| %>

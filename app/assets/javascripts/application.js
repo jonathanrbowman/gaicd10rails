@@ -21,12 +21,20 @@ $(document).ready(function() {
 setTimeout(function(){$(".notice, .alert").css({"opacity" : "1", "top" : "10px"});}, 300);	
 setTimeout(function(){$(".notice, .alert").css({"opacity" : "0", "top" : "-10px"});}, 3500);
 
+$("#headerControlsWrapperAdmin").mouseenter(function() {
+	$(this).css({"top" : "0px"});
+});
+
+$("#headerControlsWrapperAdmin").mouseleave(function() {
+	$(this).css({"top" : "-125px"});
+});
+
 $("#headerControlsWrapper").mouseenter(function() {
-	$(this).css({"top" : "-2px"});
+	$(this).css({"top" : "0px"});
 });
 
 $("#headerControlsWrapper").mouseleave(function() {
-	$(this).css({"top" : "-125px"});
+	$(this).css({"top" : "-83px"});
 });
 
 $('textarea').autosize();

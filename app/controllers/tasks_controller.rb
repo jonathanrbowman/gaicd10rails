@@ -44,12 +44,12 @@ class TasksController < ApplicationController
       end
 
       flash[:notice] = 'Successfully made'
-      redirect_to admin_view_path
+      redirect_to request.referrer
 
     else
 
       flash[:notice] = 'Could not create'
-      redirect_to admin_view_path
+      redirect_to request.referrer
 
     end
 
@@ -85,11 +85,11 @@ class TasksController < ApplicationController
       Task.find(x).update_attributes(:position => @task_to, :title => params[:task][:title], :description => params[:task][:description])
     end
 
-    redirect_to tasks_path
+    redirect_to request.referrer
     
     else
       flash[:notice] = 'The step number can only be changed to a spot that already exists. Use New Task to add another step.'
-      redirect_to tasks_path
+      redirect_to request.referrer
     end
 
   end
@@ -112,7 +112,7 @@ class TasksController < ApplicationController
       Task.destroy(x)
     end
 
-    redirect_to tasks_path
+    redirect_to request.referrer
 
   end
 
@@ -123,6 +123,7 @@ class TasksController < ApplicationController
     else
       @task.update_attributes(:status => false)
     end
+    redirect_to request.referrer
   end
 
   private

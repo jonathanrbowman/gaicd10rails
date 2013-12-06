@@ -24,7 +24,7 @@
         <td><%= Task.find(task).status %></td>
        <td><a href='/tasks/<%= task %>/status_change'>Change Status</a></td>
        <td><%= link_to 'Modify', edit_task_path(task) %></td>
-       <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <td><%= link_to 'Delete', Task.find(task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
 
       <% end %>

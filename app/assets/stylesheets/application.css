@@ -72,24 +72,29 @@ input, input:focus {
 	max-width: 300px;
 }
 
-#headerControlsWrapper {
-	border-collapse: collapse;
+#headerControlsWrapper, #headerControlsWrapperAdmin {
+	border-collapse:collapse;
 	position: fixed;
-	top: -125px;
+	top: -83px;
 	right: 0;
 	padding: 10px;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	text-align: center;
+	z-index:9999;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
 }
 
+#headerControlsWrapperAdmin {
+	top:-125px;
+}
+
 #headerSignOut {
 	background-color: rgba(225,93,106, 1);
-	opacity: .7;
+	opacity: .8;
 	display: block;
 	padding: 10px;
 }
@@ -98,21 +103,21 @@ input, input:focus {
 	opacity: 1;
 }
 
-#headerModify {
+#headerOverview {
 	background-color: rgba(105,157,200, .7);
-	opacity: .7;
+	opacity: .8;
 	display: block;
 	padding: 10px;
 }
 
-#headerModify:hover {
+#headerOverview:hover {
 	background-color: rgba(105,157,200, 1);
 	opacity: 1;
 }
 
 #headerViewAll {
 	background-color: rgba(110,190,82, .7);
-	opacity: .7;
+	opacity: .8;
 	display: block;
 	padding: 10px;
 	
@@ -124,12 +129,17 @@ input, input:focus {
 }
 
 #signedInAs {
-	padding-left:10px;
-	padding-right:10px;
 	background-color: rgba(255,255,255,.3);
-	width: 100%;
-	height: 50px;
-	vertical-align: middle;
+	opacity: .8;
+	display: block;
+	padding: 10px;
+}
+
+#signedInAs:hover {
+	background-color: rgba(255,255,255,.6);
+	opacity: 1;
+	display: block;
+	padding: 10px;
 }
 
 .notice, .alert {
@@ -140,6 +150,7 @@ input, input:focus {
 	color: white;
 	position: fixed;
 	top: -10px;
+	z-index:99;
 	-webkit-transition: .25s ease-in-out;
 	-moz-transition: .25s ease-in-out;
 	-o-transition: .25s ease-in-out;
@@ -314,4 +325,42 @@ input, input:focus {
 
 #ga_stars img {
 	width: 270px;
+}
+
+.hospital_overview_wrapper {
+	width:100%;
+	border-top: 5px solid #65BE6E;
+	border-bottom: 5px solid #65BE6E;
+	margin-top:-5px;
+}
+
+.hospital_overview_inner {
+	width:100%;
+	max-width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:25px;
+	position:relative;
+}
+
+.hospital_overview_name {
+	display:inline;
+}
+
+.hospital_overview_progress_outer {
+	width:40%;
+	height:100%;
+	background-color: rgba(101,190,110,.2);
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+.hospital_overview_progress_inner {
+	height:100%;
+	background-color: rgba(101,190,110,.6);
+	border-right: 5px solid rgba(255,255,255,.1);
+	position:absolute;
+	left:0;
+	top:0;
 }

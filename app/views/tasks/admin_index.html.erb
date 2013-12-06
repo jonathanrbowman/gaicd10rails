@@ -1,29 +1,32 @@
 <% if user_signed_in? && current_user.admin?%>
-<h1>Listing Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Hospital</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% User.all.pluck(:id).each do |x| %>
-    <% if current_user.u_state == User.find(x).u_state && User.find(x).admin == false %>
-      <tr>
-        <td><%= link_to User.find(x).email, admin_detail_path(:hospital_id => x) %></td>
-      </tr>
-      <% end %>
-      <% end %>
-  </tbody>
-</table>
+<br />
+<br />
+<br />
+<br />
+<br />
+<% User.all.pluck(:id).each do |x| %>
+<% if current_user.u_state == User.find(x).u_state && User.find(x).admin == false %>
+<% @true_count = User.find(x).tasks.where('status = ?', true).count %>
+<% @total_count = User.find(x).tasks.count %>
+<% @progress_bar = number_to_percentage((@true_count.to_f / @total_count) * 100) %>
+<div class="hospital_overview_wrapper">
+	<div class="hospital_overview_inner">
+		<div class="hospital_overview_name">
+			<%= link_to User.find(x).email, admin_detail_path(:hospital_id => x) %>
+		</div>
+		<div class="hospital_overview_progress_outer">
+			<div class="hospital_overview_progress_inner" style="width: <%= @progress_bar %>">
+				
+			</div>
+		</div>
+	</div>
+</div>
+<% end %>
+<% end %>
 
 <% else %>
 
 <script type="text/javascript">window.location.href = "/"</script>
 
 <% end %>
-
-
 
