@@ -1,3 +1,7 @@
+<% if user_signed_in? %>
+<% current_user.admin? %>
+<script type="text/javascript">window.location.href = "/admin_view"</script>
+<% else %>
 <h1>Listing tasks</h1>
 
 <table>
@@ -23,8 +27,6 @@
         <td><%= task.user.email if task.user %></td>
         <td><%= task.status %></td>
        <td><a href='/tasks/<%= task.id %>/status_change'>Change Status</a></td>
-       <td><%= link_to 'Modify', edit_task_path(task) %></td>
-       <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
     <% end %>
@@ -33,6 +35,6 @@
 
 <br>
  <%= link_to 'New Task', new_task_path %> <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
-
+<% end %>
 
 
