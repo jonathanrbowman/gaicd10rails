@@ -1,7 +1,6 @@
 class RegistrationsController < DeviseController
   prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
   prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
-
   # GET /resource/sign_up
   def new
     build_resource({})
@@ -11,8 +10,11 @@ class RegistrationsController < DeviseController
   # POST /resource
   def create
     build_resource(sign_up_params)
+    resource.update_attributes(:u_state => current_user.u_state)
 
     if resource.save
+    
+
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
         #sign_up(resource_name, resource)
@@ -77,8 +79,8 @@ class RegistrationsController < DeviseController
 
   def update_needs_confirmation?(resource, previous)
     resource.respond_to?(:pending_reconfirmation?) &&
-      resource.pending_reconfirmation? &&
-      previous != resource.unconfirmed_email
+    resource.pending_reconfirmation? &&
+    previous != resource.unconfirmed_email
   end
 
   # By default we want to require a password checks on update.

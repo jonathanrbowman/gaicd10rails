@@ -20,14 +20,17 @@ class TasksController < ApplicationController
 
   # POST /tasks
   def create
-
-    @task_number = Task.all.pluck(:position).uniq.count
+    
+    @tasks_by_state = Task.where('t_state = ?', current_user.u_state)
+    @task_number = @tasks_by_state.pluck(:position).uniq.count
     @task_number_result = @task_number + 1
     if params[:task][:position].to_i > 0 && params[:task][:position].to_i <= @task_number_result
 
-      @task_list = Task.where('position >= ?', params[:task][:position])
+      @task_list = @tasks_by_state.where("position >= #{params[:task][:position]}")
+      
+      #@task_list = Task.where("position >= #{params[:task][:position]} AND t_state = #{current_user.u_state}")
       @task_id = @task_list.pluck(:id)
-      @user_list = User.all
+      @user_list = User.where('u_state = ?', current_user.u_state)
       @user_id = @user_list.pluck(:id)
 
       @task_id.each do |x|
@@ -37,16 +40,16 @@ class TasksController < ApplicationController
       end
 
       @user_id.each do |x|
-        Task.create(:position =>  params[:task][:position], :title =>  params[:task][:title], :description =>  params[:task][:description], :user_id => x)
+        Task.create(:position =>  params[:task][:position], :title =>  params[:task][:title], :description =>  params[:task][:description], :user_id => x, :t_state => current_user.u_state)
       end
 
       flash[:notice] = 'Successfully made'
-      redirect_to tasks_path
+      redirect_to admin_view_path
 
     else
 
       flash[:notice] = 'Could not create'
-      redirect_to tasks_path
+      redirect_to admin_view_path
 
     end
 
@@ -54,22 +57,23 @@ class TasksController < ApplicationController
 
   # PATCH/PUT /tasks/1
   def update
-
+    
+    @tasks_by_state = Task.where('t_state = ?', current_user.u_state)
     @task_from = params[:task][:position_from].to_i
     @task_to = params[:task][:position].to_i
-    @tasks_to_update = Task.where('position = ?', @task_from).pluck(:id)
-    @task_count = Task.all.pluck(:position).uniq.count
+    @tasks_to_update = @tasks_by_state.where('position = ?', @task_from).pluck(:id)
+    @task_count = @tasks_by_state.pluck(:position).uniq.count
     
     if @task_to > 0 && @task_to <= @task_count
 
     if @task_from > @task_to
-      @task_list_id = Task.where("position >= #{@task_to} AND position < #{@task_from}").pluck(:id)
+      @task_list_id = @tasks_by_state.where("position >= #{@task_to} AND position < #{@task_from}").pluck(:id)
       @task_list_id.each do |x|
         y = Task.find(x).position
         Task.find(x).update_attributes(:position => y + 1)
       end
     elsif @task_from < @task_to
-      @task_list_id = Task.where("position <= #{@task_to} AND position > #{@task_from}").pluck(:id)
+      @task_list_id = @tasks_by_state.where("position <= #{@task_to} AND position > #{@task_from}").pluck(:id)
       @task_list_id.each do |x|
         y = Task.find(x).position
         Task.find(x).update_attributes(:position => y - 1)
@@ -92,11 +96,12 @@ class TasksController < ApplicationController
 
   # DELETE /tasks/1
   def destroy
-
-    @position_number = Task.where('id = ?', params[:id]).pluck(:position)
-    @task_list = Task.where('position > ?', @position_number)
+    
+    @tasks_by_state = Task.where('t_state = ?', current_user.u_state)
+    @position_number =  @tasks_by_state.where('id = ?', params[:id]).pluck(:position)
+    @task_list =  @tasks_by_state.where('position > ?', @position_number)
     @task_id = @task_list.pluck(:id)
-    @tasks_to_destroy = Task.where('position = ?', @position_number).pluck(:id)
+    @tasks_to_destroy = @tasks_by_state.where('position = ?', @position_number).pluck(:id)
 
     @task_id.each do |x|
       y = Task.find(x).position
@@ -129,6 +134,6 @@ class TasksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def task_params
-    params.require(:task).permit(:position, :title, :description)
+    params.require(:task).permit(:position, :title, :description, :status, :t_state)
   end
 end

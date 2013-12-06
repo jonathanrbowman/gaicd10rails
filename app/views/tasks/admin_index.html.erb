@@ -10,9 +10,11 @@
 
   <tbody>
     <% User.all.pluck(:id).each do |x| %>
+    <% if current_user.u_state == User.find(x).u_state && User.find(x).admin == false %>
       <tr>
         <td><%= link_to User.find(x).email, admin_detail_path(:hospital_id => x) %></td>
       </tr>
+      <% end %>
       <% end %>
   </tbody>
 </table>
