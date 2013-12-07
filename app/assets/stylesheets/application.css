@@ -40,7 +40,7 @@ a {
 	text-decoration: none;
 }
 
-a, p, h1, h2, h3, h4, input, button, form, td, th {
+a, p, h1, h2, h3, h4, input, button, form, td, th, label {
 	-webkit-font-smoothing: antialiased;
 	color: white;
 	font-family: 'Mate', serif;
@@ -48,6 +48,12 @@ a, p, h1, h2, h3, h4, input, button, form, td, th {
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
+}
+
+h1, h2, h3, h4, label {
+	font-family: 'Cinzel', serif;
+	font-weight: 400;
+	color: #f79758;
 }
 
 input, input:focus {
@@ -202,12 +208,55 @@ input, input:focus {
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size: 20px;
-	border: 2px solid #ffffff;
+	border: 3px solid #ffffff;
 	margin: 0;
 }
 
 .field_input:focus {
-	border: 2px solid #65BE6E;
+	border: 3px solid #65BE6E;
+}
+
+.field_input_general {
+	color: #333333;
+	font-family: 'Mate', serif;
+	font-weight: 700;
+	height: 40px;
+	width: 95%;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+	border: 3px solid #ffffff;
+	margin: 0;
+}
+
+.field_input_general:focus {
+	border: 3px solid #65BE6E;
+}
+
+.field_input_lname, .field_input_fname {
+	color: #333333;
+	font-family: 'Mate', serif;
+	font-weight: 700;
+	height: 40px;
+	width: 44%;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+	border: 3px solid #ffffff;
+	margin: 0;
+}
+
+.field_input_lname:focus, .field_input_fname:focus {
+	border: 3px solid #65BE6E;
+}
+
+.field_input_fname {
+	position: relative;
+}
+
+.field_input_lname {
+	position: absolute;
+	right: 0;
 }
 
 .submit_btn {
@@ -240,6 +289,34 @@ input, input:focus {
 
 .submit_btn:active {
 	border-bottom: 0px solid #37843f;
+}
+
+.enroll_btn {
+	font-family: 'Cinzel', serif;
+	font-size: 18px;
+	font-weight: 600;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width:100%;
+	text-align:center;
+	background-color: #65BE6E;
+	border: none;
+	border-bottom: 4px solid #37843f;
+	color: white;
+	margin: 0;
+	position: absolute;
+	bottom:-70px;
+	left: 0;
+	cursor: pointer;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.enroll_btn:hover {
+	border-bottom: 2px solid #37843f;
+	background-color: #5da860;
 }
 
 .cancel_btn {
@@ -405,4 +482,11 @@ input, input:focus {
 	position: absolute;
 	right: 0;
 	bottom: 0;
+}
+
+#form_outer_wrapper {
+	position: relative;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
 }

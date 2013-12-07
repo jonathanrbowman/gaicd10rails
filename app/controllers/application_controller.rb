@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     if current_user.admin?
       admin_view_path
     else
-    tasks_path
+      tasks_path
     end
   end
 
@@ -21,8 +21,22 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :organization
     devise_parameter_sanitizer.for(:sign_up) << :u_state
+    devise_parameter_sanitizer.for(:sign_up) << :p_fname
+    devise_parameter_sanitizer.for(:sign_up) << :p_lname
+    devise_parameter_sanitizer.for(:sign_up) << :p_phone
+    devise_parameter_sanitizer.for(:sign_up) << :s_fname
+    devise_parameter_sanitizer.for(:sign_up) << :s_lname
+    devise_parameter_sanitizer.for(:sign_up) << :s_email
+    devise_parameter_sanitizer.for(:sign_up) << :s_phone
     devise_parameter_sanitizer.for(:account_update) << :organization
     devise_parameter_sanitizer.for(:account_update) << :u_state
+    devise_parameter_sanitizer.for(:account_update) << :p_fname
+    devise_parameter_sanitizer.for(:account_update) << :p_lname
+    devise_parameter_sanitizer.for(:account_update) << :p_phone
+    devise_parameter_sanitizer.for(:account_update) << :s_fname
+    devise_parameter_sanitizer.for(:account_update) << :s_lname
+    devise_parameter_sanitizer.for(:account_update) << :s_email
+    devise_parameter_sanitizer.for(:account_update) << :s_phone
   end
 
   protect_from_forgery with: :exception
