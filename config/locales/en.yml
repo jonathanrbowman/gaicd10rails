@@ -24,4 +24,6 @@ en:
     attributes:
       user:
         p_fname: First Name
+        p_lname: Last Name
+        p_phone: Phone Number
   

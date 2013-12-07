@@ -255,7 +255,8 @@ input, input:focus {
 }
 
 .field_input_lname {
-	position: absolute;
+	position:absolute;
+	top: 0;
 	right: 0;
 }
 
