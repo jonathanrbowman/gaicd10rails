@@ -6,7 +6,7 @@ Gaicd10rails::Application.routes.draw do
     end
   end
 
-  devise_for :users, :controllers => {:registrations => "registrations", :devise => "devise"}
+  devise_for :users, :controllers => {:registrations => "registrations", :devise => "devise"}, :helpers => {:devise => "devise"}
   
   root 'pages#home'
 

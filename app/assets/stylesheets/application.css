@@ -297,15 +297,15 @@ input, input:focus {
 	font-weight: 600;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	width:100%;
-	text-align:center;
+	width: 100%;
+	text-align: center;
 	background-color: #65BE6E;
 	border: none;
 	border-bottom: 4px solid #37843f;
 	color: white;
 	margin: 0;
 	position: absolute;
-	bottom:-70px;
+	bottom: -70px;
 	left: 0;
 	cursor: pointer;
 	-webkit-transition: .15s ease-in-out;
@@ -489,4 +489,8 @@ input, input:focus {
 	max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#error_explanation h2 {
+	text-align: center;
 }
