@@ -32,6 +32,7 @@ body {
 	padding: 0;
 	background-color: #112C44;
 	background-image: url("https://s3.amazonaws.com/gaicd10rails/gaicd10bg.jpg");
+	background-attachment:fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
