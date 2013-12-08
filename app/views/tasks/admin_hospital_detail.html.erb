@@ -18,7 +18,7 @@
 				<tbody>
 					<tr class="task_row">
 						<td class="step"><%= Task.find(task).position %></td>
-						<td class="task_title"><%= Task.find(task).title %></td>
+						<td class="task_title" id="title_<%= task %>"><%= Task.find(task).title %></td>
 						<% if Task.find(task).status == true%>
 						<td class="admin_change_status"><a href='/tasks/<%= Task.find(task).id %>/status_change'>Complete!</a></td>
 						<% else %>
@@ -27,12 +27,26 @@
 						<td class="task_modify"><%= link_to 'Modify', edit_task_path(task) %></td>
 						<td class="task_delete"><%= link_to 'Delete', Task.find(task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 					</tr>
+					<div class= "task_description" id="description_<%= task %>">
+						<p class="description_inside"><%= Task.find(task).description %></p>
+					</div>
+					<script>
+						$("#title_<%= task %>").click(function() {
+						$("#description_<%= task %>").css({"display" : "block", "z-index" : "9999999999"});
+						setTimeout(function(){$("#description_<%= task %>").css({"opacity" : ".9"})},200);
+						});
+						$("#description_<%= task %>").click(function() {
+						$("#description_<%= task %>").css({"opacity" : "0"});
+						setTimeout(function(){$("#description_<%= task %>").css({"display" : "none", "z-index" : "0"})},200);
+						});
+					</script>
+					</tbody>
+
+					<% end %>
+				
+			</table>
+			<%= link_to 'Add New Task', new_task_path, class: 'add_task' %>
 	</div>
-	<% end %>
-	</tbody>
-	</table>
-	<%= link_to 'Add New Task', new_task_path, class: 'add_task' %>
-</div>
 </div>
 <br>
 <br>

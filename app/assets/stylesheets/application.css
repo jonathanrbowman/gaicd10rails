@@ -555,6 +555,7 @@ input, input:focus {
 
 .task_title {
 	padding-left: 10px;
+	cursor: pointer;
 }
 
 #hospital_progress_outer {
@@ -585,7 +586,7 @@ input, input:focus {
 	width: 100px;
 }
 
-.admin_change_status_red a{
+.admin_change_status_red a {
 	width: 100px;
 }
 
@@ -596,10 +597,10 @@ input, input:focus {
 }
 
 .task_modify a {
-	display:block;
-	width:100px;
-	padding-top:25px;
-	padding-bottom:25px;
+	display: block;
+	width: 100px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 
 .task_modify:hover {
@@ -613,10 +614,10 @@ input, input:focus {
 }
 
 .task_delete a {
-	display:block;
-	width:100px;
-	padding-top:25px;
-	padding-bottom:25px;
+	display: block;
+	width: 100px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 
 .task_delete:hover {
@@ -625,17 +626,38 @@ input, input:focus {
 
 .add_task {
 	background-color: #65be6e;
-	border-bottom:3px solid #357f3c;
+	border-bottom: 3px solid #357f3c;
 	font-family: 'Cinzel', serif;
-	margin-top:10px;
-	font-size:30px;
-	display:block;
-	width:100%;
-	padding-top:20px;
-	padding-bottom:20px;
-	text-align:center;
+	margin-top: 10px;
+	font-size: 30px;
+	display: block;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
 }
 
 .add_task:hover {
 	background-color: #78d181;
+}
+
+.task_description {
+	padding: 20px;
+	display: none;
+	opacity:0;
+	width: 500px;
+	height: 300px;
+	left:50px;
+	background-color: white;
+	position: absolute;
+	top: 100px;
+	cursor:pointer;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.description_inside {
+	color: #333333;
 }
