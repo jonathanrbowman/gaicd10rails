@@ -36,16 +36,10 @@
 					</div>
 					<script>
 					
-		$("#title_<%= task %>").click(function() {
-						$("#description_<%= task %>").css({"display" : "block", "z-index" : "9999999999"});
-						setTimeout(function(){$("#description_<%= task %>").css({"opacity" : ".9", "height" : "200px"})},5);
+					$("#title_<%= task %>").click(function () {
+   					 $("#description_<%= task %>").toggleClass("open");
 						});
 
-						$("#description_<%= task %>").click(function() {
-						$("#description_<%= task %>").css({"opacity" : "0", "height" : "0px"});
-						setTimeout(function(){$("#description_<%= task %>").css({"display" : "none", "z-index" : "0"})},160);
-						});
-						
 					</script>
 					<% end %>
 			<%= link_to 'Add New Task', new_task_path, class: 'add_task' %>

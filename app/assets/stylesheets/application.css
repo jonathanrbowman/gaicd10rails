@@ -501,14 +501,14 @@ input, input:focus {
 	width: 100%;
 	border: 2px solid #65be6e;
 	border-collapse: collapse;
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 .task_list_red {
 	width: 100%;
 	border: 2px solid #e85151;
 	border-collapse: collapse;
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 .step {
@@ -643,21 +643,24 @@ input, input:focus {
 }
 
 .task_description {
-	padding: 20px;
 	width: 95%;
 	max-width: 800px;
 	height: 0px;
 	opacity:0;
-	display:none;
 	background-color: white;
 	position: relative;
 	top: 0;
 	left: 0;
-	cursor: pointer;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
+}
+
+.open {
+	height:200px;
+	opacity:.8;
+	padding: 20px;
 }
 
 .description_inside {
