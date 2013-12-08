@@ -1,44 +1,44 @@
-<% if user_signed_in? && current_user.admin?%>
-<h1>Listing tasks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>position</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Owner</th>
-      <th>Status</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  	<% @admin_hospital_list = Task.where('user_id = ?', params[:hospital_id]).pluck(:id) %>
-    <% @admin_hospital_list.each do |task| %>
-      <tr>
-      	<td><%= Task.find(task).position %></td>
-        <td><%= Task.find(task).title %></td>
-        <td><%= Task.find(task).description %></td>
-        <td><%= Task.find(task).user.email %></td>
-        <td><%= Task.find(task).status %></td>
-       <td><a href='/tasks/<%= task %>/status_change'>Change Status</a></td>
-       <td><%= link_to 'Modify', edit_task_path(task) %></td>
-       <td><%= link_to 'Delete', Task.find(task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-
-      <% end %>
-  </tbody>
-</table>
-
+<% if user_signed_in? && current_user.admin?%> <h2 style="text-align:center;"><%= User.find(params[:hospital_id]).organization%></h2>
+<% @admin_hospital_list = Task.where('user_id = ?', params[:hospital_id]).pluck(:id) %>
+<% @hospital_id = params[:hospital_id] %>
+<div class="hospital_overview_header_out">
+	<div class="hospital_overview_header_in">
+		<% @true_count = User.find(@hospital_id).tasks.where('status = ?', true).count %>
+		<% @total_count = User.find(@hospital_id).tasks.count %>
+		<% @progress_bar = number_to_percentage((@true_count.to_f / @total_count) * 100) %>
+		<div id="hospital_progress_outer">
+			<div id="hospital_progress_inner" style="width: <%= @progress_bar %>"></div>
+		</div>
+		<% @admin_hospital_list.each do |task| %>
+		<% if Task.find(task).status == true%>
+		<table class="task_list">
+			<% else %>
+			<table class="task_list_red">
+				<% end %>
+				<tbody>
+					<tr class="task_row">
+						<td class="step"><%= Task.find(task).position %></td>
+						<td class="task_title"><%= Task.find(task).title %></td>
+						<% if Task.find(task).status == true%>
+						<td class="admin_change_status"><a href='/tasks/<%= Task.find(task).id %>/status_change'>Complete!</a></td>
+						<% else %>
+						<td class="admin_change_status_red"><a href='/tasks/<%= Task.find(task).id %>/status_change'>Incomplete</a></td>
+						<% end %>
+						<td class="task_modify"><%= link_to 'Modify', edit_task_path(task) %></td>
+						<td class="task_delete"><%= link_to 'Delete', Task.find(task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					</tr>
+	</div>
+	<% end %>
+	</tbody>
+	</table>
+	<%= link_to 'Add New Task', new_task_path, class: 'add_task' %>
+</div>
+</div>
 <br>
- <%= link_to 'New Task', new_task_path %>
- 
- <% else %>
+<br>
+
+<% else %>
 
 <script type="text/javascript">window.location.href = "/"</script>
 
 <% end %>
-
-
-

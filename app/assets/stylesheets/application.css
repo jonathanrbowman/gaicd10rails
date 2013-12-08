@@ -499,7 +499,7 @@ input, input:focus {
 
 .task_list {
 	width: 100%;
-	border: 2px solid #37843F;
+	border: 2px solid #65be6e;
 	border-collapse: collapse;
 	margin-top: 15px;
 }
@@ -519,34 +519,34 @@ input, input:focus {
 	font-family: 'Cinzel', serif;
 }
 
-.change_status {
+.change_status, .admin_change_status {
 	width: 150px;
-	background-color: #37843F;
+	background-color: #65be6e;
 	text-align: center;
 }
 
-.change_status:hover {
-	background-color: #52a55b;
+.change_status:hover, .admin_change_status:hover {
+	background-color: #78d181;
 }
 
-.change_status_red {
+.change_status_red, .admin_change_status_red {
 	width: 150px;
 	background-color: #e85151;
 	text-align: center;
 }
 
-.change_status_red:hover {
+.change_status_red:hover, .admin_change_status_red:hover {
 	background-color: #f18181;
 }
 
-.change_status a {
+.change_status a, .admin_change_status a {
 	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	width: 150px;
 }
 
-.change_status_red a {
+.change_status_red a, .admin_change_status_red a {
 	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -561,7 +561,7 @@ input, input:focus {
 	width: 100%;
 	height: 50px;
 	background-color: rgba(101,190,110,.2);
-	position:relative;
+	position: relative;
 }
 
 #hospital_progress_inner {
@@ -571,4 +571,71 @@ input, input:focus {
 	position: absolute;
 	left: 0;
 	top: 0;
+}
+
+.admin_change_status {
+	width: 100px;
+}
+
+.admin_change_status a {
+	width: 100px;
+}
+
+.admin_change_status_red {
+	width: 100px;
+}
+
+.admin_change_status_red a{
+	width: 100px;
+}
+
+.task_modify {
+	width: 100px;
+	text-align: center;
+	background-color: #658bbe;
+}
+
+.task_modify a {
+	display:block;
+	width:100px;
+	padding-top:25px;
+	padding-bottom:25px;
+}
+
+.task_modify:hover {
+	background-color: #7aa0d4;
+}
+
+.task_delete {
+	width: 100px;
+	text-align: center;
+	background-color: #111111;
+}
+
+.task_delete a {
+	display:block;
+	width:100px;
+	padding-top:25px;
+	padding-bottom:25px;
+}
+
+.task_delete:hover {
+	background-color: red;
+}
+
+.add_task {
+	background-color: #65be6e;
+	border-bottom:3px solid #357f3c;
+	font-family: 'Cinzel', serif;
+	margin-top:10px;
+	font-size:30px;
+	display:block;
+	width:100%;
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align:center;
+}
+
+.add_task:hover {
+	background-color: #78d181;
 }

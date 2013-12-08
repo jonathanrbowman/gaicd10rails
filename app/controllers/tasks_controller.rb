@@ -85,7 +85,7 @@ class TasksController < ApplicationController
       Task.find(x).update_attributes(:position => @task_to, :title => params[:task][:title], :description => params[:task][:description])
     end
 
-    redirect_to request.referrer
+    redirect_to admin_view_path
     
     else
       flash[:notice] = 'The step number can only be changed to a spot that already exists. Use New Task to add another step.'
