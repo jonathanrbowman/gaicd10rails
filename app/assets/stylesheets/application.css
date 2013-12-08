@@ -32,7 +32,7 @@ body {
 	padding: 0;
 	background-color: #112C44;
 	background-image: url("https://s3.amazonaws.com/gaicd10rails/gaicd10bg.jpg");
-	background-attachment:fixed;
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -256,7 +256,7 @@ input, input:focus {
 }
 
 .field_input_lname {
-	position:absolute;
+	position: absolute;
 	top: 0;
 	right: 0;
 }
@@ -495,4 +495,80 @@ input, input:focus {
 
 #error_explanation h2 {
 	text-align: center;
+}
+
+.task_list {
+	width: 100%;
+	border: 2px solid #37843F;
+	border-collapse: collapse;
+	margin-top: 15px;
+}
+
+.task_list_red {
+	width: 100%;
+	border: 2px solid #e85151;
+	border-collapse: collapse;
+	margin-top: 15px;
+}
+
+.step {
+	text-align: center;
+	color: #F79758;
+	width: 50px;
+	font-size: 32px;
+	font-family: 'Cinzel', serif;
+}
+
+.change_status {
+	width: 150px;
+	background-color: #37843F;
+	text-align: center;
+}
+
+.change_status:hover {
+	background-color: #52a55b;
+}
+
+.change_status_red {
+	width: 150px;
+	background-color: #e85151;
+	text-align: center;
+}
+
+.change_status_red:hover {
+	background-color: #f18181;
+}
+
+.change_status a {
+	display: block;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: 150px;
+}
+
+.change_status_red a {
+	display: block;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: 150px;
+}
+
+.task_title {
+	padding-left: 10px;
+}
+
+#hospital_progress_outer {
+	width: 100%;
+	height: 50px;
+	background-color: rgba(101,190,110,.2);
+	position:relative;
+}
+
+#hospital_progress_inner {
+	height: 100%;
+	background-color: rgba(101,190,110,.6);
+	border-right: 3px solid rgba(255,255,255,.1);
+	position: absolute;
+	left: 0;
+	top: 0;
 }

@@ -2,39 +2,41 @@
 <% if current_user.admin? %>
 <script type="text/javascript">window.location.href = "/admin_view"</script>
 <% else %>
-<h1>Listing tasks</h1>
+<div class="hospital_overview_header_out">
+	<div class="hospital_overview_header_in">
+		<% @true_count = User.find(current_user.id).tasks.where('status = ?', true).count %>
+		<% @total_count = User.find(current_user.id).tasks.count %>
+		<% @progress_bar = number_to_percentage((@true_count.to_f / @total_count) * 100) %>
+		<div id="hospital_progress_outer">
+			<div id="hospital_progress_inner" style="width: <%= @progress_bar %>"></div>
+		</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>position</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Owner</th>
-      <th>Status</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+		<% @tasks.each do |task| %>
+		<% if task.user == current_user %>
+		<% if task.status == true%>
+		<table class="task_list">
+			<% else %>
+			<table class="task_list_red">
+				<% end %>
+				<tbody>
+					<tr class="task_row">
+						<td class="step"><%= task.position %></td>
+						<td class="task_title"><%= task.title %></td>
+						<% if task.status == true%>
+						<td class="change_status"><a href='/tasks/<%= task.id %>/status_change'>Complete!</a></td>
+						<% else %>
+						<td class="change_status_red"><a href='/tasks/<%= task.id %>/status_change'>Incomplete</a></td>
+						<% end %>
+					</tr>
+	</div>
+	<% end %>
+	<% end %>
+	</tbody>
 
-  <tbody>
-    <% @tasks.each do |task| %>
-    <% if task.user == current_user %>
-      <tr>
-        <td><%= task.position %></td>
-        <td><%= task.title %></td>
-        <td><%= task.description %></td>
-        <td><%= task.user.email if task.user %></td>
-        <td><%= task.status %></td>
-       <td><a href='/tasks/<%= task.id %>/status_change'>Change Status</a></td>
-      </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
+	</table>
 
-<br>
-<% end %>
-<% end %>
-
-
+	<br>
+	<% end %>
+	<% end %>
+</div>
+</div>
