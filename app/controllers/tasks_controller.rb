@@ -29,7 +29,6 @@ class TasksController < ApplicationController
 
       @task_list = @tasks_by_state.where("position >= #{params[:task][:position]}")
       
-      #@task_list = Task.where("position >= #{params[:task][:position]} AND t_state = #{current_user.u_state}")
       @task_id = @task_list.pluck(:id)
       @user_list = User.where('u_state = ?', current_user.u_state)
       @user_id = @user_list.pluck(:id)

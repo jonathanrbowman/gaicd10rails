@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   validate :password_complexity
 
   has_many :tasks, order: :position
+  has_many :issues
 
   after_create :generate_tasks
 

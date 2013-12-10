@@ -1,5 +1,7 @@
 Gaicd10rails::Application.routes.draw do
 
+  resources :issues
+
   resources :tasks do
     member do
       post 'status_change'

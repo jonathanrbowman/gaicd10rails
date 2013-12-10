@@ -604,7 +604,7 @@ textarea {
 	width: 100%;
 	border: 2px solid #e85151;
 	border-collapse: collapse;
-	margin-top: 10px;
+	margin-top: 15px;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
@@ -626,13 +626,14 @@ textarea {
 }
 
 .change_status:hover, .admin_change_status:hover {
-	background-color: #78d181;
+	background-color: #8cdf94;
 }
 
 .change_status_red, .admin_change_status_red {
 	width: 150px;
 	background-color: #e85151;
 	text-align: center;
+	margin:0px !important;
 }
 
 .change_status_red:hover, .admin_change_status_red:hover {
@@ -651,6 +652,7 @@ textarea {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	width: 150px;
+	margin:0px !important;
 }
 
 .task_title {
