@@ -70,12 +70,12 @@ textarea, textarea:focus, input, input:focus {
 	box-shadow: none !important;
 	outline: none;
 	color: #333333;
-	resize:none;
+	resize: none;
 }
 
 textarea {
-	padding-top:10px;
-	padding-bottom:10px
+	padding-top: 10px;
+	padding-bottom: 10px
 }
 
 #logo {
@@ -259,8 +259,8 @@ textarea {
 }
 
 .field_input_position {
-	text-align:center;
-	width:10%;
+	text-align: center;
+	width: 10%;
 	color: #333333;
 	font-family: 'Mate', serif;
 	font-weight: 700;
@@ -273,8 +273,8 @@ textarea {
 }
 
 #position_field_label {
-	padding:0;
-	margin:0;
+	padding: 0;
+	margin: 0;
 }
 
 .field_input_position:hover {
@@ -422,7 +422,7 @@ textarea {
 }
 
 .back_btn {
-	display:block;
+	display: block;
 	font-family: 'Cinzel', serif;
 	font-size: 18px;
 	font-weight: 600;
@@ -433,7 +433,7 @@ textarea {
 	background-color: #ba676b;
 	border: none;
 	border-bottom: 4px solid #82373e;
-	position:relative;
+	position: relative;
 	color: white;
 	margin-top: 10px;
 	cursor: pointer;
@@ -616,7 +616,7 @@ textarea {
 	width: 50px;
 	font-size: 32px;
 	font-family: 'Cinzel', serif;
-	cursor:default;
+	cursor: default;
 }
 
 .change_status, .admin_change_status {
@@ -633,7 +633,7 @@ textarea {
 	width: 150px;
 	background-color: #e85151;
 	text-align: center;
-	margin:0px !important;
+	margin: 0px !important;
 }
 
 .change_status_red:hover, .admin_change_status_red:hover {
@@ -652,7 +652,7 @@ textarea {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	width: 150px;
-	margin:0px !important;
+	margin: 0px !important;
 }
 
 .task_title {
@@ -791,4 +791,27 @@ textarea {
 	right: 20px;
 	font-size: 14px;
 	color: #5DA860;
+}
+
+.change_password {
+	display:block;
+	overflow:hidden;
+	position:relative;
+	max-height:0px;
+	opacity: 0;
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
+
+.passchange {
+	max-height:1000px;
+	opacity:1;
+}
+
+#change_password_button {
+	cursor:pointer;
+	padding:0px;
+	margin:0px;
 }

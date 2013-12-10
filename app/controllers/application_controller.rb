@@ -1,9 +1,7 @@
 class ApplicationController < ActionController::Base
   
   require 'rails_autolink'
-  
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :authenticate_user!
   
@@ -22,24 +20,15 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :organization
-    devise_parameter_sanitizer.for(:sign_up) << :u_state
-    devise_parameter_sanitizer.for(:sign_up) << :p_fname
-    devise_parameter_sanitizer.for(:sign_up) << :p_lname
-    devise_parameter_sanitizer.for(:sign_up) << :p_phone
-    devise_parameter_sanitizer.for(:sign_up) << :s_fname
-    devise_parameter_sanitizer.for(:sign_up) << :s_lname
-    devise_parameter_sanitizer.for(:sign_up) << :s_email
-    devise_parameter_sanitizer.for(:sign_up) << :s_phone
-    devise_parameter_sanitizer.for(:account_update) << :organization
-    devise_parameter_sanitizer.for(:account_update) << :u_state
-    devise_parameter_sanitizer.for(:account_update) << :p_fname
-    devise_parameter_sanitizer.for(:account_update) << :p_lname
-    devise_parameter_sanitizer.for(:account_update) << :p_phone
-    devise_parameter_sanitizer.for(:account_update) << :s_fname
-    devise_parameter_sanitizer.for(:account_update) << :s_lname
-    devise_parameter_sanitizer.for(:account_update) << :s_email
-    devise_parameter_sanitizer.for(:account_update) << :s_phone
+    
+        devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit(:organization, :email, :password, :password_confirmation, :current_password, :u_state, :p_fname, :p_lname, :p_phone, :s_fname, :s_lname, :s_email, :s_phone)
+    end
+    
+        devise_parameter_sanitizer.for(:account_update) do |u|
+        u.permit(:user, :current_user, :organization, :email, :password, :password_confirmation, :current_password, :u_state, :p_fname, :p_lname, :p_phone, :s_fname, :s_lname, :s_email, :s_phone)
+    end
+    
   end
 
   protect_from_forgery with: :exception

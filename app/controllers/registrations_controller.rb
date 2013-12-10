@@ -83,7 +83,7 @@ class RegistrationsController < DeviseController
     previous != resource.unconfirmed_email
   end
 
-  # By default we want to require a password checks on update.
+  # By default we want to require password checks on update.
   # You can overwrite this method in your own RegistrationsController.
   def update_resource(resource, params)
     resource.update_with_password(params)

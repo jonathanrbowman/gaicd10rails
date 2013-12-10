@@ -39,4 +39,8 @@ $("#headerControlsWrapper").mouseleave(function() {
 
 $('textarea').autosize();
 
+$("#change_password_button").click(function () {
+  $(".change_password").toggleClass("passchange");
+  });
+
 });
