@@ -1,4 +1,6 @@
-<%= form_for(@task) do |f| %>
+<div id="form_outer_wrapper">
+	<h2 style="text-align:center;">Add a New Task</h2>
+<%= form_for @task do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -10,23 +12,26 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :position %><br>
-    <%= f.number_field :position %>
+<br />
+  <div>
+  	<h2 id="position_field_label">Step: </h2>
+    <%= f.number_field :position, class: "field_input_position" %>
   </div>
-  
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <br />
+  <div>
+    <%= f.text_field :title, class: "field_input_general", :placeholder => 'Task Title', :autofocus => true %>
   </div>
-  
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <br />
+  <div>
+    <%= f.text_area :description, class: "field_input_general", :placeholder => 'Task Description' %>
   </div>
-  
+  <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Task", class: "add_task_btn" %>
+    <%= link_to 'Back', admin_task_overview_path, class: "back_btn" %>
   </div>
 <% end %>
+
+</div>
+</div>
+

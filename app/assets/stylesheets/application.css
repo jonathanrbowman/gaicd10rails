@@ -18,6 +18,11 @@
  * Peach - #f79758
  */
 
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
 html {
 	width: 100%;
 	height: 100%;
@@ -41,14 +46,16 @@ a {
 	text-decoration: none;
 }
 
-a, p, h1, h2, h3, h4, input, button, form, td, th, label {
+a, h1, h2, h3, h4, input, button, form, td, th, label, textarea {
 	-webkit-font-smoothing: antialiased;
+	-webkit-appearance: none !important;
 	color: white;
 	font-family: 'Mate', serif;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
+	-webkit-appearance: none;
 }
 
 h1, h2, h3, h4, label {
@@ -57,12 +64,18 @@ h1, h2, h3, h4, label {
 	color: #f79758;
 }
 
-input, input:focus {
+textarea, textarea:focus, input, input:focus {
 	-moz-box-shadow: none !important;
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
 	outline: none;
 	color: #333333;
+	resize:none;
+}
+
+textarea {
+	padding-top:10px;
+	padding-bottom:10px
 }
 
 #logo {
@@ -96,7 +109,7 @@ input, input:focus {
 }
 
 #headerControlsWrapperAdmin {
-	top: -125px;
+	top: -165px;
 }
 
 #headerSignOut {
@@ -111,7 +124,7 @@ input, input:focus {
 }
 
 #headerOverview {
-	background-color: rgba(105,157,200, .7);
+	background-color: rgba(105,157,200, 1);
 	opacity: .8;
 	display: block;
 	padding: 10px;
@@ -122,8 +135,20 @@ input, input:focus {
 	opacity: 1;
 }
 
+#headerTaskOverview {
+	background-color: rgba(255,140,0, 1);
+	opacity: .8;
+	display: block;
+	padding: 10px;
+}
+
+#headerTaskOverview:hover {
+	background-color: rgba(255,140,0, 1);
+	opacity: 1;
+}
+
 #headerViewAll {
-	background-color: rgba(110,190,82, .7);
+	background-color: rgba(110,190,82, 1);
 	opacity: .8;
 	display: block;
 	padding: 10px;
@@ -234,6 +259,29 @@ input, input:focus {
 	border: 3px solid #65BE6E;
 }
 
+.field_input_position {
+	text-align:center;
+	width:10%;
+	color: #333333;
+	font-family: 'Mate', serif;
+	font-weight: 700;
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+	border: 3px solid #ffffff;
+	margin: 0;
+}
+
+#position_field_label {
+	padding:0;
+	margin:0;
+}
+
+.field_input_position:hover {
+	border: 3px solid #65BE6E;
+}
+
 .field_input_lname, .field_input_fname {
 	color: #333333;
 	font-family: 'Mate', serif;
@@ -316,6 +364,31 @@ input, input:focus {
 	transition: .15s ease-in-out;
 }
 
+.add_task_btn {
+	font-family: 'Cinzel', serif;
+	font-size: 18px;
+	font-weight: 600;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 100%;
+	text-align: center;
+	background-color: #65BE6E;
+	border: none;
+	border-bottom: 4px solid #37843f;
+	color: white;
+	margin: 0;
+	position: relative;
+	cursor: pointer;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.add_task_btn:hover {
+	background-color: #5da860;
+}
+
 .enroll_btn:hover {
 	border-bottom: 2px solid #37843f;
 	background-color: #5da860;
@@ -348,8 +421,31 @@ input, input:focus {
 	border-bottom: 2px solid #82373e;
 	background-color: #994a53;
 }
-.cancel_btn:active {
-	border-bottom: 0px solid #82373e;
+
+.back_btn {
+	display:block;
+	font-family: 'Cinzel', serif;
+	font-size: 18px;
+	font-weight: 600;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 100%;
+	text-align: center;
+	background-color: #ba676b;
+	border: none;
+	border-bottom: 4px solid #82373e;
+	position:relative;
+	color: white;
+	margin-top: 10px;
+	cursor: pointer;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.back_btn:hover {
+	background-color: #994a53;
 }
 
 #page_content {
@@ -440,7 +536,7 @@ input, input:focus {
 .hospital_overview_progress_outer {
 	width: 40%;
 	height: 100%;
-	background-color: rgba(101,190,110,.2);
+	background-color: rgba(255,255,255,.1);
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -448,8 +544,8 @@ input, input:focus {
 
 .hospital_overview_progress_inner {
 	height: 100%;
-	background-color: rgba(101,190,110,.6);
-	border-right: 3px solid rgba(255,255,255,.1);
+	background-color: rgba(101,190,110,.8);
+	border-right: 3px solid rgba(255,255,255,.2);
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -501,7 +597,7 @@ input, input:focus {
 	width: 100%;
 	border: 2px solid #65be6e;
 	border-collapse: collapse;
-	margin-top: 10px;
+	margin-top: 15px;
 }
 
 .task_list_red {
@@ -509,6 +605,10 @@ input, input:focus {
 	border: 2px solid #e85151;
 	border-collapse: collapse;
 	margin-top: 10px;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
 }
 
 .step {
@@ -562,14 +662,18 @@ input, input:focus {
 #hospital_progress_outer {
 	width: 100%;
 	height: 50px;
-	background-color: rgba(101,190,110,.2);
+	background-color: rgba(255,255,255,.1);
 	position: relative;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
 }
 
 #hospital_progress_inner {
 	height: 100%;
-	background-color: rgba(101,190,110,.6);
-	border-right: 3px solid rgba(255,255,255,.1);
+	background-color: rgba(101,190,110,.8);
+	border-right: 3px solid rgba(255,255,255,.2);
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -643,28 +747,38 @@ input, input:focus {
 }
 
 .task_description {
-	width: 95%;
+	overflow: hidden;
+	width: 100%;
 	max-width: 800px;
-	height: 0px;
-	opacity:0;
+	max-height: 0px;
+	opacity: 0;
 	background-color: white;
 	position: relative;
 	top: 0;
 	left: 0;
+	margin: 0;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
 }
 
-.open {
-	height:200px;
-	opacity:.8;
-	padding: 20px;
+.task_description a {
+	color: #357F3C;
 }
 
-.description_inside {
+.task_description a:hover {
+	color: #F79758;
+}
+
+.open {
+	max-height: 100px;
+	opacity: .8;
+}
+
+.task_description p {
 	color: #333333;
+	margin-left: 20px !important;
 }
 
 .click_for_more {

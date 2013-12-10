@@ -26,7 +26,7 @@ $("#headerControlsWrapperAdmin").mouseenter(function() {
 });
 
 $("#headerControlsWrapperAdmin").mouseleave(function() {
-	$(this).css({"top" : "-125px"});
+	$(this).css({"top" : "-165px"});
 });
 
 $("#headerControlsWrapper").mouseenter(function() {

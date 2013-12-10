@@ -13,6 +13,7 @@ Gaicd10rails::Application.routes.draw do
   get '/tasks/:id/status_change' => "tasks#status_change"
   get '/admin_view' => "tasks#admin_index"
   get '/admin_detail' => "tasks#admin_hospital_detail"
+  get '/admin_task_overview' => "tasks#admin_task_overview"
 
 # Example of regular route:
 #   get 'products/:id' => 'catalog#view'

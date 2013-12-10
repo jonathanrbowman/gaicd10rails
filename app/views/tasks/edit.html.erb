@@ -1,5 +1,5 @@
-<h1>Edit Task</h1>
-
+<div id="form_outer_wrapper">
+	<h2 style="text-align:center;">Add a New Task</h2>
 <%= form_for @task do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
@@ -16,26 +16,24 @@
     <div class="field">
     <%= f.hidden_field :position_from, value: @task.position %>
   </div>
-
-  <div class="field">
-    <%= f.label :position %><br>
-    <%= f.number_field :position %>
+<div>
+  <h2 id="position_field_label">Step: </h2>
+    <%= f.number_field :position, class: "field_input_position", :value => @task.position %>
   </div>
-  
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <br />
+  <div>
+    <%= f.text_field :title, class: "field_input_general", :placeholder => 'Task Title', :autofocus => true %>
   </div>
-  
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <br />
+  <div>
+    <%= f.text_area :description, class: "field_input_general", :placeholder => 'Task Description' %>
   </div>
-  
+  <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Update Task", class: "add_task_btn" %>
+    <%= link_to 'Back', admin_task_overview_path, class: "back_btn" %>
   </div>
 <% end %>
 
-
-<%= link_to 'Back', tasks_path %>
+</div>
+</div>

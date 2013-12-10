@@ -1,9 +1,12 @@
 class ApplicationController < ActionController::Base
+  
+  require 'rails_autolink'
+  
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :authenticate_user!
+  
   def after_sign_in_path_for(resource_or_scope)
     if current_user.admin?
       admin_view_path

@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   # GET /tasks
   def index
@@ -43,13 +44,12 @@ class TasksController < ApplicationController
         Task.create(:position =>  params[:task][:position], :title =>  params[:task][:title], :description =>  params[:task][:description], :user_id => x, :t_state => current_user.u_state)
       end
 
-      flash[:notice] = 'Successfully made'
-      redirect_to request.referrer
+      flash[:notice] = 'Task has been successfully created.'
+    redirect_to admin_task_overview_path
 
     else
 
       flash[:notice] = 'Please make sure you entered a step that is either next in line or greater than 0.'
-      redirect_to request.referrer
 
     end
 
@@ -84,8 +84,8 @@ class TasksController < ApplicationController
     @tasks_to_update.each do |x|
       Task.find(x).update_attributes(:position => @task_to, :title => params[:task][:title], :description => params[:task][:description])
     end
-
-    redirect_to admin_view_path
+    flash[:notice] = 'Task has been successfully updated.'
+    redirect_to admin_task_overview_path
     
     else
       flash[:notice] = 'The step number can only be changed to a spot that already exists. Use New Task to add another step.'

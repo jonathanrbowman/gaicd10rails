@@ -1,0 +1,44 @@
+<% if user_signed_in? && current_user.admin?%> 
+<h2 style="text-align:center;">Master Task List</h2>
+<div class="hospital_overview_header_out">
+	<div class="hospital_overview_header_in">
+		<h3 style="text-align:center;">All changes, additions, and deletions that are made here will be reflected in all hospitals for your state. Proceed with caution.</h3>
+		
+		<% Task.all.each do |task| %>
+		<% @task_ids = task.id %>
+		<% if task.user == current_user %>
+		<table class="task_list">
+				<tbody>
+					<tr class="task_row">
+						<td class="step"><%= task.position %></td>
+						<td class="task_title" id="title_<%= @task_ids %>"><%= task.title %><p class="click_for_more"><i>more >></i></p></td>
+						<td class="task_modify"><%= link_to 'Modify', edit_task_path(task) %></td>
+						<td class="task_delete"><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Deleting this task will delete it from every hospital - are you sure?' } %></td>
+					</tr>
+					
+					</tbody>
+			
+			</table>
+			<div class= "task_description" id="description_<%= @task_ids %>">
+						<p class="description_inside"><%= auto_link(simple_format(task.description)) %></p>
+					</div>
+					<script>
+					
+					$("#title_<%= @task_ids %>").click(function () {
+   					 $("#description_<%= @task_ids %>").toggleClass("open");
+						});
+
+					</script>
+					<% end %>
+					<% end %>
+			<%= link_to 'Add New Task', new_task_path, class: 'add_task' %> 
+	</div>
+</div>
+<br>
+<br>
+
+<% else %>
+
+<script type="text/javascript">window.location.href = "/"</script>
+
+<% end %>
