@@ -49,6 +49,7 @@ class TasksController < ApplicationController
     else
 
       flash[:notice] = 'Please make sure you entered a step that is either next in line or greater than 0.'
+      redirect_to request.referrer
 
     end
 

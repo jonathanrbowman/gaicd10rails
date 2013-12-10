@@ -136,14 +136,13 @@ textarea {
 }
 
 #headerTaskOverview {
-	background-color: rgba(255,140,0, 1);
+	background-color: #F79758;
 	opacity: .8;
 	display: block;
 	padding: 10px;
 }
 
 #headerTaskOverview:hover {
-	background-color: rgba(255,140,0, 1);
 	opacity: 1;
 }
 
