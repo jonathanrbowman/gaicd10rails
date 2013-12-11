@@ -10,7 +10,7 @@
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
 		<% if Task.where('t_state = ?', current_user.u_state).count.to_i == 0 %>
-		<%= link_to "Create Your First Task", new_task_path, id: "headerViewAll", class: "enroll_btn", :style => 'padding-top:20px; padding-bottom:20px; font-size:24px; bottom:-80px;' %>
+		<%= link_to "Create Your First Task", new_task_path, class: "add_task" %>
 		<% else %>
 		<% @true_count = User.find(@hospital_id).tasks.where('status = ?', true).count %>
 		<% @total_count = User.find(@hospital_id).tasks.count %>
