@@ -55,3 +55,5 @@ ruby "2.0.0"
 gem 'devise', '~> 3.1.1'
 
 gem 'rails_autolink'
+
+gem 'newrelic_rpm'
