@@ -25,7 +25,7 @@ class TasksController < ApplicationController
     @tasks_by_state = Task.where('t_state = ?', current_user.u_state)
     @task_number = @tasks_by_state.pluck(:position).uniq.count
     @task_number_result = @task_number + 1
-    if params[:task][:position].to_i > 0 && params[:task][:position].to_i <= @task_number_result
+    if params[:task][:position].to_i > 0 && params[:task][:position].to_i <= @task_number_result && params[:task][:title] != "" && params[:task][:description] != "" 
 
       @task_list = @tasks_by_state.where("position >= #{params[:task][:position]}")
       
@@ -43,12 +43,13 @@ class TasksController < ApplicationController
         Task.create(:position =>  params[:task][:position], :title =>  params[:task][:title], :description =>  params[:task][:description], :user_id => x, :t_state => current_user.u_state)
       end
 
-      flash[:notice] = 'Task has been successfully created.'
+    flash[:notice] = 'Task has been successfully created.'
     redirect_to admin_task_overview_path
-
+    
     else
+    
 
-      flash[:notice] = 'Please make sure you entered a step that is either next in line or greater than 0.'
+      flash[:notice] = 'Please make sure a valid step number was entered, as well as a title and description.'
       redirect_to request.referrer
 
     end

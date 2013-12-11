@@ -9,6 +9,4 @@ class Task < ActiveRecord::Base
   
   default_scope order('position ASC')
   
-  private
-  
 end

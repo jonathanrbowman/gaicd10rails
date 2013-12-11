@@ -1,4 +1,10 @@
-<% if user_signed_in? && current_user.admin?%> <h2 style="text-align:center;"><%= User.find(params[:hospital_id]).organization%></h2>
+<% if user_signed_in? && current_user.admin?%>
+<h2 style="text-align:center;"><%= User.find(params[:hospital_id]).organization%></h2>
+<% if User.find(params[:hospital_id]).sign_in_count == 0 %>
+<h3 style="text-align:center;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> has never signed in.</h3>
+<% else %>
+<h3 style="text-align:center;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> last signed in on <%= User.find(params[:hospital_id]).last_sign_in_at.to_s(:short) %></h3>
+<% end %>
 <% @admin_hospital_list = Task.where('user_id = ?', params[:hospital_id]).pluck(:id) %>
 <% @hospital_id = params[:hospital_id] %>
 <div class="hospital_overview_header_out">

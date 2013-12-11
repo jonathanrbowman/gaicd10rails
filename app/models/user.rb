@@ -13,12 +13,11 @@ class User < ActiveRecord::Base
     end
   end
 
-  validates :organization, presence: true, uniqueness: true
+  validates :organization, presence: true
   validates :p_fname, presence: true
   validates :p_lname, presence: true
   validates :p_phone, presence: true
-  validate :password_complexity, on: :create
- # validate :password, on: :update, allow_blank: true
+  validate :password_complexity
 
   has_many :tasks, order: :position
   has_many :issues
