@@ -5,6 +5,7 @@
 <% else %>
 <h3 style="text-align:center;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> last signed in on <%= User.find(params[:hospital_id]).last_sign_in_at.to_s(:short) %></h3>
 <% end %>
+
 <% @admin_hospital_list = Task.where('user_id = ?', params[:hospital_id]).pluck(:id) %>
 <% @hospital_id = params[:hospital_id] %>
 <div class="hospital_overview_header_out">
