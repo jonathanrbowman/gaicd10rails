@@ -9,6 +9,9 @@
 <% @hospital_id = params[:hospital_id] %>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
+		<% if Task.where('t_state = ?', current_user.u_state).count.to_i == 0 %>
+		<%= link_to "Create Your First Task", new_task_path, id: "headerViewAll", class: "enroll_btn", :style => 'padding-top:20px; padding-bottom:20px; font-size:24px; bottom:-80px;' %>
+		<% else %>
 		<% @true_count = User.find(@hospital_id).tasks.where('status = ?', true).count %>
 		<% @total_count = User.find(@hospital_id).tasks.count %>
 		<% @progress_bar = number_to_percentage((@true_count.to_f / @total_count) * 100) %>
@@ -53,7 +56,7 @@
 </div>
 <br>
 <br>
-
+<% end %>
 <% else %>
 
 <script type="text/javascript">window.location.href = "/"</script>

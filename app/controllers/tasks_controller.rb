@@ -22,6 +22,11 @@ class TasksController < ApplicationController
   # POST /tasks
   def create
     
+     if  params[:task][:position] == '' ||  params[:task][:title] == '' ||  params[:task][:description] == ''
+      flash[:notice] = 'Each task must have a step, title, and position entered.'
+      redirect_to request.referrer
+    else
+    
     @tasks_by_state = Task.where('t_state = ?', current_user.u_state)
     @task_number = @tasks_by_state.pluck(:position).uniq.count
     @task_number_result = @task_number + 1
@@ -53,11 +58,18 @@ class TasksController < ApplicationController
       redirect_to request.referrer
 
     end
+    
+    end
 
   end
 
   # PATCH/PUT /tasks/1
   def update
+    
+    if  params[:task][:position] == '' ||  params[:task][:title] == '' ||  params[:task][:description] == ''
+      flash[:notice] = 'Each task must have a step, title, and position entered.'
+      redirect_to request.referrer
+    else
     
     @tasks_by_state = Task.where('t_state = ?', current_user.u_state)
     @task_from = params[:task][:position_from].to_i
@@ -91,6 +103,7 @@ class TasksController < ApplicationController
     else
       flash[:notice] = 'The step number can only be changed to a spot that already exists. Use New Task to add another step.'
       redirect_to request.referrer
+    end
     end
 
   end

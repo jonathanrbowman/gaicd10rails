@@ -6,6 +6,10 @@
 <br />
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
+		<% if User.where('u_state = ?', current_user.u_state).where('admin = ?', false).count.to_i == 0 %>
+		<h1 style="text-align:center;">There aren't any hospitals yet!</h1>
+		<%= link_to "Enroll Your First Hospital", new_user_registration_path, id: "headerViewAll", class: "enroll_btn", :style => 'padding-top:20px; padding-bottom:20px; font-size:24px; bottom:-80px;' %>
+		<% else %>
 		<div class="hospital_overview_header_name">
 			Organization
 		</div>
@@ -33,7 +37,7 @@
 </div>
 <% end %>
 <% end %>
-
+<% end %>
 <% else %>
 
 <script type="text/javascript">window.location.href = "/"</script>

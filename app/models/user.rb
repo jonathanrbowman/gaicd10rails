@@ -6,17 +6,17 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable
          
   def password_complexity
-    if password.present? and not password.match(/^(?=.*[^a-zA-Z])(?=.*[a-z])(?=.*[A-Z])\S{8,}$/)
-   # if password.match(/^(?=.*[^a-zA-Z])(?=.*[a-z])(?=.*[A-Z])\S{8,}$/)
+  #  if password.present? and not password.match(/^(?=.*[^a-zA-Z])(?=.*[a-z])(?=.*[A-Z])\S{8,}$/)
+    if password.match(/^(?=.*[^a-zA-Z])(?=.*[a-z])(?=.*[A-Z])\S{8,}$/)
       else
       errors.add :password, "must include at least one lowercase letter, one uppercase letter, one number, and be at least 8 characters in length."
     end
   end
 
-  validates :organization, presence: true
-  validates :p_fname, presence: true
-  validates :p_lname, presence: true
-  validates :p_phone, presence: true
+  validate :organization, presence: true
+  validate :p_fname, presence: true
+  validate :p_lname, presence: true
+  validate :p_phone, presence: true
   validate :password_complexity
 
   has_many :tasks, order: :position
