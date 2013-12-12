@@ -18,7 +18,7 @@
 		</div>
 	</div>
 </div>
-<% User.all.pluck(:id).each do |x| %>
+<% User.all.order('organization asc').pluck(:id).each do |x| %>
 <% if current_user.u_state == User.find(x).u_state && User.find(x).admin == false %>
 <% @true_count = User.find(x).tasks.where('status = ?', true).count %>
 <% @total_count = User.find(x).tasks.count %>
