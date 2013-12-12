@@ -135,17 +135,7 @@ class TasksController < ApplicationController
 
   def status_change
     @task = Task.find(params[:id])
-#     
-      # respond_to do |format|
-    # format.json {
-       # if @task.status == false
-        # @task.update_attributes(:status => true)
-     # else
-        # @task.update_attributes(:status => false)
-     # end
-    # }
-    # end
-    
+
      if @task.status == false
       @task.update_attributes(:status => true)
      else

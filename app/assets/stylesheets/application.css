@@ -608,14 +608,18 @@ textarea {
 	color: #e85151;
 }
 
-.task_list {
+.task_list_green_before {
 	width: 100%;
 	border: 2px solid #65be6e;
 	border-collapse: collapse;
 	margin-top: 15px;
 }
 
-.task_list_red {
+.task_list_green_after {
+	border: 2px solid #65be6e !important;
+}
+
+.task_list_red_before {
 	width: 100%;
 	border: 2px solid #e85151;
 	border-collapse: collapse;
@@ -624,6 +628,10 @@ textarea {
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
+}
+
+.task_list_red_after {
+	border: 2px solid #e85151 !important;
 }
 
 .step {
@@ -635,35 +643,51 @@ textarea {
 	cursor: default;
 }
 
-.change_status, .admin_change_status {
+.change_status_green_before, .admin_change_status {
 	width: 150px;
 	background-color: #65be6e;
 	text-align: center;
 }
 
-.change_status:hover, .admin_change_status:hover {
+.change_status_green_after {
+	background-color: #65be6e !important;
+}
+
+.change_status_green_after:hover {
+	background-color: #8cdf94 !important;
+}
+
+.change_status_green_before:hover, .admin_change_status:hover {
 	background-color: #8cdf94;
 }
 
-.change_status_red, .admin_change_status_red {
+.change_status_red_before, .admin_change_status_red {
 	width: 150px;
 	background-color: #e85151;
 	text-align: center;
 	margin: 0px !important;
 }
 
-.change_status_red:hover, .admin_change_status_red:hover {
+.change_status_red_after {
+	background-color: #e85151 !important;
+}
+
+.change_status_red_after:hover {
+	background-color: #f18181 !important;
+}
+
+.change_status_red_before:hover, .admin_change_status_red:hover {
 	background-color: #f18181;
 }
 
-.change_status a, .admin_change_status a {
+.change_status_green_before a, .admin_change_status a {
 	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	width: 150px;
 }
 
-.change_status_red a, .admin_change_status_red a {
+.change_status_red_before a, .admin_change_status_red a {
 	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;

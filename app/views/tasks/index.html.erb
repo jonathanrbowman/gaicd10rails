@@ -12,28 +12,44 @@
 		<% @task_ids = task.id %>
 		<% if task.user == current_user %>
 		<% if task.status == true%>
-		<table class="task_list">
-			<% else %>
-			<table class="task_list_red">
-				<% end %>
-				<tbody>
-					<tr class="task_row">
-						<td class="step"><%= task.position %></td>
-						<td class="task_title" id="title_<%= @task_ids %>"><%= task.title %><p class="click_for_more"><i>more >></i></p></td>
-						<% if task.status == true%>
-			<!--		<td class="change_status"><a href='/tasks/<%= task.id %>/status_change'>Complete!</a></td> --> 
-					<td class="change_status" id="status_<%= @task_ids %>"><%= link_to 'Complete!', status_change_task_path(task.id) %></td>
-						<% else %>
-				<!--		<td class="change_status_red"><a href='/tasks/<%= task.id %>/status_change'>Click to Complete</a></td> -->
-					<td class="change_status_red" id="status_<%= @task_ids %>"><%= link_to 'Click to Complete', status_change_task_path(task.id) %></td>
-						<% end %>
-					</tr>
-	</div>
-	
-	
-	</tbody>
+		<table class="task_list_green_before" id="row_<%= @task_ids %>">
+                        <% else %>
+                        <table class="task_list_red_before" id="row_<%= @task_ids %>">
+                                <% end %>
+                                <tbody>
+                                        <tr class="task_row">
+                                                <td class="step"><%= task.position %></td>
+                                                <td class="task_title" id="title_<%= @task_ids %>"><%= task.title %><p class="click_for_more"><i>more >></i></p></td>
+                                                <% if task.status == true%>
+                        <!--                <td class="change_status"><a href='/tasks/<%= task.id %>/status_change'>Complete!</a></td> --> 
+                                        <td class="change_status_green_before" id="status_<%= @task_ids %>"><%= link_to 'Click to Change', status_change_task_path(task.id), :remote => true %></td>
+                                        					<script>
 
-	</table>
+					$("#status_<%= @task_ids %>").click(function () {
+   					 $("#status_<%= @task_ids %>").toggleClass("change_status_red_after");
+   					 $("#row_<%= @task_ids %>").toggleClass("task_list_red_after");
+						});
+
+					</script>
+                                                <% else %>
+                                <!--                <td class="change_status_red"><a href='/tasks/<%= task.id %>/status_change'>Click to Complete</a></td> -->
+                                        <td class="change_status_red_before" id="status_<%= @task_ids %>"><%= link_to 'Click to Change', status_change_task_path(task.id), :remote => true %></td>
+                                                                                					<script>
+
+					$("#status_<%= @task_ids %>").click(function () {
+   					 $("#status_<%= @task_ids %>").toggleClass("change_status_green_after");
+   					 $("#row_<%= @task_ids %>").toggleClass("task_list_green_after");
+						});
+
+					</script>
+                                                <% end %>
+                                        </tr>
+        </div>
+        
+        
+        </tbody>
+
+        </table>
 			<div class= "task_description" id="description_<%= @task_ids %>">
 						<p class="description_inside"><%= auto_link(simple_format(task.description)) %></p>
 					</div>
