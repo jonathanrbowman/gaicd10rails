@@ -502,8 +502,6 @@ textarea {
 
 .hospital_overview_wrapper {
 	width: 100%;
-	border-top: 3px solid #65BE6E;
-	border-bottom: 3px solid #65BE6E;
 	margin-top: -3px;
 }
 
@@ -513,6 +511,8 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
+		border-top: 3px solid #65BE6E;
+	border-bottom: 3px solid #65BE6E;
 }
 
 .hospital_overview_name {
@@ -544,7 +544,7 @@ textarea {
 .hospital_overview_progress_inner {
 	height: 100%;
 	background-color: rgba(101,190,110,.8);
-	border-right: 3px solid rgba(255,255,255,.2);
+	box-shadow: -3px 0px 0px 0px rgba(255,255,255,.2) inset;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -590,6 +590,11 @@ textarea {
 
 #error_explanation h2 {
 	text-align: center;
+	color: #e85151;
+}
+
+#error_explanation {
+	color: #e85151;
 }
 
 .task_list {
@@ -814,4 +819,9 @@ textarea {
 	cursor:pointer;
 	padding:0px;
 	margin:0px;
+}
+
+#change_password_button h3 {
+	margin:0;
+	padding:0;
 }

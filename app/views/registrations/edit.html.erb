@@ -19,10 +19,6 @@
 	<%= f.text_field :p_phone, class: "field_input_general", class: "field_input_fname", :placeholder => 'Phone Number' %>
 </div>
 	<br />
-<div>
-	<%= f.password_field :current_password, class: "field_input_general", :placeholder => 'Current Password (required to update info)' %>
-</div>
-<br />
 	<div id="change_password_button"><h3>> Change Password?</h3></div>
 	<br />
 	<div class="change_password">
@@ -33,6 +29,10 @@
 <div>
 	<%= f.password_field :password_confirmation, class: "field_input_general", :placeholder => 'Confirm New Password' %>
 </div>
+<br />
+</div>
+<div>
+	<%= f.password_field :current_password, class: "field_input_general", :placeholder => 'Type current password here to save changes', :style => 'border:2px solid #e85151;' %>
 </div>
 <br />
 <h2 style="text-align:center;">Secondary Contact Information</h2>

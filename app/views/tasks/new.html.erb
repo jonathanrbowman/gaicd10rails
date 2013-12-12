@@ -29,7 +29,7 @@
   <br />
   <div class="actions">
     <%= f.submit "Create Task", class: "add_task_btn" %>
-    <%= link_to 'Back', admin_task_overview_path, class: "back_btn" %>
+    <%= link_to 'Back', admin_task_overview_path, class: "back_btn", data: { confirm: 'All unsaved data will be lost - are you sure?' } %>
   </div>
 <% end %>
 

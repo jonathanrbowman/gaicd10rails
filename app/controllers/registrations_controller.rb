@@ -51,7 +51,8 @@ class RegistrationsController < DeviseController
         set_flash_message :notice, flash_key
       end
       sign_in resource_name, resource, :bypass => true
-      respond_with resource, :location => after_update_path_for(resource)
+      flash[:notice] = 'Account updated.'
+      redirect_to request.referrer
     else
       clean_up_passwords resource
       respond_with resource
