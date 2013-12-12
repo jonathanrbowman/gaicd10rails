@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+<% if not current_user.admin? %>
+<script type="text/javascript">window.location.href = "/"</script>
+<% else %>
+<h2 style="text-align:center;">Current Potential Issues</h2>
+<div class="hospital_overview_header_out">
+	<div class="hospital_overview_header_in">
+		<h3 style="text-align:center;">Click any issues that  apply to your hospital. Active issues will be lit red.</h3>
+		<% @issues = Issue.all %>
+    <% @issues.each do |issue| %>
+<table class="issue_table">
+
+  <tbody>
+
+      <tr>
+
+      </tr>
+
+  </tbody>
+</table>
+      <% end %>
+<br>
+</div>
+</div>
+<% end %>
+<% end %>

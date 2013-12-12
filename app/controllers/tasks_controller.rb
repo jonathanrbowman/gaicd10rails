@@ -4,6 +4,9 @@ class TasksController < ApplicationController
   # GET /tasks
   def index
     @tasks = Task.all
+    @true_count = User.find(current_user.id).tasks.where('status = ?', true).count
+    @total_count = User.find(current_user.id).tasks.count
+    @progress_bar = (@true_count.to_f / @total_count) * 100
   end
 
   # GET /tasks/1
@@ -132,12 +135,23 @@ class TasksController < ApplicationController
 
   def status_change
     @task = Task.find(params[:id])
-    if @task.status == false
+#     
+      # respond_to do |format|
+    # format.json {
+       # if @task.status == false
+        # @task.update_attributes(:status => true)
+     # else
+        # @task.update_attributes(:status => false)
+     # end
+    # }
+    # end
+    
+     if @task.status == false
       @task.update_attributes(:status => true)
-    else
-      @task.update_attributes(:status => false)
-    end
-    redirect_to request.referrer
+     else
+       @task.update_attributes(:status => false)
+     end
+    
   end
 
   private

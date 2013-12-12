@@ -5,6 +5,9 @@
 	<tr>
 		<td><%= link_to "Task List", tasks_path, id: "headerOverview" %></td>
 	</tr>
+		<tr>
+		<td><%= link_to "Record Issues", issues_path, id: "headerIssuesOverview" %></td>
+	</tr>
 	<tr>
 		<td><%= link_to "+ Logged in as #{current_user.organization}", edit_user_registration_path, id: "signedInAs" %></td>
 	</tr>

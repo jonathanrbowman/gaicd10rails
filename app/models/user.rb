@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   has_many :issues
 
   after_create :generate_tasks
+  after_create :generate_issues
 
   def generate_tasks
     # tasks_by_state = Task.where('t_state = ?', User.last.u_state)
@@ -46,6 +47,19 @@ class User < ActiveRecord::Base
         :title =>  template_task.title,
         :t_state =>  self.u_state,
         :description =>  template_task.description, 
+        :user => self)
+    end
+
+  end
+  
+    def generate_issues
+    
+    template_issues = Issue.where('i_state = ?', User.last.u_state).to_a.uniq { |issue| issue.title }
+
+    template_issues.each do |template_issue|
+      Issue.create(
+        :title =>  template_issue.title,
+        :i_state =>  self.u_state, 
         :user => self)
     end
 

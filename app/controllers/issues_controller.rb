@@ -62,14 +62,25 @@ class IssuesController < ApplicationController
     end
   end
   
-  def status_change
+def status_change
     @issue = Issue.find(params[:id])
-    if @issue.status == false
+#     
+      # respond_to do |format|
+    # format.json {
+       # if @issue.status == false
+        # @issue.update_attributes(:status => true)
+     # else
+        # @issue.update_attributes(:status => false)
+     # end
+    # }
+    # end
+    
+     if @issue.status == false
       @issue.update_attributes(:status => true)
-    else
-      @issue.update_attributes(:status => false)
-    end
-    redirect_to request.referrer
+     else
+       @issue.update_attributes(:status => false)
+     end
+    
   end
 
   private

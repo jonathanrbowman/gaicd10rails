@@ -34,7 +34,7 @@ $("#headerControlsWrapper").mouseenter(function() {
 });
 
 $("#headerControlsWrapper").mouseleave(function() {
-	$(this).css({"top" : "-83px"});
+	$(this).css({"top" : "-125px"});
 });
 
 $('textarea').autosize();
@@ -42,5 +42,6 @@ $('textarea').autosize();
 $("#change_password_button").click(function () {
   $(".change_password").toggleClass("passchange");
   });
+
 
 });

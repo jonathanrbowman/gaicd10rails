@@ -4,11 +4,8 @@
 <% else %>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
-		<% @true_count = User.find(current_user.id).tasks.where('status = ?', true).count %>
-		<% @total_count = User.find(current_user.id).tasks.count %>
-		<% @progress_bar = number_to_percentage((@true_count.to_f / @total_count) * 100) %>
 		<div id="hospital_progress_outer">
-			<div id="hospital_progress_inner" style="width: <%= @progress_bar %>"></div>
+			<div id="hospital_progress_inner" style="width: <%= number_to_percentage(@progress_bar) %>"></div>
 		</div>
 
 		<% @tasks.each do |task| %>
@@ -24,9 +21,11 @@
 						<td class="step"><%= task.position %></td>
 						<td class="task_title" id="title_<%= @task_ids %>"><%= task.title %><p class="click_for_more"><i>more >></i></p></td>
 						<% if task.status == true%>
-						<td class="change_status"><a href='/tasks/<%= task.id %>/status_change'>Complete!</a></td>
+			<!--		<td class="change_status"><a href='/tasks/<%= task.id %>/status_change'>Complete!</a></td> --> 
+					<td class="change_status" id="status_<%= @task_ids %>"><%= link_to 'Complete!', status_change_task_path(task.id) %></td>
 						<% else %>
-						<td class="change_status_red"><a href='/tasks/<%= task.id %>/status_change'>Click to Complete</a></td>
+				<!--		<td class="change_status_red"><a href='/tasks/<%= task.id %>/status_change'>Click to Complete</a></td> -->
+					<td class="change_status_red" id="status_<%= @task_ids %>"><%= link_to 'Click to Complete', status_change_task_path(task.id) %></td>
 						<% end %>
 					</tr>
 	</div>
