@@ -1,5 +1,29 @@
-<h1>New issue</h1>
+<div id="form_outer_wrapper">
+	<h2 style="text-align:center;">Register a New Issue</h2>
+<%= form_for @issue do |f| %>
+  <% if @issue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @issue.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br />
+  <div>
+  <div>
+    <%= f.text_field :title, class: "field_input_general", :placeholder => 'Task Title', :autofocus => true %>
+  </div>
+  <br />
+  <div class="actions">
+    <%= f.submit "Add Issue", class: "add_task_btn" %>
+    <%= link_to 'Back', admin_issue_index_path, class: "back_btn", data: { confirm: 'All unsaved data will be lost - are you sure?' } %>
+  </div>
+<% end %>
 
-<%= link_to 'Back', issues_path %>
+</div>
+</div>
+

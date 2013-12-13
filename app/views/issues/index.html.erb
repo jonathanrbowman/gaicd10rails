@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 <% if current_user.admin? %>
-<script type="text/javascript">window.location.href = "/admin_view"</script>
+<script type="text/javascript">window.location.href = "/admin_issue_index"</script>
 <% else %>
 <h2 style="text-align:center;">Current Potential Issues</h2>
 <div class="hospital_overview_header_out">
@@ -13,7 +13,7 @@
   <tbody>
 
       <tr>
-        			 <% if issue.status == true%>
+        			 <% if issue.status == false%>
 				<td class="issue_change_status" id="issue_change"><a href='/issues/<%= issue.id %>/status_change'><%= issue.title %></a></td> 
 						<% else %>
 					<td class="issue_change_status_red" id="issue_change"><a href='/issues/<%= issue.id %>/status_change'><%= issue.title %></a></td>

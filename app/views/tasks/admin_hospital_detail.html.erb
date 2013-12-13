@@ -21,21 +21,14 @@
 		</div>
 		<% @admin_hospital_list.each do |task| %>
 		<% if Task.find(task).status == true%>
-		<table class="task_list">
+		<table class="task_list_green_before">
 			<% else %>
-			<table class="task_list_red">
+			<table class="task_list_red_before">
 				<% end %>
 				<tbody>
 					<tr class="task_row">
 						<td class="step"><%= Task.find(task).position %></td>
 						<td class="task_title" id="title_<%= task %>"><%= Task.find(task).title %><p class="click_for_more"><i>more >></i></p></td>
-				<!--		<% if Task.find(task).status == true%>
-						<td class="admin_change_status"><a href='/tasks/<%= Task.find(task).id %>/status_change'>Complete!</a></td>
-						<% else %>
-						<td class="admin_change_status_red"><a href='/tasks/<%= Task.find(task).id %>/status_change'>Click to Complete</a></td>
-						<% end %> 
-						<td class="task_modify"><%= link_to 'Modify', edit_task_path(task) %></td>
-						<td class="task_delete"><%= link_to 'Delete', Task.find(task), method: :delete, data: { confirm: 'Deleting this task will delete it from every hospital - are you sure?' } %></td> -->
 					</tr>
 					
 					</tbody>

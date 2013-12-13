@@ -3,6 +3,9 @@
 		<td><%= link_to "Sign out?", destroy_user_session_path, method: :delete, id: "headerSignOut" %></td>
 	</tr>
 	<tr>
+		<td><%= link_to "View Issues Report", admin_issue_index_path, id: "headerIssuesOverview" %></td>
+	</tr>
+	<tr>
 		<td><%= link_to "Hospital Overview", admin_view_path, id: "headerOverview" %></td>
 	</tr>
 	<tr>

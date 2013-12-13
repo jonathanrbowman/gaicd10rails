@@ -7,11 +7,11 @@
 		<% Task.all.each do |task| %>
 		<% @task_ids = task.id %>
 		<% if task.user == current_user %>
-		<table class="task_list">
+		<table class="task_list_master">
 				<tbody>
 					<tr class="task_row">
 						<td class="step"><%= task.position %></td>
-						<td class="task_title" id="title_<%= @task_ids %>"><%= task.title %><p class="click_for_more"><i>more >></i></p></td>
+						<td class="task_title" id="title_<%= @task_ids %>"><%= task.title %></td>
 						<td class="task_modify"><%= link_to 'Modify', edit_task_path(task) %></td>
 						<td class="task_delete"><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Deleting this task will delete it from every hospital - are you sure?' } %></td>
 					</tr>

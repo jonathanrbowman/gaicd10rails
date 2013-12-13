@@ -82,6 +82,10 @@ def status_change
      end
     
   end
+  
+  def admin_issue_index
+    @state_issues = Issue.where('i_state = ?', current_user.u_state).pluck(:title).uniq
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

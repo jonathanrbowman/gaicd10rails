@@ -26,7 +26,7 @@ $("#headerControlsWrapperAdmin").mouseenter(function() {
 });
 
 $("#headerControlsWrapperAdmin").mouseleave(function() {
-	$(this).css({"top" : "-165px"});
+	$(this).css({"top" : "-205px"});
 });
 
 $("#headerControlsWrapper").mouseenter(function() {
@@ -42,6 +42,6 @@ $('textarea').autosize();
 $("#change_password_button").click(function () {
   $(".change_password").toggleClass("passchange");
   });
-
+  
 
 });

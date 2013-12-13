@@ -1,26 +1,28 @@
 <% if user_signed_in? %>
-<% if not current_user.admin? %>
-<script type="text/javascript">window.location.href = "/"</script>
-<% else %>
 <h2 style="text-align:center;">Current Potential Issues</h2>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
-		<h3 style="text-align:center;">Click any issues that  apply to your hospital. Active issues will be lit red.</h3>
-		<% @issues = Issue.all %>
-    <% @issues.each do |issue| %>
+		<h3 style="text-align:center;">Bars represent what percentage of hospitals have reported each issue.</h3>
+    <% @state_issues.each do |issue| %>
+    <% @state_issue_total = Issue.where('title = ?', issue).where('i_state = ?', current_user.u_state).count %>
+    <% @state_issue_true = Issue.where('title = ?', issue).where('i_state = ?', current_user.u_state).where('status = ?', true).count %>
+    <% @state_issue_result = (@state_issue_true.to_f/@state_issue_total) * 100 %>
 <table class="issue_table">
 
   <tbody>
 
       <tr>
-
+      	<a href="#"><%= issue %></a>
+			<div id="hospital_progress_outer">
+			<div id="hospital_progress_inner_red" style="width:<%= number_to_percentage(@state_issue_result) %>;"></div>
+			</div>
       </tr>
 
   </tbody>
 </table>
       <% end %>
+      <%= link_to 'Add New Issue', new_issue_path, class: 'add_task' %>
 <br>
 </div>
 </div>
-<% end %>
 <% end %>

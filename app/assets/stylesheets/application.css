@@ -109,7 +109,7 @@ textarea {
 }
 
 #headerControlsWrapperAdmin {
-	top: -165px;
+	top: -205px;
 }
 
 #headerSignOut {
@@ -136,7 +136,7 @@ textarea {
 }
 
 #headerIssuesOverview {
-	background-color: #bf74af;
+	background-color: #7F00FF;
 	opacity: .8;
 	display: block;
 	padding: 10px;
@@ -608,6 +608,13 @@ textarea {
 	color: #e85151;
 }
 
+.task_list_master {
+	width: 100%;
+	border: 2px solid #7F00FF;
+	border-collapse: collapse;
+	margin-top: 15px;
+}
+
 .task_list_green_before {
 	width: 100%;
 	border: 2px solid #65be6e;
@@ -715,6 +722,15 @@ textarea {
 #hospital_progress_inner {
 	height: 100%;
 	background-color: rgba(101,190,110,.8);
+	border-right: 3px solid rgba(255,255,255,.2);
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#hospital_progress_inner_red {
+	height: 100%;
+	background-color: rgba(232,81,81,.8);
 	border-right: 3px solid rgba(255,255,255,.2);
 	position: absolute;
 	left: 0;
@@ -868,6 +884,11 @@ textarea {
 
 .issue_change_status {
 	border:3px solid #444444;
+	
+}
+
+.issue_change_status a {
+	color:#777777;
 }
 
 .issue_change_status:hover {
@@ -879,10 +900,6 @@ textarea {
 	border:3px solid #e85151;
 	text-align: center;
 	margin-top: 10px;
-}
-
-.issue_change_status_red:hover {
-	/* border:3px solid #444444; */
 }
 
 .issue_change_status a, .issue_change_status_red a {

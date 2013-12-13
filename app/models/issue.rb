@@ -4,7 +4,7 @@ class Issue < ActiveRecord::Base
   
   validates :title, presence: true
   
-  default_scope order('status ASC')
+  default_scope order('status DESC')
 
   
 end
