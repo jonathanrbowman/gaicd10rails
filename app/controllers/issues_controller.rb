@@ -84,7 +84,7 @@ def status_change
   end
   
   def admin_issue_index
-    @state_issues = Issue.where('i_state = ?', current_user.u_state).pluck(:title).uniq
+    @state_issues = Issue.where('i_state = ?', current_user.u_state).order(status: :desc).pluck(:title).uniq
   end
 
   private
