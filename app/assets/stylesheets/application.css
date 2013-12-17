@@ -92,7 +92,7 @@ textarea {
 	max-width: 300px;
 }
 
-#headerControlsWrapper, #headerControlsWrapperAdmin {
+.headerControlsWrapper, .headerControlsWrapperAdmin {
 	border-collapse: collapse;
 	position: fixed;
 	top: -125px;
@@ -102,14 +102,19 @@ textarea {
 	padding-bottom: 0px;
 	text-align: center;
 	z-index: 9999;
+	border-left:2px solid rgba(255,255,255,.8);
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
 }
 
-#headerControlsWrapperAdmin {
+.headerControlsWrapperAdmin {
 	top: -205px;
+}
+
+.admin_open {
+	top: 0px;
 }
 
 #headerSignOut {
@@ -522,7 +527,7 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
-		border-top: 3px solid #65BE6E;
+	border-top: 3px solid #65BE6E;
 	border-bottom: 3px solid #65BE6E;
 }
 
@@ -850,10 +855,10 @@ textarea {
 }
 
 .change_password {
-	display:block;
-	overflow:hidden;
-	position:relative;
-	max-height:0px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	max-height: 0px;
 	opacity: 0;
 	-webkit-transition: .25s ease-in-out;
 	-moz-transition: .25s ease-in-out;
@@ -862,57 +867,70 @@ textarea {
 }
 
 .passchange {
-	max-height:1000px;
-	opacity:1;
+	max-height: 1000px;
+	opacity: 1;
 }
 
 #change_password_button {
-	cursor:pointer;
-	padding:0px;
-	margin:0px;
+	cursor: pointer;
+	padding: 0px;
+	margin: 0px;
 }
 
 #change_password_button h3 {
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
 }
 
 .issue_table {
 	width: 100%;
-	margin-top:15px;
+	margin-top: 15px;
 }
 
 .issue_change_status {
-	border:3px solid #444444;
-	
+	border: 3px solid #444444;
 }
 
 .issue_change_status a {
-	color:#777777;
+	color: #777777;
 }
 
 .issue_change_status:hover {
-	border:3px solid #e85151;
+	border: 3px solid #e85151;
 	color: #e85151;
 }
 
 .issue_change_status_red {
-	border:3px solid #e85151;
+	border: 3px solid #e85151;
 	text-align: center;
 	margin-top: 10px;
 }
 
 .issue_change_status a, .issue_change_status_red a {
-	display:block;
+	display: block;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	text-align: center;
 }
 
-.issue_change_status:hover >  a {
+.issue_change_status:hover > a {
 	color: #e85151;
 }
 
 .issue_change_status_red a {
 	color: #e85151;
+}
+
+/* MOBILE CSS RULES START HERE */
+
+@media only screen and (max-width: 569px) {
+
+	.hospital_overview_header_name, .hospital_overview_header_progress {
+		font-size: 20px;
+	}
+
+	.hospital_overview_name {
+		font-size: 14px;
+	}
+
 }

@@ -24,6 +24,12 @@ class IssuesController < ApplicationController
   # POST /issues
   # POST /issues.json
   def create
+    
+    if params[:issue][:title] == ''
+      flash[:notice] = 'Please make sure you entered a title.'
+    redirect_to request.referrer
+    else
+    
 
       @user_list = User.where('u_state = ?', current_user.u_state)
       @user_id = @user_list.pluck(:id)
@@ -34,12 +40,17 @@ class IssuesController < ApplicationController
 
       flash[:notice] = 'Issue has been successfully created.'
     redirect_to request.referrer
-
+end
   end
 
   # PATCH/PUT /issues/1
   # PATCH/PUT /issues/1.json
   def update
+    
+        if params[:issue][:title] == ''
+      flash[:notice] = 'Please make sure you entered a title.'
+    redirect_to request.referrer
+    else
     
     @issue_titles = Issue.where('title = ?', params[:issue][:title_from])
     @issues_by_state = @issue_titles.where('i_state = ?', current_user.u_state).pluck(:id)
@@ -50,6 +61,9 @@ class IssuesController < ApplicationController
 
       flash[:notice] = 'Issue has been successfully updated.'
     redirect_to request.referrer
+    
+    end
+    
   end
 
   # DELETE /issues/1
@@ -84,7 +98,7 @@ def status_change
   end
   
   def admin_issue_index
-    @state_issues = Issue.where('i_state = ?', current_user.u_state).order(status: :desc).pluck(:title).uniq
+    @state_issues = Issue.where('i_state = ?', current_user.u_state).pluck(:title).uniq
   end
 
   private
