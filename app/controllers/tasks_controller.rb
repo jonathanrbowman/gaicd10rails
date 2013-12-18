@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   # GET /tasks
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks
     @true_count = User.find(current_user.id).tasks.where('status = ?', true).count
     @total_count = User.find(current_user.id).tasks.count
     @progress_bar = (@true_count.to_f / @total_count) * 100
