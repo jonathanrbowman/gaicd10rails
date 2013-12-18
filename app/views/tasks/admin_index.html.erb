@@ -1,4 +1,7 @@
 <% if user_signed_in? && current_user.admin?%>
+		<script>
+			$("body").spin();
+		</script>
 <br />
 <br />
 <br />
@@ -10,9 +13,6 @@
 		<h1 style="text-align:center;">There aren't any hospitals yet!</h1>
 		<%= link_to "Enroll Your First Hospital", new_user_registration_path, class: "add_task" %>
 		<% else %>
-		<script>
-			$("body").spin();
-		</script>
 		<div class="hospital_overview_header_name">
 			Organization
 		</div>
