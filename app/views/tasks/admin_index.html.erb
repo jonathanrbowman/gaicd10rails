@@ -10,6 +10,9 @@
 		<h1 style="text-align:center;">There aren't any hospitals yet!</h1>
 		<%= link_to "Enroll Your First Hospital", new_user_registration_path, class: "add_task" %>
 		<% else %>
+		<script>
+			$("body").spin();
+		</script>
 		<div class="hospital_overview_header_name">
 			Organization
 		</div>
@@ -19,24 +22,26 @@
 	</div>
 </div>
 <% User.all.order('organization asc').pluck(:id).each do |x| %>
-<% if current_user.u_state == User.find(x).u_state && User.find(x).admin == false %>
-<% @true_count = User.find(x).tasks.where('status = ?', true).count %>
-<% @total_count = User.find(x).tasks.count %>
-<% @progress_bar = number_to_percentage((@true_count.to_f / @total_count) * 100) %>
-<div class="hospital_overview_wrapper">
-	<div class="hospital_overview_inner">
-		<div class="hospital_overview_name">
+	<% if current_user.u_state == User.find(x).u_state && User.find(x).admin == false %>
+		<% @true_count = User.find(x).tasks.where('status = ?', true).count %>
+		<% @total_count = User.find(x).tasks.count %>
+		<% @progress_bar = number_to_percentage((@true_count.to_f / @total_count) * 100) %>
+			<div class="hospital_overview_wrapper">
+				<div class="hospital_overview_inner">
+					<div class="hospital_overview_name">
 			<%= link_to User.find(x).organization, admin_detail_path(:hospital_id => x) %>
-		</div>
-		<div class="hospital_overview_progress_outer">
-			<div class="hospital_overview_progress_inner" style="width: <%= @progress_bar %>">
-
+					</div>
+			<div class="hospital_overview_progress_outer">
+				<div class="hospital_overview_progress_inner" style="width: <%= @progress_bar %>">
 			</div>
 		</div>
 	</div>
 </div>
-<% end %>
-<% end %>
+		<% end %>
+	<% end %>
+		<script>
+			$("body").spin(false);
+		</script>
 <% end %>
 <% else %>
 

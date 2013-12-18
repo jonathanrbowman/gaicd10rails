@@ -57,3 +57,5 @@ gem 'devise', '~> 3.1.1'
 gem 'rails_autolink'
 
 gem 'newrelic_rpm'
+
+gem 'spinjs-rails'
