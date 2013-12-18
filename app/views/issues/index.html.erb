@@ -7,7 +7,6 @@
 	<div class="hospital_overview_header_in">
 		<h3 style="text-align:center;">Click any issues that  apply to your hospital. Active issues will be lit red.</h3>
     <% @issues.each do |issue| %>
-    <% if issue.user == current_user %>
 <table class="issue_table">
 
   <tbody>
@@ -23,7 +22,6 @@
   </tbody>
 </table>
       <% end %>
-    <% end %>
 <br>
 </div>
 </div>
