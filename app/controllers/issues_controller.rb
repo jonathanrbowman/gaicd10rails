@@ -94,6 +94,7 @@ def status_change
      else
        @issue.update_attributes(:status => false)
      end
+     redirect_to issues_path
     
   end
   

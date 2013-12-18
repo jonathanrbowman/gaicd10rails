@@ -1,7 +1,4 @@
 <% if user_signed_in? && current_user.admin?%>
-		<script>
-			$("body").spin();
-		</script>
 <br />
 <br />
 <br />
@@ -39,9 +36,6 @@
 </div>
 		<% end %>
 	<% end %>
-		<script>
-			$("body").spin(false);
-		</script>
 <% end %>
 <% else %>
 
