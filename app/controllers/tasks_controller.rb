@@ -33,6 +33,20 @@ class TasksController < ApplicationController
       flash[:notice] = 'Each task must have a step, title, and position entered.'
       redirect_to request.referrer
     else
+      
+    @current_task_array = Task.where('t_state = ?', current_user.u_state).pluck(:position).uniq
+    if @current_task_array.any? {|x| x == params[:task][:position]}
+      
+      @user_id = User.where('u_state = ?', current_user.u_state).pluck(:id)
+      
+      @user_id.each do |x|
+        Task.create(:position =>  params[:task][:position], :title =>  params[:task][:title], :description =>  params[:task][:description], :user_id => x, :t_state => current_user.u_state)
+      end
+      
+    flash[:notice] = 'Task has been successfully created test message.'
+    redirect_to admin_task_overview_path
+      
+    else
     
     @tasks_by_state = Task.where('t_state = ?', current_user.u_state)
     @task_number = @tasks_by_state.pluck(:position).uniq.count
@@ -42,8 +56,7 @@ class TasksController < ApplicationController
       @task_list = @tasks_by_state.where("position >= #{params[:task][:position]}")
       
       @task_id = @task_list.pluck(:id)
-      @user_list = User.where('u_state = ?', current_user.u_state)
-      @user_id = @user_list.pluck(:id)
+      @user_id = User.where('u_state = ?', current_user.u_state).pluck(:id)
 
       @task_id.each do |x|
         y = Task.find(x).position
@@ -64,6 +77,7 @@ class TasksController < ApplicationController
       flash[:notice] = 'Please make sure a valid step number was entered, as well as a title and description.'
       redirect_to request.referrer
 
+    end
     end
     
     end
