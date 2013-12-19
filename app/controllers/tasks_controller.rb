@@ -44,7 +44,7 @@ class TasksController < ApplicationController
           Task.create(:position =>  @entered_position, :title =>  @entered_title, :description =>  @entered_description, :user_id => x, :t_state => current_user.u_state)
         end
         
-        flash[:notice] = 'That position did not exist.'
+        flash[:notice] = 'Task has been successfully created.'
         redirect_to admin_task_overview_path
         
       else
