@@ -14,7 +14,7 @@ class TasksController < ApplicationController
   end
   
   def admin_task_overview
-    @task_list_overview = Task.where('t_state = ?', current_user.u_state)
+    @task_list_overview = current_user.tasks
   end
 
   # GET /tasks/1
