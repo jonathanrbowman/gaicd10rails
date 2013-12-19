@@ -1,0 +1,13 @@
+var numGreenBefore = $('.change_status_green_before').length;
+var numGreenAfter = $('.change_status_green_after').length;
+var totalGreen = numGreenBefore + numGreenAfter;
+
+var numRedBefore = $('.change_status_red_before').length;
+var numRedAfter = $('.change_status_red_after').length;
+var totalRed = numRedBefore + numRedAfter;
+
+var totalItems = totalRed + totalGreen;
+
+var percentResult = (totalGreen / totalItems) * 100;
+
+$("#hospital_progress_inner").css({"width" : percentResult + "%"});

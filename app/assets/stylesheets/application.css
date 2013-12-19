@@ -629,6 +629,13 @@ textarea {
 
 .task_list_green_after {
 	border: 2px solid #65be6e !important;
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 15px;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
 }
 
 .task_list_red_before {
@@ -642,8 +649,22 @@ textarea {
 	transition: .15s ease-in-out;
 }
 
+.task_list_red_before a, .task_list_red_after a, .task_list_green_before a, .task_list_green_after a {
+		display: block;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: 150px  !important;
+}
+
 .task_list_red_after {
 	border: 2px solid #e85151 !important;
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 15px;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
 }
 
 .step {
@@ -662,6 +683,8 @@ textarea {
 }
 
 .change_status_green_after {
+	width: 150px;
+	text-align: center;
 	background-color: #65be6e !important;
 }
 
@@ -681,6 +704,8 @@ textarea {
 }
 
 .change_status_red_after {
+	width: 150px;
+	text-align: center;
 	background-color: #e85151 !important;
 }
 
@@ -700,6 +725,21 @@ textarea {
 }
 
 .change_status_red_before a, .admin_change_status_red a {
+	display: block;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: 150px;
+	margin: 0px !important;
+}
+
+.change_status_green_after a {
+	display: block;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: 150px;
+}
+
+.change_status_red_after a {
 	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -731,6 +771,10 @@ textarea {
 	position: absolute;
 	left: 0;
 	top: 0;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
 }
 
 #hospital_progress_inner_red {

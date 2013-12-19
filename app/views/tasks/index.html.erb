@@ -15,7 +15,6 @@
 
 		<% @tasks.each do |task| %>
 		<% @task_ids = task.id %>
-		<% if task.user == current_user %>
 		<% if task.status == true%>
 		<table class="task_list_green_before" id="row_<%= @task_ids %>">
                         <% else %>
@@ -32,6 +31,8 @@
 					$("#status_<%= @task_ids %>").click(function () {
    					 $("#status_<%= @task_ids %>").toggleClass("change_status_red_after");
    					 $("#row_<%= @task_ids %>").toggleClass("task_list_red_after");
+   					 $("#status_<%= @task_ids %>").toggleClass("change_status_green_before");
+   					 $("#row_<%= @task_ids %>").toggleClass("task_list_green_before");
 						});
 
 					</script>
@@ -42,6 +43,8 @@
 					$("#status_<%= @task_ids %>").click(function () {
    					 $("#status_<%= @task_ids %>").toggleClass("change_status_green_after");
    					 $("#row_<%= @task_ids %>").toggleClass("task_list_green_after");
+   					 $("#status_<%= @task_ids %>").toggleClass("change_status_red_before");
+   					 $("#row_<%= @task_ids %>").toggleClass("task_list_red_before");
 						});
 
 					</script>
@@ -63,7 +66,6 @@
 						});
 
 					</script>
-					<% end %>
 					<% end %>
 	<br>
 	<% end %>
