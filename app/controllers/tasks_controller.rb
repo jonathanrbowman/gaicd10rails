@@ -37,8 +37,9 @@ class TasksController < ApplicationController
     @entered_title = params[:task][:title]
     @entered_description = params[:task][:description]
     @current_task_array = Task.where('t_state = ?', current_user.u_state).pluck(:position).uniq
-    @last_position_number = @current_task_array[@current_task_array.length - 1]
+    @last_position_number = @current_task_array[@current_task_array.length - 1].to_i
     @users_of_same_state = User.where('u_state = ?', current_user.u_state).pluck(:id)
+    @tasks_of_same_state_greater = Task.where('t_state = ?', current_user.u_state).where('position >= ?', @entered_position)
     
     if @entered_position >= 1 && @entered_position <= (@last_position_number + 1) && @entered_position != "" && @entered_title != "" && @entered_description != ""
       
@@ -52,8 +53,6 @@ class TasksController < ApplicationController
         redirect_to admin_task_overview_path
         
       else
-        
-        @tasks_of_same_state_greater = Task.where('t_state = ?', current_user.u_state).where('position >= ?', @entered_position)
         
         @tasks_of_same_state_greater.each do |x|
           y = Task.find(x).position.to_i
