@@ -50,7 +50,7 @@ class TasksController < ApplicationController
         end
         
         flash[:notice] = 'Task has been successfully created.'
-        redirect_to admin_task_overview_path
+        redirect_to request.referrer
         
       else
         
@@ -65,7 +65,7 @@ class TasksController < ApplicationController
         end
         
         flash[:notice] = 'Task has been successfully created.'
-        redirect_to admin_task_overview_path
+        redirect_to request.referrer
         
       end
       
