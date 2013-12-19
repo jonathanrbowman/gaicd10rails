@@ -8,6 +8,10 @@ class TasksController < ApplicationController
     @total_count = User.find(current_user.id).tasks.count
     @progress_bar = (@true_count.to_f / @total_count) * 100
   end
+  
+  def admin_index
+    @users_of_same_state = User.where('u_state = ?', current_user.u_state)
+  end
 
   # GET /tasks/1
   def show
