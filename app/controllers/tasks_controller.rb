@@ -12,6 +12,10 @@ class TasksController < ApplicationController
   def admin_index
     @users_of_same_state = User.where('u_state = ?', current_user.u_state)
   end
+  
+  def admin_task_overview
+    @task_list_overview = Task.where('t_state = ?', current_user.u_state)
+  end
 
   # GET /tasks/1
   def show
