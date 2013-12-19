@@ -29,57 +29,46 @@ class TasksController < ApplicationController
   # POST /tasks
   def create
     
-     if  params[:task][:position] == '' ||  params[:task][:title] == '' ||  params[:task][:description] == ''
-      flash[:notice] = 'Each task must have a step, title, and position entered.'
-      redirect_to request.referrer
-    else
-      
+    @entered_position = params[:task][:position].to_i
+    @entered_title = params[:task][:title]
+    @entered_description = params[:task][:description]
     @current_task_array = Task.where('t_state = ?', current_user.u_state).pluck(:position).uniq
-    if @current_task_array.any? {|x| x == params[:task][:position]}
+    @last_position_number = @current_task_array[@current_task_array.length - 1]
+    @users_of_same_state = User.where('u_state = ?', current_user.u_state).pluck(:id)
+    
+    if @entered_position >= 1 && @entered_position <= (@last_position_number + 1) && @entered_position != "" && @entered_title != "" && @entered_description != ""
       
-      @user_id = User.where('u_state = ?', current_user.u_state).pluck(:id)
-      
-      @user_id.each do |x|
-        Task.create(:position =>  params[:task][:position], :title =>  params[:task][:title], :description =>  params[:task][:description], :user_id => x, :t_state => current_user.u_state)
+      if @current_task_array.exclude?(@entered_position) && @entered_position < (@last_position_number + 1)
+        
+        @users_of_same_state.each do |x|
+          Task.create(:position =>  @entered_position, :title =>  @entered_title, :description =>  @entered_description, :user_id => x, :t_state => current_user.u_state)
+        end
+        
+        flash[:notice] = 'That position did not exist.'
+        redirect_to admin_task_overview_path
+        
+      else
+        
+        @tasks_of_same_state_greater = Task.where('t_state = ?', current_user.u_state).where('position >= ?', @entered_position)
+        
+        @tasks_of_same_state_greater.each do |x|
+          y = Task.find(x).position
+          y = y + 1
+          Task.find(x).update_attributes(:position => y)
+        end
+        
+        @users_of_same_state.each do |x|
+          Task.create(:position =>  @entered_position, :title =>  @entered_title, :description =>  @entered_description, :user_id => x, :t_state => current_user.u_state)
+        end
+        
+        flash[:notice] = 'Task has been successfully created.'
+        redirect_to admin_task_overview_path
+        
       end
-      
-    flash[:notice] = 'Task has been successfully created test message.'
-    redirect_to admin_task_overview_path
       
     else
-    
-    @tasks_by_state = Task.where('t_state = ?', current_user.u_state)
-    @task_number = @tasks_by_state.pluck(:position).uniq.count
-    @task_number_result = @task_number + 1
-    if params[:task][:position].to_i > 0 && params[:task][:position].to_i <= @task_number_result && params[:task][:title] != "" && params[:task][:description] != "" 
-
-      @task_list = @tasks_by_state.where("position >= #{params[:task][:position]}")
-      
-      @task_id = @task_list.pluck(:id)
-      @user_id = User.where('u_state = ?', current_user.u_state).pluck(:id)
-
-      @task_id.each do |x|
-        y = Task.find(x).position
-        y = y + 1
-        Task.find(x).update_attributes(:position => y)
-      end
-
-      @user_id.each do |x|
-        Task.create(:position =>  params[:task][:position], :title =>  params[:task][:title], :description =>  params[:task][:description], :user_id => x, :t_state => current_user.u_state)
-      end
-
-    flash[:notice] = 'Task has been successfully created.'
-    redirect_to admin_task_overview_path
-    
-    else
-    
-
       flash[:notice] = 'Please make sure a valid step number was entered, as well as a title and description.'
       redirect_to request.referrer
-
-    end
-    end
-    
     end
 
   end
