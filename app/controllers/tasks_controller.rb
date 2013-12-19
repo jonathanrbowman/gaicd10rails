@@ -56,7 +56,7 @@ class TasksController < ApplicationController
         @tasks_of_same_state_greater = Task.where('t_state = ?', current_user.u_state).where('position >= ?', @entered_position)
         
         @tasks_of_same_state_greater.each do |x|
-          y = Task.find(x).position
+          y = Task.find(x).position.to_i
           y = y + 1
           Task.find(x).update_attributes(:position => y)
         end
