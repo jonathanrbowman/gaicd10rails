@@ -4,7 +4,7 @@
 	<div class="hospital_overview_header_in">
 		<h3 style="text-align:center;">All changes, additions, and deletions to the task list are reflected in every hospital for your state. Proceed with caution.</h3>
 		
-		<% Task.all.each do |task| %>
+		<% Task.where('t_state = ?', current_user.u_state).each do |task| %>
 		<% @task_ids = task.id %>
 		<% if task.user == current_user %>
 		<table class="task_list_master">
