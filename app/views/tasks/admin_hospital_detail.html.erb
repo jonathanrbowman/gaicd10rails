@@ -1,5 +1,5 @@
 <% if user_signed_in? && current_user.admin?%>
-<h2 style="text-align:center;"><%= User.find(params[:hospital_id]).organization%></h2>
+<h2 style="text-align:center;"><%= User.find(params[:hospital_id]).organization %></h2>
 <% if User.find(params[:hospital_id]).sign_in_count == 0 %>
 <h3 style="text-align:center;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> has never signed in.</h3>
 <% else %>
