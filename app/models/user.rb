@@ -25,27 +25,27 @@ class User < ActiveRecord::Base
   after_create :generate_issues
 
   def generate_tasks
-    # tasks_by_state = Task.where('t_state = ?', User.last.u_state)
-    # task_count = tasks_by_state.pluck(:position).uniq.count
-    # task_title = tasks_by_state.pluck(:title).uniq
-    # task_position = tasks_by_state.pluck(:position).uniq
-    # task_description = tasks_by_state.pluck(:description).uniq
+    # tasks_by_parent = Task.where('t_parent = ?', User.last.u_parent)
+    # task_count = tasks_by_parent.pluck(:position).uniq.count
+    # task_title = tasks_by_parent.pluck(:title).uniq
+    # task_position = tasks_by_parent.pluck(:position).uniq
+    # task_description = tasks_by_parent.pluck(:description).uniq
 # 
     # task_iterator = 0
 #     
-    # task_description_result = Task.where('position = ?', task_position[task_iterator]).where('t_state = ?', 'GA').pluck(:description).uniq
+    # task_description_result = Task.where('position = ?', task_position[task_iterator]).where('t_parent = ?', 'GA').pluck(:description).uniq
 # 
     # while task_iterator < task_count
-      # Task.create(:position =>  task_position[task_iterator], :title =>  task_title[task_iterator], :description =>  task_description_result.to_sentence, :user => self, :t_state => self.u_state)
+      # Task.create(:position =>  task_position[task_iterator], :title =>  task_title[task_iterator], :description =>  task_description_result.to_sentence, :user => self, :t_parent => self.u_parent)
       # task_iterator += 1
     # end
     
-    template_tasks = Task.where('t_state = ?', User.last.u_state).to_a.uniq { |task| task.position }
+    template_tasks = Task.where('t_parent = ?', User.last.u_parent).to_a.uniq { |task| task.position }
 
     template_tasks.each do |template_task|
       Task.create(:position =>  template_task.position,
         :title =>  template_task.title,
-        :t_state =>  self.u_state,
+        :t_parent =>  self.u_parent,
         :description =>  template_task.description, 
         :user => self)
     end
@@ -54,12 +54,12 @@ class User < ActiveRecord::Base
   
     def generate_issues
     
-    template_issues = Issue.where('i_state = ?', User.last.u_state).to_a.uniq { |issue| issue.title }
+    template_issues = Issue.where('i_parent = ?', User.last.u_parent).to_a.uniq { |issue| issue.title }
 
     template_issues.each do |template_issue|
       Issue.create(
         :title =>  template_issue.title,
-        :i_state =>  self.u_state, 
+        :i_parent =>  self.u_parent, 
         :user => self)
     end
 

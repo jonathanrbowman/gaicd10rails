@@ -6,7 +6,7 @@
 <br />
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
-		<% if @users_of_same_state.where('admin = ?', false).count.to_i == 0 %>
+		<% if @users_of_same_parent.where('admin = ?', false).count.to_i == 0 %>
 		<h1 style="text-align:center;">There aren't any hospitals yet!</h1>
 		<%= link_to "Enroll Your First Hospital", new_user_registration_path, class: "add_task" %>
 		<% else %>
@@ -18,7 +18,7 @@
 		</div>
 	</div>
 </div>
-<% @users_of_same_state.order('organization asc').pluck(:id).each do |x| %>
+<% @users_of_same_parent.order('organization asc').pluck(:id).each do |x| %>
 	<% if User.find(x).admin == false %>
 		<% @true_count = User.find(x).tasks.where('status = ?', true).count %>
 		<% @total_count = User.find(x).tasks.count %>

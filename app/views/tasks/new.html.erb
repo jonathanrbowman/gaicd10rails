@@ -15,7 +15,7 @@
 <br />
   <div>
   	<h2 id="position_field_label">Step: </h2>
-    <% @next_task = (Task.where('t_state = ?', current_user.u_state).pluck(:position).uniq.count.to_i + 1) %>
+    <% @next_task = (Task.where('t_parent = ?', current_user.u_parent).pluck(:position).uniq.count.to_i + 1) %>
     <%= f.number_field :position, class: "field_input_position", :value =>  @next_task %>
   </div>
   <br />

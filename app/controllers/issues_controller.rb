@@ -31,11 +31,11 @@ class IssuesController < ApplicationController
     else
     
 
-      @user_list = User.where('u_state = ?', current_user.u_state)
+      @user_list = User.where('u_parent = ?', current_user.u_parent)
       @user_id = @user_list.pluck(:id)
 
       @user_id.each do |x|
-        Issue.create(:title =>  params[:issue][:title], :user_id => x, :i_state => current_user.u_state)
+        Issue.create(:title =>  params[:issue][:title], :user_id => x, :i_parent => current_user.u_parent)
       end
 
       flash[:notice] = 'Issue has been successfully created.'
@@ -53,9 +53,9 @@ end
     else
     
     @issue_titles = Issue.where('title = ?', params[:issue][:title_from])
-    @issues_by_state = @issue_titles.where('i_state = ?', current_user.u_state).pluck(:id)
+    @issues_by_parent = @issue_titles.where('i_parent = ?', current_user.u_parent).pluck(:id)
 
-      @issues_by_state.each do |x|
+      @issues_by_parent.each do |x|
         Issue.find(x).update_attributes(:title =>  params[:issue][:title])
       end
 
@@ -99,7 +99,7 @@ def status_change
   end
   
   def admin_issue_index
-    @state_issues = Issue.where('i_state = ?', current_user.u_state).pluck(:title).uniq
+    @parent_issues = Issue.where('i_parent = ?', current_user.u_parent).pluck(:title).uniq
   end
 
   private
@@ -110,6 +110,6 @@ def status_change
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def issue_params
-      params.require(:issue).permit(:title, :user_id, :status, :i_state)
+      params.require(:issue).permit(:title, :user_id, :status, :i_parent)
     end
 end

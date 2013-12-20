@@ -10,7 +10,7 @@ class RegistrationsController < DeviseController
   # POST /resource
   def create
     build_resource(sign_up_params)
-    resource.update_attributes(:u_state => current_user.u_state)
+    resource.update_attributes(:u_parent => current_user.u_parent)
 
     if resource.save
     

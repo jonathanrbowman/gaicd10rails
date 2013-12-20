@@ -3,10 +3,10 @@
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
 		<h3 style="text-align:center;">Bars represent what percentage of hospitals have reported each issue.</h3>
-    <% @state_issues.each do |issue| %>
-    <% @state_issue_total = Issue.where('title = ?', issue).where('i_state = ?', current_user.u_state).count %>
-    <% @state_issue_true = Issue.where('title = ?', issue).where('i_state = ?', current_user.u_state).where('status = ?', true).count %>
-    <% @state_issue_result = (@state_issue_true.to_f/@state_issue_total) * 100 %>
+    <% @parent_issues.each do |issue| %>
+    <% @parent_issue_total = Issue.where('title = ?', issue).where('i_parent = ?', current_user.u_parent).count %>
+    <% @parent_issue_true = Issue.where('title = ?', issue).where('i_parent = ?', current_user.u_parent).where('status = ?', true).count %>
+    <% @parent_issue_result = (@parent_issue_true.to_f/@parent_issue_total) * 100 %>
 <table class="issue_table">
 
   <tbody>
@@ -14,7 +14,7 @@
       <tr>
       	<a href="#"><%= issue %></a>
 			<div id="hospital_progress_outer">
-			<div id="hospital_progress_inner_red" style="width:<%= number_to_percentage(@state_issue_result) %>;"></div>
+			<div id="hospital_progress_inner_red" style="width:<%= number_to_percentage(@parent_issue_result) %>;"></div>
 			</div>
       </tr>
 
