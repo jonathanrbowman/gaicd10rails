@@ -92,17 +92,56 @@ textarea {
 	max-width: 300px;
 }
 
+.app_icon_container {
+	width:30px;
+	height:30px;
+	overflow:hidden;
+	position:absolute;
+	bottom:5px;
+	left:10px;
+}
+
+.menu_icon {
+	position:absolute;
+	left:-7px;
+	top:-8px;
+	width:200px;
+}
+
+.issues_icon {
+	position:absolute;
+	left:-85px;
+	top:-8px;
+	width:200px;
+}
+
+.tasks_icon {
+	position:absolute;
+	left:-47px;
+	top:-8px;
+	width:200px;
+}
+
+.out_icon {
+	position:absolute;
+	left:-125px;
+	top:-8px;
+	width:200px;
+}
+
+td {
+	position:relative;
+}
+
 .headerControlsWrapper, .headerControlsWrapperAdmin {
+	min-width:200px;
 	border-collapse: collapse;
 	position: fixed;
 	top: -125px;
 	right: 0;
-	padding: 10px;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	text-align: center;
+	text-align: right;
 	z-index: 9999;
-	border-left:2px solid rgba(255,255,255,.8);
+	border-left: 2px solid black;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
@@ -117,43 +156,49 @@ textarea {
 	top: 0px;
 }
 
+#sign_in_wrapper {
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin-left:-420px;
+	margin-top:-170px;
+	width:840px;
+	height:340px;
+}
+
 #headerSignOut {
-	background-color: rgba(225,93,106, 1);
-	opacity: .8;
+	background-color: rgba(225,93,106, .8);
 	display: block;
 	padding: 10px;
 }
 
 #headerSignOut:hover {
-	opacity: 1;
+	background-color: rgba(225,93,106, 1);
 }
 
 #headerOverview {
-	background-color: rgba(105,157,200, 1);
-	opacity: .8;
+	background-color: rgba(105,157,200, .8);
 	display: block;
 	padding: 10px;
 }
 
 #headerOverview:hover {
 	background-color: rgba(105,157,200, 1);
-	opacity: 1;
 }
 
 #headerIssuesOverview {
-	background-color: #7F00FF;
-	opacity: .8;
+	background-color: rgba(127,0,255, .8);
 	display: block;
 	padding: 10px;
 }
 
 #headerIssuesOverview:hover {
-	opacity: 1;
+	background-color: rgba(127,0,255, 1);
 }
 
 #headerTaskOverview {
 	background-color: #F79758;
-	opacity: .8;
+	opacity: 1;
 	display: block;
 	padding: 10px;
 }
@@ -164,7 +209,7 @@ textarea {
 
 #headerViewAll {
 	background-color: rgba(110,190,82, 1);
-	opacity: .8;
+	opacity: 1;
 	display: block;
 	padding: 10px;
 }
@@ -176,16 +221,20 @@ textarea {
 
 #signedInAs {
 	background-color: rgba(255,255,255,.3);
-	opacity: .8;
+	opacity: 1;
 	display: block;
 	padding: 10px;
 }
 
 #signedInAs:hover {
-	background-color: rgba(255,255,255,.6);
+	background-color: rgba(0,0,0,1);
 	opacity: 1;
 	display: block;
 	padding: 10px;
+}
+
+.menu_active {
+	background-color: black !important;
 }
 
 .notice, .alert {
@@ -471,9 +520,7 @@ textarea {
 
 .inner_content {
 	width: 840px;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
+	position: absolute;
 }
 
 /* ----------------------- LOG IN PAGE START ----------------------- */
@@ -496,7 +543,7 @@ textarea {
 	margin: 0;
 	position: absolute;
 	right: 0;
-	top: 100px;
+	top: 0px;
 }
 
 #login_fields {
@@ -509,7 +556,7 @@ textarea {
 #ga_stars {
 	position: absolute;
 	left: 0;
-	top: 110px;
+	top: 15px;
 }
 
 #ga_stars img {
@@ -568,7 +615,6 @@ textarea {
 
 .hospital_overview_header_out {
 	width: 100%;
-	margin-bottom: 5px;
 }
 
 .hospital_overview_header_in {
@@ -650,10 +696,10 @@ textarea {
 }
 
 .task_list_red_before a, .task_list_red_after a, .task_list_green_before a, .task_list_green_after a {
-		display: block;
+	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	width: 150px  !important;
+	width: 150px !important;
 }
 
 .task_list_red_after {

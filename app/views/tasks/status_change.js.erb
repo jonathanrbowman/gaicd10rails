@@ -11,3 +11,8 @@ var totalItems = totalRed + totalGreen;
 var percentResult = (totalGreen / totalItems) * 100;
 
 $("#hospital_progress_inner").css({"width" : percentResult + "%"});
+
+$('.change_status_red_before a').html('Click to Complete');
+$('.change_status_green_before a').html('Completed!');
+$('.change_status_red_after a').html('Click to Complete');
+$('.change_status_green_after a').html('Completed!');

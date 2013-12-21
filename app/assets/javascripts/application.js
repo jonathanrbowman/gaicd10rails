@@ -24,10 +24,12 @@ setTimeout(function(){$(".notice, .alert").css({"opacity" : "0", "top" : "-10px"
 
 $('.headerControlsWrapperAdmin').click(function() {
      $('.headerControlsWrapperAdmin').toggleClass("admin_open");
+     $('#signedInAs').toggleClass("menu_active");
 });
 
 $(".headerControlsWrapper").click(function() {
      $('.headerControlsWrapper').toggleClass("admin_open");
+     $('#signedInAs').toggleClass("menu_active");
 });
 
 $('textarea').autosize();
