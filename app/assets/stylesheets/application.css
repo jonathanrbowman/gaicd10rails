@@ -97,7 +97,7 @@ textarea {
 	height:30px;
 	overflow:hidden;
 	position:absolute;
-	bottom:5px;
+	bottom:6px;
 	left:10px;
 }
 
@@ -156,26 +156,35 @@ td {
 
 .headerControlsWrapper, .headerControlsWrapperAdmin {
 	font-family: 'Mate', serif;
+	background-color:black;
 	min-width:230px;
 	border-collapse: collapse;
 	position: fixed;
-	top: -165px;
+	top: -172px;
 	right: 0;
 	text-align: right;
 	z-index: 9999;
+	opacity: .8;
 	border-left: 2px solid black;
+	border-bottom: 2px solid black;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
 }
 
+.headerControlsWrapper td a, .headerControlsWrapperAdmin td a {
+	border-top:1px solid rgba(255,255,255,.2);
+	border-bottom:1px solid rgba(0,0,0,.2);
+}
+
 .headerControlsWrapperAdmin {
-	top: -245px;
+	top: -258px;
 }
 
 .admin_open {
 	top: 0px;
+	opacity:1;
 }
 
 #sign_in_wrapper {
@@ -250,17 +259,15 @@ td {
 }
 
 #signedInAs {
-	background-color: rgba(255,255,255, .1);
-	opacity: 1;
+	background-color: rgba(255,255,255, .4);
 	display: block;
 	padding: 10px;
+	padding-top:12px;
 }
 
 #signedInAs:hover {
 	background-color: rgba(0,0,0,1);
-	opacity: 1;
 	display: block;
-	padding: 10px;
 }
 
 .menu_active {
@@ -641,6 +648,8 @@ td {
 	position: absolute;
 	left: 0;
 	top: 0;
+	border-top:1px solid rgba(255,255,255,.2);
+	border-bottom:1px solid rgba(0,0,0,.2);
 }
 
 .hospital_overview_header_out {
