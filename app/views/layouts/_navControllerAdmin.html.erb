@@ -10,6 +10,14 @@
 	<tr>
 		<td>
 		<div class="app_icon_container">
+		<img class="account_icon" src="https://s3.amazonaws.com/gaicd10rails/appicons.png" />
+		</div>
+			<%= link_to "Modify Account", edit_user_registration_path, id: "headerAccountModify" %>
+			</td>
+	</tr>
+	<tr>
+		<td>
+		<div class="app_icon_container">
 		<img class="issues_icon" src="https://s3.amazonaws.com/gaicd10rails/appicons.png" />
 		</div>
 			<%= link_to "View Issues Report", admin_issue_index_path, id: "headerIssuesOverview" %>

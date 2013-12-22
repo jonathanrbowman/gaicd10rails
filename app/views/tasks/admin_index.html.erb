@@ -1,7 +1,5 @@
 <% if user_signed_in? && current_user.admin?%>
-<br />
-<br />
-<br />
+<h2 style="text-align:center;">Logged in as <%= current_user.p_fname %> <%= current_user.p_lname %> for <%= current_user.organization %></h2>
 <br />
 <br />
 <div class="hospital_overview_header_out">

@@ -143,16 +143,23 @@ textarea {
 	width:200px;
 }
 
+.account_icon {
+	position:absolute;
+	left:-46px;
+	top:-47px;
+	width:200px;
+}
+
 td {
 	position:relative;
 }
 
 .headerControlsWrapper, .headerControlsWrapperAdmin {
 	font-family: 'Mate', serif;
-	min-width:200px;
+	min-width:230px;
 	border-collapse: collapse;
 	position: fixed;
-	top: -125px;
+	top: -165px;
 	right: 0;
 	text-align: right;
 	z-index: 9999;
@@ -164,7 +171,7 @@ td {
 }
 
 .headerControlsWrapperAdmin {
-	top: -205px;
+	top: -245px;
 }
 
 .admin_open {
@@ -199,6 +206,16 @@ td {
 
 #headerOverview:hover {
 	background-color: rgba(105,157,200, 1);
+}
+
+#headerAccountModify {
+	background-color: rgba(72,189,160, .8);
+	display: block;
+	padding: 10px;
+}
+
+#headerAccountModify:hover {
+	background-color: rgba(72,189,160, 1);
 }
 
 #headerIssuesOverview {
