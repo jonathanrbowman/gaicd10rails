@@ -22,15 +22,28 @@ $(document).ready(function() {
 setTimeout(function(){$(".notice, .alert").css({"opacity" : "1", "top" : "10px"});}, 300);	
 setTimeout(function(){$(".notice, .alert").css({"opacity" : "0", "top" : "-10px"});}, 3500);
 
-$('.headerControlsWrapperAdmin').click(function() {
-     $('.headerControlsWrapperAdmin').toggleClass("admin_open");
-     $('#signedInAs').toggleClass("menu_active");
+$('#overviewIcon').click(function() {
+     window.location.href='/tasks';
+});
+$('#issuesIcon').click(function() {
+     window.location.href='/issues';
+});
+$('#accountModifyIcon').click(function() {
+     window.location.href='/users/edit';
+});
+$('#signOutIcon').click(function() {
+     window.location.href='/users/sign_out';
 });
 
-$(".headerControlsWrapper").click(function() {
-     $('.headerControlsWrapper').toggleClass("admin_open");
-     $('#signedInAs').toggleClass("menu_active");
-});
+      if(window.location.href.indexOf("tasks") > -1) {
+        $("#headerOverview").css({"background-color" : "rgba(105,157,200, 1)"});
+    }
+      if(window.location.href.indexOf("issues") > -1) {
+        $("#headerIssuesOverview").css({"background-color" : "rgba(127,0,255, 1)"});
+    }
+      if(window.location.href.indexOf("users") > -1) {
+        $("#headerAccountModify").css({"background-color" : "rgba(72,189,160, 1)"});
+    }
 
 $('textarea').autosize();
 

@@ -5,10 +5,10 @@
 		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= csrf_meta_tags %>
-		<link href='http://fonts.googleapis.com/css?family=Cinzel:400,700' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Mate:400,400italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
+		<div id="site_frame"></div>
 
 		<% if user_signed_in? %>
 			<% if current_user.admin? %>
@@ -22,34 +22,11 @@
 		<%= content_tag(:div, msg, class: "alert alert-info") %>
 		<% end %>
 
-		<% if request.original_url.match("sign_in") %>
-		<% else %>
-		<div id="logo">
-			<% if user_signed_in? && current_user.admin? %>
-
-				<a href ="/admin_view"><img src="https://s3.amazonaws.com/gaicd10rails/nationalicd10logotext.png" /></a>
-
-				<% elsif user_signed_in? %>
-
-				<a href ="/tasks"><img src="https://s3.amazonaws.com/gaicd10rails/nationalicd10logotext.png" /></a>
-					
-				<% else %>
-
-				<a href ="/user/sign_in"><img src="https://s3.amazonaws.com/gaicd10rails/nationalicd10logotext.png" /></a>
-
-				<% end %>
-		</div>
-		<% end %>
-
 		<div id="page_content">
 
 			<%= yield %>
+			
 
 		</div>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
 	</body>
 </html>

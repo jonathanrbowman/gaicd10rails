@@ -2,9 +2,10 @@
 <% if current_user.admin? %>
 <script type="text/javascript">window.location.href = "/admin_view"</script>
 <% else %>
-<h2 style="text-align:center;">Logged in as <%= current_user.p_fname %> <%= current_user.p_lname %> for <%= current_user.organization %></h2>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
+		<h1 style="text-align:left;">Task Overview</h1>
+		<h2 style="text-align:left; margin-bottom:5px;">Progress</h2>
 		<div id="hospital_progress_outer">
 			<div id="hospital_progress_inner"></div>
 			 <style>
@@ -13,7 +14,6 @@
 				}
 			</style> 
 		</div>
-
 		<% @tasks.each do |task| %>
 		<% @task_ids = task.id %>
 		<% if task.status == true%>
