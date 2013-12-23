@@ -4,8 +4,9 @@
 <% else %>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
-		<h1 style="text-align:left;">Task Overview</h1>
-		<h2 style="text-align:left; margin-bottom:5px;">Progress</h2>
+		<div id="page_header">
+			<p id="page_header_title">Task Overview</p>
+		<p id="page_header_progress">Progress</p>
 		<div id="hospital_progress_outer">
 			<div id="hospital_progress_inner"></div>
 			 <style>
@@ -13,6 +14,7 @@
 					width: <%= number_to_percentage(@progress_bar) %>;
 				}
 			</style> 
+		</div>
 		</div>
 		<% @tasks.each do |task| %>
 		<% @task_ids = task.id %>

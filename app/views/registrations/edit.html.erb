@@ -1,3 +1,9 @@
+<div class="hospital_overview_header_out">
+	<div class="hospital_overview_header_in">
+				<div id="page_header">
+			<p id="page_header_title">Modify Account</p>
+		<h3 style="text-align:left;">Here you can make changes to your account information.</h3>
+		</div>
 <div id="form_outer_wrapper">
 	<h2 style="text-align:center;">Primary Contact Information</h2>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
@@ -52,6 +58,8 @@
 	<%= f.submit "Update User Information", class: "enroll_btn" %>
 </div>
 <% end %>
+</div>
+</div>
 </div>
 <br />
 <br />

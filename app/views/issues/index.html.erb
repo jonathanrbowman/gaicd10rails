@@ -2,10 +2,12 @@
 <% if current_user.admin? %>
 <script type="text/javascript">window.location.href = "/admin_issue_index"</script>
 <% else %>
-<h2 style="text-align:center;">Current Potential Issues</h2>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
-		<h3 style="text-align:center;">Click any issues that  apply to your hospital. Active issues will be lit red.</h3>
+				<div id="page_header">
+			<p id="page_header_title">Potential Issues</p>
+		<h3 style="text-align:left;">Click any issues that  apply to your hospital. Active issues will be lit red and viewable by your administrator.</h3>
+		</div>
     <% @issues.each do |issue| %>
 <table class="issue_table">
 
