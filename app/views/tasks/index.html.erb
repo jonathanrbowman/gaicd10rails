@@ -1,12 +1,13 @@
 <% if user_signed_in? %>
 <% if current_user.admin? %>
 <script type="text/javascript">window.location.href = "/admin_view"</script>
-<% else %>
+<% else %>	
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
 		<div id="page_header">
 			<p id="page_header_title">Task Overview</p>
-		<p id="page_header_progress">Progress</p>
+			<h3 id="page_header_subtitle">As tasks are completed, the green progress bar will fill up from left to right.</h3>
+		<p id="page_header_progress" style="color: rgba(101,190,110,.8);">Progress</p>
 		<div id="hospital_progress_outer">
 			<div id="hospital_progress_inner"></div>
 			 <style>

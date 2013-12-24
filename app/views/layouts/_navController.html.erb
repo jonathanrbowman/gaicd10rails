@@ -1,14 +1,21 @@
-<h1 id="logo">ICD-10 Project Manager</h1>
+<div id="logo">
+<h1 id="site_title">ICD-10 Project Manager</h1>
+<a href="/users/edit" id="logged_in_as">Logged in as <%= current_user.p_fname %> <%= current_user.p_lname %></a>
+</div>
 <div class="headerControlsWrapper">
-	<div class="menu_header">menu</div>
 	<div class="menu_item" id="headerOverview">
 		<div class="app_icon_container" id="overviewIcon">
-			<%= link_to "Task List", tasks_path, class: "menu_item_text" %>
+			<%= link_to "Task Overview", tasks_path, class: "menu_item_text" %>
 		</div>
 	</div>
 	<div class="menu_item" id="headerIssuesOverview">
 		<div class="app_icon_container" id="issuesIcon">
-			<%= link_to "Record Issues", issues_path, class: "menu_item_text" %>
+			<%= link_to "Report Issues", issues_path, class: "menu_item_text" %>
+		</div>
+	</div>
+	<div class="menu_item" id="headerHelp">
+		<div class="app_icon_container" id="helpIcon">
+			<%= link_to "Help Me!", issues_path, class: "menu_item_text" %>
 		</div>
 	</div>
 	<div class="menu_item" id="headerAccountModify">
