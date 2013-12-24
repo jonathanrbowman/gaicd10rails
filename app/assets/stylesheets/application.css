@@ -30,6 +30,7 @@ html {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	background-color: #f1f1f1;
 }
 
 body {
@@ -121,10 +122,10 @@ textarea {
 #page_header {
 	width: 100%;
 	padding: 0px;
-	padding-top: 50px;
 	padding-bottom: 15px;
 	margin: 0px;
 	z-index: 9999;
+	padding-top:15px;
 }
 
 #page_header_title {
@@ -238,10 +239,8 @@ textarea {
 	position: fixed;
 	left: 50%;
 	top: 50%;
-	margin-left: -420px;
-	margin-top: -170px;
-	width: 840px;
-	height: 340px;
+	margin-left: -225px;
+	margin-top: -175px;
 }
 
 #headerSignOut:hover {
@@ -280,7 +279,7 @@ textarea {
 	color: white;
 	position: fixed;
 	top: -10px;
-	z-index: 99;
+	z-index: 99999999999;
 	-webkit-transition: .25s ease-in-out;
 	-moz-transition: .25s ease-in-out;
 	-o-transition: .25s ease-in-out;
@@ -290,10 +289,12 @@ textarea {
 .heading {
 	font-family: 'Lato', sans-serif;
 	color: #444444;
-	font-size: 36px;
+	font-size: 32px;
+	font-weight: 400;
 	text-align: center;
 	padding: 0;
 	margin: 0;
+	padding-bottom:15px;
 }
 
 .sub_heading {
@@ -333,12 +334,16 @@ textarea {
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size: 20px;
-	border: 3px solid #ffffff;
+	border: 3px solid white;
+	border: 3px solid white;
+	border-bottom: 3px solid #f1f1f1;
+	border-top: 3px solid #f1f1f1;
 	margin: 0;
 }
 
 .field_input:focus {
-	border: 3px solid #65BE6E;
+	border-bottom: 3px solid #65BE6E;
+	border-top: 3px solid #65BE6E;
 }
 
 .field_input_general {
@@ -350,12 +355,15 @@ textarea {
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size: 20px;
-	border: 3px solid #f1f1f1;
+	border: 3px solid white;
+	border-bottom: 3px solid #f1f1f1;
+	border-top: 3px solid #f1f1f1;
 	margin: 0;
 }
 
 .field_input_general:focus {
-	border: 3px solid #65BE6E;
+	border-bottom: 3px solid #65BE6E;
+	border-top: 3px solid #65BE6E;
 }
 
 .field_input_position {
@@ -368,7 +376,9 @@ textarea {
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size: 20px;
-	border: 3px solid #f1f1f1;
+	border: 3px solid white;
+	border-bottom: 3px solid #f1f1f1;
+	border-top: 3px solid #f1f1f1;
 	margin: 0;
 }
 
@@ -378,7 +388,8 @@ textarea {
 }
 
 .field_input_position:hover {
-	border: 3px solid #65BE6E;
+	border-bottom: 3px solid #65BE6E;
+	border-top: 3px solid #65BE6E;
 }
 
 .field_input_lname, .field_input_fname {
@@ -390,12 +401,15 @@ textarea {
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size: 20px;
-	border: 3px solid #f1f1f1;
+	border: 3px solid white;
+	border-bottom: 3px solid #f1f1f1;
+	border-top: 3px solid #f1f1f1;
 	margin: 0;
 }
 
 .field_input_lname:focus, .field_input_fname:focus {
-	border: 3px solid #65BE6E;
+	border-bottom: 3px solid #65BE6E;
+	border-top: 3px solid #65BE6E;
 }
 
 .field_input_fname {
@@ -414,8 +428,8 @@ textarea {
 	font-weight: 600;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	padding-left: 35px;
-	padding-right: 35px;
+	padding-left: 55px;
+	padding-right: 55px;
 	background-color: #65BE6E;
 	border: none;
 	border-bottom: 4px solid #37843f;
@@ -560,13 +574,14 @@ textarea {
 }
 
 .inner_content {
-	width: 840px;
+	width: 450px;
 	position: absolute;
 }
 
 /* ----------------------- LOG IN PAGE START ----------------------- */
 
 #login_box {
+	background-color:white;
 	width: 394px;
 	height: 230px;
 	border: 3px solid #65BE6E;
@@ -582,7 +597,6 @@ textarea {
 	padding-left: 25px;
 	padding-right: 25px;
 	margin: 0;
-	position: absolute;
 	right: 0;
 	top: 0px;
 }
@@ -664,6 +678,10 @@ textarea {
 	max-width: 1000px;
 	float: left;
 	margin-left: 220px;
+	background-color:white;
+	padding-left:20px;
+	padding-right:20px;
+	margin-top:50px;
 }
 
 .hospital_overview_header_name {
