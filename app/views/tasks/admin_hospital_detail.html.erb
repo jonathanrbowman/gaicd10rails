@@ -1,15 +1,16 @@
 <% if user_signed_in? && current_user.admin?%>
-<h2 style="text-align:center;"><%= User.find(params[:hospital_id]).organization %></h2>
-<% if User.find(params[:hospital_id]).sign_in_count == 0 %>
-<h3 style="text-align:center;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> has never signed in.</h3>
-<% else %>
-<h3 style="text-align:center;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> last signed in on <%= User.find(params[:hospital_id]).last_sign_in_at.to_s(:short) %></h3>
-<% end %>
-
 <% @admin_hospital_list = Task.where('user_id = ?', params[:hospital_id]).pluck(:id) %>
 <% @hospital_id = params[:hospital_id] %>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
+		<div id="page_header">
+			<p id="page_header_title"><%= User.find(params[:hospital_id]).organization %></p>
+			<% if User.find(params[:hospital_id]).sign_in_count == 0 %>
+			<h3 style="text-align: left;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> has not signed in yet.</h3>
+			<% else %>
+			<h3 style="text-align: left;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> last signed in on <%= User.find(params[:hospital_id]).last_sign_in_at.to_s(:short) %></h3>
+			<% end %>
+		</div>
 		<% if Task.where('t_parent = ?', current_user.u_parent).count.to_i == 0 %>
 		<%= link_to "Create Your First Task", new_task_path, class: "add_task" %>
 		<% else %>
@@ -28,7 +29,7 @@
 				<tbody>
 					<tr class="task_row">
 						<td class="step"><%= Task.find(task).position %></td>
-						<td class="task_title" id="title_<%= task %>"><%= Task.find(task).title %><p class="click_for_more"><i>more >></i></p></td>
+						<td class="task_title" id="title_<%= task %>"><%= Task.find(task).title %><p class="click_for_more"><i>more info >></i></p></td>
 					</tr>
 					
 					</tbody>

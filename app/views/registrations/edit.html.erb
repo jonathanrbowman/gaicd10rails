@@ -4,8 +4,7 @@
 			<p id="page_header_title">Modify Account</p>
 		<h3 id="page_header_subtitle">Here you can make changes to your account information.</h3>
 		</div>
-<div id="form_outer_wrapper">
-	<h2 style="text-align:center;">Primary Contact Information</h2>
+	<h1 style="text-align: left;">Primary Contact Information</h1>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 <div>
@@ -60,7 +59,7 @@
 	<%= f.password_field :current_password, class: "field_input_general", :placeholder => 'Required to make any changes to your account', :style => 'border:2px solid white; border-top:2px solid #e85151; border-bottom:2px solid #e85151;' %>
 </div>
 <br />
-<h2 style="text-align:center;">Secondary Contact Information</h2>
+<h1 style="text-align: left;">Secondary Contact Information</h1>
 <div>
 	<%= f.label "First Name", class: "field_label" %>
 	<br />
@@ -92,9 +91,3 @@
 <% end %>
 </div>
 </div>
-</div>
-<br />
-<br />
-<br />
-<br />
-<br />

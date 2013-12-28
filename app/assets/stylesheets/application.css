@@ -289,8 +289,8 @@ textarea {
 	font-family: 'Lato', sans-serif;
 	opacity: 0;
 	width: 100%;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	font-weight: 500;
 	-webkit-font-smoothing: antialiased;
 	text-align: center;
@@ -416,7 +416,7 @@ textarea {
 	font-family: 'Lato', sans-serif;
 	font-weight: 700;
 	height: 40px;
-	width: 44%;
+	width: 25%;
 	padding-left: 10px;
 	padding-right: 10px;
 	font-size: 20px;
@@ -717,6 +717,7 @@ textarea {
 	color: #444444;
 	font-size: 26px;
 	text-align:left;
+	padding-bottom:10px;
 }
 
 .hospital_overview_header_progress {
@@ -724,6 +725,7 @@ textarea {
 	color: #444444;
 	font-size: 26px;
 	text-align:right;
+	padding-bottom:10px;
 }
 
 #form_outer_wrapper {
@@ -744,7 +746,7 @@ textarea {
 
 .task_list_master {
 	width: 100%;
-	border: 2px solid #7F00FF;
+	border: 2px solid rgb(105, 157, 200);
 	border-collapse: collapse;
 	margin-top: 15px;
 }
@@ -888,6 +890,18 @@ textarea {
 	background-color: #f1f1f1;
 }
 
+#hospital_issues_outer {
+	width: 100%;
+	height: 50px;
+	background-color: rgba(255,255,255,.1);
+	position: relative;
+	border-bottom: 3px solid rgba(232,81,81,.8);
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
 #hospital_progress_outer {
 	width: 100%;
 	height: 50px;
@@ -941,7 +955,7 @@ textarea {
 .task_modify {
 	width: 100px;
 	text-align: center;
-	background-color: #658bbe;
+	background-color: rgb(105, 157, 200);
 }
 
 .task_modify a {
@@ -952,7 +966,7 @@ textarea {
 }
 
 .task_modify:hover {
-	background-color: #7aa0d4;
+	background-color: rgb(125, 177, 220);
 }
 
 .task_delete {

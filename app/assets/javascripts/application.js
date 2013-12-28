@@ -43,6 +43,7 @@ $('#headerEnrollHospital').click(function() {
 
       if(window.location.href.indexOf("tasks") > -1) {
         $("#headerOverview").css({"background-color" : "rgba(105,157,200, 1)"});
+        $("#headerMasterTask").css({"background-color" : "rgba(105,157,200, 1)"});
         $(".headerControlsWrapper").css({"border-right" : "10px solid rgba(105,157,200, 1)"});
         
     }
@@ -54,11 +55,12 @@ $('#headerEnrollHospital').click(function() {
         $("#headerAccountModify").css({"background-color" : "rgba(72,189,160, 1)"});
         $(".headerControlsWrapper").css({"border-right" : "10px solid rgba(72,189,160, 1)"});
     }
-      if(window.location.href.indexOf("admin_view") > -1) {
+      if(window.location.href.indexOf("admin_view") > -1 || window.location.href.indexOf("admin_detail") > -1) {
         $("#headerHospitalIndex").css({"background-color" : "#E59661"});
         $(".headerControlsWrapper").css({"border-right" : "10px solid #E59661"});
     }
-      if(window.location.href.indexOf("admin_task_overview") > -1) {
+    
+      if(window.location.href.indexOf("admin_task_overview") > -1 || window.location.href.indexOf("tasks/new") > -1) {
         $("#headerMasterTask").css({"background-color" : "rgba(105,157,200, 1)"});
         $(".headerControlsWrapper").css({"border-right" : "10px solid rgba(105,157,200, 1)"});
     }

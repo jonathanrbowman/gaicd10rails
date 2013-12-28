@@ -1,9 +1,10 @@
 <% if user_signed_in? && current_user.admin?%> 
-<h2 style="text-align:center;">Master Task List</h2>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
-		<h3 style="text-align:center;">All changes, additions, and deletions to the task list are reflected in every hospital in your organization. Proceed with caution.</h3>
-		
+		<div id="page_header">
+			<p id="page_header_title">Master Task List</p>
+			<h3 id="page_header_subtitle">All changes, additions, and deletions to the task list are reflected in every hospital in your organization. Proceed with caution.</h3>
+		</div>
 		<% @task_list_overview.each do |task| %>
 		<% @task_ids = task.id %>
 		<% if task.user == current_user %>

@@ -1,8 +1,10 @@
 <% if user_signed_in? %>
-<h2 style="text-align:center;">Current Potential Issues</h2>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
-		<h3 style="text-align:center;">Bars represent what percentage of hospitals have reported each issue.</h3>
+		<div id="page_header">
+			<p id="page_header_title">Current Potential Issues</p>
+			<h3 id="page_header_subtitle">The red bars represent what percentage of your hospitals are experiencing said issue.</h3>
+		</div>
     <% @parent_issues.each do |issue| %>
     <% @parent_issue_total = Issue.where('title = ?', issue).where('i_parent = ?', current_user.u_parent).count %>
     <% @parent_issue_true = Issue.where('title = ?', issue).where('i_parent = ?', current_user.u_parent).where('status = ?', true).count %>
@@ -12,8 +14,8 @@
   <tbody>
 
       <tr>
-      	<a href="#"><%= issue %></a>
-			<div id="hospital_progress_outer">
+      	<a href="#" style="color: #333333"><%= issue %></a>
+			<div id="hospital_issues_outer">
 			<div id="hospital_progress_inner_red" style="width:<%= number_to_percentage(@parent_issue_result) %>;"></div>
 			</div>
       </tr>

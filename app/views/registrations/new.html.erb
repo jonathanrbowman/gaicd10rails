@@ -1,55 +1,82 @@
-<div id="form_outer_wrapper">
-	<h2 style="text-align:center;">Primary Contact Information</h2>
+<div class="hospital_overview_header_out">
+	<div class="hospital_overview_header_in">
+				<div id="page_header">
+			<p id="page_header_title">Enroll New Hospital</p>
+		<h3 id="page_header_subtitle">Adding a new hospital will allow them to log in and begin working through the task list you've created.</h3>
+		</div>
+	<h1 style="text-align: left;">Primary Contact Information</h1>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 <%= devise_error_messages! %>
 <div>
-	<%= f.text_field :organization, class: "field_input_general", :autofocus => true, :placeholder => 'Organization' %>
-</div>
+	<%= f.label "Organization", class: "field_label" %>
 	<br />
-<div style="position:relative;">
-	<%= f.text_field :p_fname, class: "field_input_general", class: "field_input_fname", :placeholder => 'First Name' %>
-	<%= f.text_field :p_lname, class: "field_input_general", class: "field_input_lname", :placeholder => 'Last Name' %>
+	<%= f.text_field :organization, class: "field_input_general", :autofocus => true, :placeholder => 'Their Company' %>
 </div>
 	<br />
 <div>
-	<%= f.email_field :email, class: "field_input_general", :placeholder => 'Email (also their login)' %>
+	<%= f.label "First Name", class: "field_label" %>
+	<br />
+	<%= f.text_field :p_fname, class: "field_input_general", :placeholder => 'John' %>
 </div>
 	<br />
 <div>
-	<%= f.password_field :password, class: "field_input_general", :placeholder => 'Password' %>
+	<%= f.label "Last Name", class: "field_label" %>
+	<br />
+	<%= f.text_field :p_lname, class: "field_input_general", :placeholder => 'Smith' %>
 </div>
 	<br />
 <div>
-	<%= f.password_field :password_confirmation, class: "field_input_general", :placeholder => 'Confirm Password' %>
+	<%= f.label "Email", class: "field_label" %>
+	<br />
+	<%= f.email_field :email, class: "field_input_general", :placeholder => 'john@mycompany.com' %>
+</div>
+	<br />
+<div>
+	<%= f.label "Password", class: "field_label" %>
+	<br />
+	<%= f.password_field :password, class: "field_input_general", :placeholder => 'Give them a password that they will use for their first time logging in' %>
+</div>
+	<br />
+<div>
+	<%= f.label "Confirm Password", class: "field_label" %>
+	<br />
+	<%= f.password_field :password_confirmation, class: "field_input_general", :placeholder => 'They will be able to change it themselves afterwards' %>
 </div>
 <br />
 <div>
-	<%= f.text_field :p_phone, class: "field_input_general", class: "field_input_fname", :placeholder => 'Phone Number' %>
+	<%= f.label "Phone Number", class: "field_label" %>
+	<br />
+	<%= f.text_field :p_phone, class: "field_input_general", class: "field_input_fname", :placeholder => 'xxx-xxx-xxxx' %>
 </div>
 <br />
-<h2 style="text-align:center;">Secondary Contact Information</h2>
-<div style="position:relative;">
-	<%= f.text_field :s_fname, class: "field_input_general", class: "field_input_fname", :placeholder => 'First Name' %>
-	<%= f.text_field :s_lname, class: "field_input_general", class: "field_input_lname", :placeholder => 'Last Name' %>
+<h1 style="text-align: left;">Secondary Contact Information</h1>
+<div>
+	<%= f.label "First Name", class: "field_label" %>
+	<br />
+	<%= f.text_field :s_fname, class: "field_input_general", :placeholder => 'Jane' %>
 </div>
 	<br />
 <div>
-	<%= f.email_field :s_email, class: "field_input_general", :placeholder => 'Email (not used for login)' %>
+	<%= f.label "Last Name", class: "field_label" %>
+	<br />
+	<%= f.text_field :s_lname, class: "field_input_general", :placeholder => 'Doe' %>
+</div>
+	<br />
+<div>
+	<%= f.label "Email", class: "field_label" %>
+	<br />
+	<%= f.email_field :s_email, class: "field_input_general", :placeholder => 'jane@mycompany.com' %>
 </div>
 	<br />
 	<div>
-	<%= f.text_field :s_phone, class: "field_input_general", class: "field_input_fname", :placeholder => 'Phone Number' %>
+	<%= f.label "Phone Number", class: "field_label" %>
+	<br />
+	<%= f.text_field :s_phone, class: "field_input_general", class: "field_input_fname", :placeholder => 'xxx-xxx-xxxx' %>
 </div>
 <div>
 	<%= f.submit "Enroll", class: "enroll_btn" %>
 </div>
+<br />
 <% end %>
 </div>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<!--
-<%= render "devise/shared/links" %>
+</div>
