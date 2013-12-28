@@ -972,7 +972,7 @@ textarea {
 .task_delete {
 	width: 100px;
 	text-align: center;
-	background-color: #111111;
+	background-color: #444444;
 }
 
 .task_delete a {
