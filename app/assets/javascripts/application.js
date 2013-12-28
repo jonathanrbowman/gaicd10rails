@@ -19,7 +19,7 @@
 
 $(document).ready(function() {
 	
-setTimeout(function(){$(".notice, .alert").css({"opacity" : "1", "top" : "10px"});}, 300);	
+setTimeout(function(){$(".notice, .alert").css({"opacity" : "1", "top" : "0"});}, 300);	
 setTimeout(function(){$(".notice, .alert").css({"opacity" : "0", "top" : "-10px"});}, 3500);
 
 $('#headerOverview').click(function() {
@@ -31,6 +31,15 @@ $('#headerIssuesOverview').click(function() {
 $('#headerAccountModify').click(function() {
      window.location.href='/users/edit';
 });
+$('#headerHospitalIndex').click(function() {
+     window.location.href='/admin_view';
+});
+$('#headerMasterTask').click(function() {
+     window.location.href='/admin_task_overview';
+});
+$('#headerEnrollHospital').click(function() {
+     window.location.href='/users/sign_up';
+});
 
       if(window.location.href.indexOf("tasks") > -1) {
         $("#headerOverview").css({"background-color" : "rgba(105,157,200, 1)"});
@@ -41,9 +50,25 @@ $('#headerAccountModify').click(function() {
         $("#headerIssuesOverview").css({"background-color" : "rgba(127,0,255, 1)"});
         $(".headerControlsWrapper").css({"border-right" : "10px solid rgba(127,0,255, 1)"});
     }
-      if(window.location.href.indexOf("users") > -1) {
+      if(window.location.href.indexOf("users/edit") > -1) {
         $("#headerAccountModify").css({"background-color" : "rgba(72,189,160, 1)"});
         $(".headerControlsWrapper").css({"border-right" : "10px solid rgba(72,189,160, 1)"});
+    }
+      if(window.location.href.indexOf("admin_view") > -1) {
+        $("#headerHospitalIndex").css({"background-color" : "#E59661"});
+        $(".headerControlsWrapper").css({"border-right" : "10px solid #E59661"});
+    }
+      if(window.location.href.indexOf("admin_task_overview") > -1) {
+        $("#headerMasterTask").css({"background-color" : "rgba(105,157,200, 1)"});
+        $(".headerControlsWrapper").css({"border-right" : "10px solid rgba(105,157,200, 1)"});
+    }
+      if(window.location.href.indexOf("users/sign_up") > -1) {
+        $("#headerEnrollHospital").css({"background-color" : "#6EBE52"});
+        $(".headerControlsWrapper").css({"border-right" : "10px solid #6EBE52"});
+    }
+      if(window.location.href.indexOf("admin_issue_index") > -1) {
+        $("#headerIssuesOverview").css({"background-color" : "rgba(127,0,255, 1)"});
+        $(".headerControlsWrapper").css({"border-right" : "10px solid rgba(127,0,255, 1)"});
     }
 
 $('textarea').autosize();

@@ -1,58 +1,41 @@
-<table class="headerControlsWrapperAdmin">
-	<tr>
-		<td>
-		<div class="app_icon_container">
-		<img class="out_icon" src="https://s3.amazonaws.com/gaicd10rails/appicons.png" />
+<div id="logo">
+<h1 id="site_title">ICD-10 Project Manager</h1>
+<a href="/users/edit" id="logged_in_as">Logged in as <%= current_user.p_fname %> <%= current_user.p_lname %></a>
+</div>
+<div class="headerControlsWrapper">
+	<div class="menu_item" id="headerHospitalIndex">
+		<div class="app_icon_container" id="hospitalIndexIcon">
+			<%= link_to "Hospital Index", admin_view_path, class: "menu_item_text" %>
 		</div>
-			<%= link_to "Sign out?", destroy_user_session_path, method: :delete, id: "headerSignOut" %>
-			</td>
-	</tr>
-	<tr>
-		<td>
-		<div class="app_icon_container">
-		<img class="account_icon" src="https://s3.amazonaws.com/gaicd10rails/appicons.png" />
+	</div>
+	<div class="menu_item" id="headerMasterTask">
+		<div class="app_icon_container" id="overviewIcon">
+			<%= link_to "Master Task List", admin_task_overview_path, class: "menu_item_text" %>
 		</div>
-			<%= link_to "Modify Account", edit_user_registration_path, id: "headerAccountModify" %>
-			</td>
-	</tr>
-	<tr>
-		<td>
-		<div class="app_icon_container">
-		<img class="issues_icon" src="https://s3.amazonaws.com/gaicd10rails/appicons.png" />
+	</div>
+	<div class="menu_item" id="headerEnrollHospital">
+		<div class="app_icon_container" id="enrollIcon">
+			<%= link_to "Enroll Hospital", new_user_registration_path, class: "menu_item_text" %>
 		</div>
-			<%= link_to "View Issues Report", admin_issue_index_path, id: "headerIssuesOverview" %>
-			</td>
-	</tr>
-	<tr>
-		<td>
-		<div class="app_icon_container">
-		<img class="hospital_overview_icon" src="https://s3.amazonaws.com/gaicd10rails/appicons.png" />
+	</div>
+	<div class="menu_item" id="headerIssuesOverview">
+		<div class="app_icon_container" id="issuesIcon">
+			<%= link_to "Issues Report", admin_issue_index_path, class: "menu_item_text" %>
 		</div>
-			<%= link_to "Hospital Overview", admin_view_path, id: "headerOverview" %>
-			</td>
-	</tr>
-	<tr>
-		<td>
-		<div class="app_icon_container">
-		<img class="tasks_icon" src="https://s3.amazonaws.com/gaicd10rails/appicons.png" />
+	</div>
+	<div class="menu_item" id="headerHelp">
+		<div class="app_icon_container" id="helpIcon">
+			<%= link_to "Help Me!", "/", class: "menu_item_text" %>
 		</div>
-			<%= link_to "Master Task List", admin_task_overview_path, id: "headerTaskOverview" %>
-			</td>
-	</tr>
-	<tr>
-		<td>
-		<div class="app_icon_container">
-		<img class="add_hospital_icon" src="https://s3.amazonaws.com/gaicd10rails/appicons.png" />
+	</div>
+	<div class="menu_item" id="headerAccountModify">
+		<div class="app_icon_container" id="accountModifyIcon">
+			<%= link_to "Modify Account", edit_user_registration_path, class: "menu_item_text" %>
 		</div>
-			<%= link_to "Enroll Hospital", new_user_registration_path, id: "headerViewAll" %>
-			</td>
-	</tr>
-	<tr>
-		<td id="signedInAs" style="cursor:pointer;">
-		<div class="app_icon_container">
-		<img class="menu_icon" src="https://s3.amazonaws.com/gaicd10rails/appicons.png" />
+	</div>
+	<div class="menu_item" id="headerSignOut">
+		<div class="app_icon_container" id="signOutIcon">
+			<%= link_to "Sign out?", destroy_user_session_path, method: :delete, class: "menu_item_text" %>
 		</div>
-			Menu
-			</td>
-	</tr>
-</table>
+	</div>
+</div>

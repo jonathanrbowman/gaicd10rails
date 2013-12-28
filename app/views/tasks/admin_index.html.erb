@@ -1,22 +1,24 @@
 <% if user_signed_in? && current_user.admin?%>
-<br />
-<br />
-<br />
-<br />
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
+		<div id="page_header">
+			<p id="page_header_title">Hospital Index</p>
+			<h3 id="page_header_subtitle">Here you can view every hospital you've enrolled along with their current progress.</h3>
+		</div>
 		<% if @users_of_same_parent.where('admin = ?', false).count.to_i == 0 %>
 		<h1 style="text-align:center;">There aren't any hospitals yet!</h1>
 		<%= link_to "Enroll Your First Hospital", new_user_registration_path, class: "add_task" %>
 		<% else %>
-		<div class="hospital_overview_header_name">
-			Organization
-		</div>
-		<div class="hospital_overview_header_progress">
-			Progress
-		</div>
-	</div>
-</div>
+		<table id="index_header">
+			<tr>
+			<td class="hospital_overview_header_name">
+				Organization
+			</div>
+			<td class="hospital_overview_header_progress">
+				Progress
+			</td>
+			</tr>
+		</table>
 <% @users_of_same_parent.order('organization asc').pluck(:id).each do |x| %>
 	<% if User.find(x).admin == false %>
 		<% @true_count = User.find(x).tasks.where('status = ?', true).count %>
@@ -36,6 +38,10 @@
 		<% end %>
 	<% end %>
 <% end %>
+<br />
+<br />
+	</div>
+</div>
 <% else %>
 
 <script type="text/javascript">window.location.href = "/"</script>
