@@ -72,6 +72,10 @@ $('#headerEnrollHospital').click(function() {
         $("#headerIssuesOverview").css({"background-color" : "rgba(127,0,255, 1)"});
         $(".headerControlsWrapper").css({"border-right" : "10px solid rgba(127,0,255, 1)"});
     }
+      if(window.location.href.indexOf("pages/help") > -1) {
+        $("#headerHelp").css({"background-color" : "rgba(242,198,80, 1)"});
+        $(".headerControlsWrapper").css({"border-right" : "10px solid rgba(242,198,80, 1)"});
+    }
 
 $('textarea').autosize();
 

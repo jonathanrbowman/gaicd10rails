@@ -15,6 +15,8 @@ Gaicd10rails::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations", :devise => "devise"}, :helpers => {:devise => "devise"}
   
   root 'pages#home'
+  get '/pages/about' => 'pages#about'
+  get '/pages/help' => 'pages#help'
 
   get '/tasks/:id/status_change' => "tasks#status_change"
   get '/issues/:id/status_change' => "issues#status_change"

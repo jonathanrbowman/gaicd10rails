@@ -1,0 +1,28 @@
+<% if user_signed_in? && current_user.admin? %>
+
+<div class="hospital_overview_header_out">
+	<div class="hospital_overview_header_in">
+		<div id="page_header">
+			<p id="page_header_title">Welcome, Administrator!</p>
+			<h3 id="page_header_subtitle">This page doesn't have anything to do with the functionality of the app, but serves as an avenue through which you can learn more about its creators. Consider this our "credit roll".</h3>
+			</div>
+			</div>
+			</div>
+
+<% elsif user_signed_in? %>
+
+<div class="hospital_overview_header_out">
+	<div class="hospital_overview_header_in">
+		<div id="page_header">
+			<p id="page_header_title">Welcome, User!</p>
+			<h3 id="page_header_subtitle">This page doesn't have anything to do with the functionality of the app, but serves as an avenue through which you can learn more about its creators. Consider this our "credit roll".</h3>
+			</div>
+			</div>
+			</div>
+
+<% else %>
+
+<h1>Welcome, Admin!</h1>
+<p>This page doesn't have anything to do with the functionality of the app, but serves as an avenue through which you can learn more about its creators. Consider this, then, the "credit roll".</p>
+
+<% end %>
