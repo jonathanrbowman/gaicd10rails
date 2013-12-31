@@ -26,6 +26,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 html {
+	border-top:58px solid #444444;
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -86,9 +87,11 @@ textarea {
 	color: white;
 	position: fixed;
 	top: 0;
-	left: 0;
-	width: 100%;
+	right: 0;
+	width: auto;
 	padding: 12px;
+	padding-left:20px;
+	padding-right:20px;
 	margin: 0px;
 	border-top: 1px solid rgba(255,255,255,.1);
 	border-bottom: 1px solid rgba(0,0,0,.1);
@@ -107,10 +110,18 @@ textarea {
 	vertical-align: middle;
 }
 
+#site_header_logo {
+	width:170px;
+	padding:5px;
+	border-top: 1px solid rgba(255,255,255,.1);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left:5px;
+}
+
 #logged_in_as {
-	width: 50%;
-	text-align: right;
-	display: inline-block;
+	width:100%;
+	text-align: center;
 	font-size: 18px;
 	color: rgba(72,189,160, 1);
 	padding: 0px;
@@ -124,7 +135,6 @@ textarea {
 #page_header {
 	width: 100%;
 	padding: 0px;
-	padding-bottom: 15px;
 	margin: 0px;
 	z-index: 9999;
 	padding-top: 15px;
@@ -235,7 +245,7 @@ textarea {
 	background-color: #444444;
 	width: 185px;
 	position: fixed;
-	top: 62px;
+	top: 0px;
 	left: 0;
 	z-index: 99999999999;
 	border-right: 10px solid white;
@@ -289,8 +299,8 @@ textarea {
 	font-family: 'Lato', sans-serif;
 	opacity: 0;
 	width: 100%;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 22px;
+	padding-bottom: 22px;
 	font-weight: 500;
 	-webkit-font-smoothing: antialiased;
 	text-align: center;
@@ -298,7 +308,7 @@ textarea {
 	position: fixed;
 	top: 0;
 	z-index: 99999999999;
-	background-color: rgba(0,0,0,.3);
+	background-color: rgba(0,0,0,.5);
 	-webkit-transition: .25s ease-in-out;
 	-moz-transition: .25s ease-in-out;
 	-o-transition: .25s ease-in-out;
@@ -589,7 +599,7 @@ textarea {
 	height:100%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 90px;
+	margin-top: 30px;
 }
 
 .inner_content {
@@ -598,6 +608,10 @@ textarea {
 }
 
 /* ----------------------- LOG IN PAGE START ----------------------- */
+
+#login_logo {
+	width:200px;
+}
 
 #login_box {
 	background-color: white;
