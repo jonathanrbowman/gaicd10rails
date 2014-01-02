@@ -10,13 +10,11 @@
 			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 			<div>
 				<%= f.label :email, class: "field_label" %>
-				<br />
 				<%= f.email_field :email, class: "field_input", :autofocus => true %>
 			</div>
 <br />
 			<div>
 				<%= f.label :password, class: "field_label" %>
-				<br />
 				<%= f.password_field :password, class: "field_input" %>
 			</div>
 			</div>

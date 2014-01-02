@@ -10,31 +10,26 @@
   <%= devise_error_messages! %>
 <div>
 	<%= f.label "Organization", class: "field_label" %>
-	<br />
 	<%= f.text_field :organization, class: "field_input_general", :autofocus => true, :placeholder => 'My Company' %>
 </div>
 	<br />
 <div>
 	<%= f.label "First Name", class: "field_label" %>
-	<br />
 	<%= f.text_field :p_fname, class: "field_input_general", :placeholder => 'John' %>
 </div>
 	<br />
 <div>
 	<%= f.label "Last Name", class: "field_label" %>
-	<br />
 	<%= f.text_field :p_lname, class: "field_input_general", :placeholder => 'Smith' %>
 </div>
 	<br />
 <div>
 	<%= f.label "Email", class: "field_label" %>
-	<br />
 	<%= f.email_field :email, class: "field_input_general", :placeholder => 'john@mycompany.com' %>
 </div>
 <br />
 <div>
 	<%= f.label "Phone Number", class: "field_label" %>
-	<br />
 	<%= f.text_field :p_phone, class: "field_input_general", class: "field_input_fname", :placeholder => 'xxx-xxx-xxxx' %>
 </div>
 	<br />
@@ -43,45 +38,38 @@
 	<div class="change_password">
 <div>
 	<%= f.label "New Password", class: "field_label" %>
-	<br />
 	<%= f.password_field :password, class: "field_input_general", :placeholder => 'New Password' %>
 </div>
 	<br />
 <div>
 	<%= f.label "Confirm New Password", class: "field_label" %>
-	<br />
 	<%= f.password_field :password_confirmation, class: "field_input_general", :placeholder => 'Confirm New Password' %>
 </div>
 <br />
 </div>
 <div>
 	<%= f.label "Current Password", class: "field_label" %>
-	<br />
 	<%= f.password_field :current_password, class: "field_input_general", :placeholder => 'Required to make any changes to your account', :style => 'border:2px solid white; border-top:2px solid #e85151; border-bottom:2px solid #e85151;' %>
 </div>
 <br />
 <h1 style="text-align: left;">Secondary Contact Information</h1>
 <div>
 	<%= f.label "First Name", class: "field_label" %>
-	<br />
 	<%= f.text_field :s_fname, class: "field_input_general", :placeholder => 'Jane' %>
 </div>
 	<br />
 <div>
 	<%= f.label "Last Name", class: "field_label" %>
-	<br />
 	<%= f.text_field :s_lname, class: "field_input_general", :placeholder => 'Doe' %>
 </div>
 	<br />
 <div>
 	<%= f.label "Email", class: "field_label" %>
-	<br />
 	<%= f.email_field :s_email, class: "field_input_general", :placeholder => 'jane@mycompany.com' %>
 </div>
 	<br />
 	<div>
 	<%= f.label "Phone Number", class: "field_label" %>
-	<br />
 	<%= f.text_field :s_phone, class: "field_input_general", class: "field_input_fname", :placeholder => 'xxx-xxx-xxxx' %>
 </div>
 <div>
