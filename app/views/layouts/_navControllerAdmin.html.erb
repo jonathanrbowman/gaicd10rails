@@ -2,7 +2,9 @@
 <a href="/users/edit" id="logged_in_as">Logged in as <%= current_user.p_fname %> <%= current_user.p_lname %></a>
 </div>
 <div class="headerControlsWrapper">
+	<div class="header_logo_wrapper">
 	<a href="/pages/about"><img id="site_header_logo" src="https://s3.amazonaws.com/gaicd10rails/icd10logowhite.png" /></a>
+	</div>
 	<div class="menu_item" id="headerHospitalIndex">
 		<div class="app_icon_container" id="hospitalIndexIcon">
 			<%= link_to "Hospital Index", admin_view_path, class: "menu_item_text" %>

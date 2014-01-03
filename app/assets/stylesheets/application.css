@@ -60,7 +60,7 @@ p {
 	-webkit-font-smoothing: antialiased;
 	-webkit-appearance: none !important;
 	font-family: 'Lato', sans-serif;
-	color: #333333;
+	color: #444444;	
 }
 
 h1, h2, h3, h4, label {
@@ -94,7 +94,7 @@ textarea {
 	padding-left:20px;
 	padding-right:20px;
 	margin: 0px;
-	z-index: 99999;
+	z-index: 99999999;
 	vertical-align: middle;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
@@ -121,7 +121,6 @@ textarea {
 #site_header_logo {
 	width:150px;
 	padding:5px;
-	border-top: 1px solid rgba(255,255,255,.1);
 	padding-top: 18px;
 	padding-bottom: 18px;
 	margin-left:12px;
@@ -154,6 +153,7 @@ textarea {
 #page_header_subtitle {
 	color: #444444;
 	text-align: left;
+	font-size:20px;
 }
 
 #page_header_progress {
@@ -178,6 +178,20 @@ textarea {
 	padding: 0;
 	border-top: 1px solid rgba(255,255,255,.1);
 	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.header_logo_wrapper {
+	cursor: pointer;
+	width: 185px;
+	background-color: #444444;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	-webkit-transition: .15s ease-out;
+	-moz-transition: .15s ease-out;
+	-o-transition: .15s ease-out;
+	transition: .15s ease-out;
 }
 
 .menu_item {

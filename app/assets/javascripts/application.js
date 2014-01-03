@@ -20,7 +20,7 @@
 $(document).ready(function() {
 	
 setTimeout(function(){$(".notice, .alert").css({"opacity" : "1", "top" : "0"});}, 300);	
-setTimeout(function(){$(".notice, .alert").css({"opacity" : "0", "top" : "-10px"});}, 3500);
+setTimeout(function(){$(".notice, .alert").css({"opacity" : "0", "top" : "-60px"});}, 4000);
 
 $('#headerOverview').click(function() {
      window.location.href='/tasks';
