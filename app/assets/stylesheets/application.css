@@ -57,7 +57,10 @@ a, h1, h2, h3, h4, input, button, form, td, th, label, textarea {
 }
 
 p {
+	-webkit-font-smoothing: antialiased;
+	-webkit-appearance: none !important;
 	font-family: 'Lato', sans-serif;
+	color: #333333;
 }
 
 h1, h2, h3, h4, label {
@@ -81,9 +84,8 @@ textarea {
 }
 
 #logo {
-	background-color: rgba(68,68,68,.7);
+	background-color: rgba(255,255,255,.7);
 	font-size: 28px;
-	color: white;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -92,10 +94,17 @@ textarea {
 	padding-left:20px;
 	padding-right:20px;
 	margin: 0px;
-	border-top: 1px solid rgba(255,255,255,.1);
-	border-bottom: 1px solid rgba(0,0,0,.1);
 	z-index: 99999;
 	vertical-align: middle;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+	cursor: pointer;
+}
+
+#logo:hover {
+	background-color: #444444;
 }
 
 #site_title {
@@ -125,10 +134,6 @@ textarea {
 	color: rgba(72,189,160, 1);
 	padding: 0px;
 	margin: 0px;
-}
-
-#logged_in_as:hover {
-	color: white;
 }
 
 #page_header {
@@ -255,7 +260,7 @@ textarea {
 	left: 50%;
 	top: 50%;
 	margin-left: -225px;
-	margin-top: -175px;
+	margin-top: -215px;
 }
 
 #headerSignOut:hover {
@@ -617,7 +622,7 @@ textarea {
 #login_box {
 	background-color: white;
 	width: 394px;
-	height: 230px;
+	height: 240px;
 	border: 3px solid #65BE6E;
 	margin: 0;
 	padding: 25px;
@@ -632,7 +637,7 @@ textarea {
 	padding-right: 25px;
 	margin: 0;
 	right: 0;
-	top: 0px;
+	top: 0;
 }
 
 #login_fields {

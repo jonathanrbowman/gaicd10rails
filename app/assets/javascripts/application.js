@@ -40,6 +40,9 @@ $('#headerMasterTask').click(function() {
 $('#headerEnrollHospital').click(function() {
      window.location.href='/users/sign_up';
 });
+$('#logo').click(function() {
+     window.location.href='/users/edit';
+});
 
       if(window.location.href.indexOf("tasks") > -1) {
         $("#headerOverview").css({"background-color" : "rgba(105,157,200, 1)"});
