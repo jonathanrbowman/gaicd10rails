@@ -27,7 +27,7 @@
                                 <tbody>
                                         <tr class="task_row">
                                                 <td class="step"><%= task.position %></td>
-                                                <td class="task_title" id="title_<%= @task_ids %>"><%= task.title %><p class="click_for_more"><i>more >></i></p></td>
+                                                <td class="task_title" id="title_<%= @task_ids %>"><%= task.title %><p class="click_for_more"><i>more info >></i></p></td>
                                                 <% if task.status == true%>
                                         <td class="change_status_green_before" id="status_<%= @task_ids %>"><%= link_to 'Completed!', status_change_task_path(task.id), :remote => true %></td>
 					<script>
