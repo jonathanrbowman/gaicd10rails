@@ -126,7 +126,7 @@ MESSAGE
 
     if notice
       set_flash_message :notice, notice if is_navigational_format?
-      true
+      #true
     end
   end
 

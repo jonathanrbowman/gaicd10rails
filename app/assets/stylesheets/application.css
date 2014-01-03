@@ -60,7 +60,7 @@ p {
 	-webkit-font-smoothing: antialiased;
 	-webkit-appearance: none !important;
 	font-family: 'Lato', sans-serif;
-	color: #444444;	
+	color: #444444;
 }
 
 h1, h2, h3, h4, label {
@@ -91,8 +91,8 @@ textarea {
 	right: 0;
 	width: auto;
 	padding: 8px;
-	padding-left:20px;
-	padding-right:20px;
+	padding-left: 20px;
+	padding-right: 20px;
 	margin: 0px;
 	z-index: 99999999;
 	vertical-align: middle;
@@ -119,15 +119,15 @@ textarea {
 }
 
 #site_header_logo {
-	width:150px;
-	padding:5px;
+	width: 150px;
+	padding: 5px;
 	padding-top: 18px;
 	padding-bottom: 18px;
-	margin-left:12px;
+	margin-left: 12px;
 }
 
 #logged_in_as {
-	width:100%;
+	width: 100%;
 	text-align: center;
 	font-size: 18px;
 	color: rgba(72,189,160, 1);
@@ -153,7 +153,7 @@ textarea {
 #page_header_subtitle {
 	color: #444444;
 	text-align: left;
-	font-size:20px;
+	font-size: 20px;
 }
 
 #page_header_progress {
@@ -183,7 +183,7 @@ textarea {
 .header_logo_wrapper {
 	cursor: pointer;
 	width: 185px;
-	background-color: #444444;
+	background-color: #303030;
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
@@ -198,7 +198,7 @@ textarea {
 	cursor: pointer;
 	width: 185px;
 	height: 50px;
-	background-color: #444444;
+	background-color: #333333;
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
@@ -260,7 +260,7 @@ textarea {
 .headerControlsWrapper, .headerControlsWrapperAdmin {
 	height: 100%;
 	font-family: 'Lato', sans-serif;
-	background-color: #444444;
+	background-color: #303030;
 	width: 185px;
 	position: fixed;
 	top: 0px;
@@ -370,7 +370,7 @@ textarea {
 	font-family: 'Lato', sans-serif;
 	color: #444444;
 	font-size: 22px;
-	display:block;
+	display: block;
 	padding-bottom: 2px;
 }
 
@@ -616,7 +616,7 @@ textarea {
 
 #page_content {
 	width: 100%;
-	height:100%;
+	height: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 30px;
@@ -630,7 +630,7 @@ textarea {
 /* ----------------------- LOG IN PAGE START ----------------------- */
 
 #login_logo {
-	width:200px;
+	width: 200px;
 }
 
 #login_box {
@@ -726,8 +726,8 @@ textarea {
 .hospital_overview_header_out {
 	width: 100%;
 	height: auto;
-	float:left;
-	padding-bottom:50px;
+	float: left;
+	padding-bottom: 50px;
 }
 
 .hospital_overview_header_in {
@@ -743,23 +743,23 @@ textarea {
 }
 
 #index_header {
-	width:100%;
+	width: 100%;
 }
 
 .hospital_overview_header_name {
 	font-family: 'Lato', sans-serif;
 	color: #444444;
 	font-size: 26px;
-	text-align:left;
-	padding-bottom:10px;
+	text-align: left;
+	padding-bottom: 10px;
 }
 
 .hospital_overview_header_progress {
 	font-family: 'Lato', sans-serif;
 	color: #444444;
 	font-size: 26px;
-	text-align:right;
-	padding-bottom:10px;
+	text-align: right;
+	padding-bottom: 10px;
 }
 
 #form_outer_wrapper {
