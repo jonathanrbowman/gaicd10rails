@@ -368,6 +368,7 @@ textarea {
 
 .field_label {
 	font-family: 'Lato', sans-serif;
+	width:100%;
 	color: #444444;
 	font-size: 22px;
 	display: block;
@@ -654,11 +655,22 @@ textarea {
 	top: 0;
 }
 
+#reset_box {
+	background-color: white;
+	width: 394px;
+	height: 145px;
+	border: 3px solid #65BE6E;
+	margin: 0;
+	padding: 25px;
+	position: absolute;
+	left: 0;
+}
+
 #login_fields {
 	position: absolute;
 	left: 20px;
 	top: 20px;
-	width: 200px;
+	width: 100%;
 }
 
 #ga_stars {

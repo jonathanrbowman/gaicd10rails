@@ -1,12 +1,32 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.submit "Send me reset password instructions" %></div>
+<% unless user_signed_in? %>
+<div id="sign_in_wrapper">
+<div class="inner_content">
+	<div id="reset_box_wrapper">
+		<p class="heading">
+			<img id="login_logo" src="https://s3.amazonaws.com/gaicd10rails/icd10logogrey.png" />
+		</p>
+		<div id="reset_box">
+<div id="login_fields">
+			<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  			<%= devise_error_messages! %>
+			<div>
+				<%= f.label "Email for the account to reset", class: "field_label" %>
+				<%= f.email_field :email, class: "field_input", :autofocus => true %>
+			</div>
+<br />
+			</div>
+			<div>
+				<%= f.submit "Send Reset Email", class: "submit_btn" %>
+			</div>
+			<div>
+				<%= link_to "Cancel", new_user_session_path, class: "cancel_btn" %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+</div>
+<br />
+<% else %>
+<script type="text/javascript">window.location.href = "/"</script>
 <% end %>
-
-<%= render "devise/shared/links" %>
