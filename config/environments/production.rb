@@ -80,4 +80,14 @@ Gaicd10rails::Application.configure do
   
   config.action_mailer.default_url_options = { :host => 'http://gaicd10rails.herokuapp.com/' }
   
+    config.action_mailer.smtp_settings = {
+    :address   => "smtp.mandrillapp.com",
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => "jonathan@bestpracticestore.com",
+    :password  => "C5GAohMzJJh6Kd0Pg01T8g", # SMTP password is any valid API key
+    :authentication => 'login', # Mandrill supports 'plain' or 'login'
+    :domain => 'bestpracticestore.com', # your domain to identify your server when connecting
+  }
+  
 end

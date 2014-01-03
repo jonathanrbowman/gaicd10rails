@@ -59,3 +59,5 @@ gem 'rails_autolink'
 gem 'newrelic_rpm'
 
 gem 'spinjs-rails'
+
+gem 'mandrill-api'
