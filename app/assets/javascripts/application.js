@@ -28,6 +28,9 @@ $('#headerOverview').click(function() {
 $('#headerIssuesOverview').click(function() {
      window.location.href='/issues';
 });
+$('#adminheaderIssuesOverview').click(function() {
+     window.location.href='/admin_issue_index';
+});
 $('#headerAccountModify').click(function() {
      window.location.href='/users/edit';
 });
@@ -72,7 +75,7 @@ $('#logo').click(function() {
         $(".headerControlsWrapper").css({"border-right" : "10px solid #6EBE52"});
     }
       if(window.location.href.indexOf("admin_issue_index") > -1) {
-        $("#headerIssuesOverview").css({"background-color" : "rgba(127,0,255, 1)"});
+        $("#adminheaderIssuesOverview").css({"background-color" : "rgba(127,0,255, 1)"});
         $(".headerControlsWrapper").css({"border-right" : "10px solid rgba(127,0,255, 1)"});
     }
       if(window.location.href.indexOf("pages/help") > -1) {

@@ -294,6 +294,10 @@ textarea {
 	background-color: rgba(127,0,255, 1);
 }
 
+#adminheaderIssuesOverview:hover {
+	background-color: rgba(127,0,255, 1);
+}
+
 #headerViewAll:hover {
 	background-color: rgba(110,190,82, 1);
 }
