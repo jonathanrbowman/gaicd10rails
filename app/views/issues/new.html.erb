@@ -1,3 +1,4 @@
+<% if user_signed_in? && current_user.admin? %>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
 		<div id="page_header">
@@ -29,4 +30,4 @@
 <% end %>
 
 </div>
-
+<% end %>
