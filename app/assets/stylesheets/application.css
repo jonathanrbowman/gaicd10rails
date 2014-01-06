@@ -1288,6 +1288,9 @@ textarea {
 .click_description_open {
 	background-color: rgb(125, 177, 220);
 }
+.open_description_border {
+	border-bottom: 2px solid rgb(125, 177, 220);
+}
 
 .change_password {
 	display: block;

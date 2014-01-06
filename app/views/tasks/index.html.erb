@@ -47,12 +47,10 @@
 																	$("#click_note_<%= @task_ids %>").click(function () {
 																	 $("#note_<%= @task_ids %>").css({"display" : "block"});
 																	 setTimeout(function(){$("#note_<%= @task_ids %>").css({"opacity" : "1"});}, 150);
-																	 $("#click_note_<%= @task_ids %>").css({"background-color" : "rgb(251, 196, 148)"});
 																		});
 																	$("#note_close<%= @task_ids %>").click(function () {
 																	 $("#note_<%= @task_ids %>").css({"opacity" : "0"});
 																	 setTimeout(function(){$("#note_<%= @task_ids %>").css({"display" : "none"});}, 150);
-																	 $("#click_note_<%= @task_ids %>").css({"background-color" : "#777777"});
 																		});
 														</script>
                                                 	</td>
@@ -101,6 +99,7 @@
         
         
         </tbody>
+        
 
         </table>
 			<div class= "task_description" id="description_<%= @task_ids %>">
