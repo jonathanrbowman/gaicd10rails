@@ -947,6 +947,7 @@ textarea {
 	padding-left: 10px;
 	cursor: pointer;
 	position: relative;
+	font-size: 18px;
 }
 
 .task_title:hover {
