@@ -950,10 +950,6 @@ textarea {
 	font-size: 18px;
 }
 
-.task_title:hover {
-	background-color: #f1f1f1;
-}
-
 #hospital_issues_outer {
 	width: 100%;
 	height: 50px;
@@ -1073,8 +1069,8 @@ textarea {
 	max-width: 1000px;
 	max-height: 0px;
 	opacity: 0;
-	background-color: #f1f1f1;
-	color: black;
+	background-color: rgb(125, 177, 220);
+	color: white;
 	position: relative;
 	top: 0;
 	left: 0;
@@ -1091,6 +1087,10 @@ textarea {
 
 .task_description a:hover {
 	color: #444444;
+}
+
+.task_description p {
+	color:white !important;
 }
 
 .note_wrapper {
@@ -1116,6 +1116,7 @@ textarea {
 .note_header {
 	width: 100%;
 	background-color: #fffdae;
+	border-bottom: 5px solid #fffdae;
 	position: absolute;
 	top: 0;
 	text-align:left;
@@ -1141,9 +1142,10 @@ textarea {
 	top: -16px;
 	right: 0;
 	background-color: #f1f1f1;
-	padding: 10px;
+	padding: 12px;
 	padding-left: 20px;
 	padding-right: 20px;
+	padding-bottom:13px;
 	cursor: pointer;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
@@ -1170,9 +1172,8 @@ textarea {
 .doublt_td {
 	padding: 0;
 	margin: 0;
-	background-color: blue;
 	text-align: right;
-	width: 150px;
+	width:40px;
 }
 
 .click_for_more {
@@ -1188,18 +1189,24 @@ textarea {
 .click_note {
 	color: white;
 	width: 100%;
+	height: 19px;
 	text-align: center;
-	background-color: #999999;
+	background-color: #777777;
 	padding-top: 11px;
 	padding-bottom: 11px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	cursor: pointer;
+	overflow:hidden;
 	border-bottom:1px solid rgba(0,0,0,.1);
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/appicons.png');
+	background-size: 210px;
+	background-repeat: no-repeat;
+	background-position: -165px -44px;
 }
 
 .click_note:hover {
@@ -1209,8 +1216,9 @@ textarea {
 .click_description {
 	color: white;
 	width: 100%;
+	height:19px;
 	text-align: center;
-	background-color: #999999;
+	background-color: #777777;
 	padding-top: 11px;
 	padding-bottom: 11px;
 	margin-top: 0px;
@@ -1221,9 +1229,17 @@ textarea {
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/appicons.png');
+	background-size: 210px;
+	background-repeat: no-repeat;
+	background-position: -2px -84px;
 }
 
 .click_description:hover {
+	background-color: rgb(125, 177, 220);
+}
+
+.click_description_open {
 	background-color: rgb(125, 177, 220);
 }
 
