@@ -369,7 +369,7 @@ textarea {
 
 .field_label {
 	font-family: 'Lato', sans-serif;
-	width:100%;
+	width: 100%;
 	color: #444444;
 	font-size: 22px;
 	display: block;
@@ -831,7 +831,7 @@ textarea {
 	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	width: 150px !important;
+	width: 100px !important;
 }
 
 .task_list_red_after {
@@ -856,15 +856,23 @@ textarea {
 }
 
 .change_status_green_before, .admin_change_status {
-	width: 150px;
+	width: 75px;
 	background-color: #65be6e;
 	text-align: center;
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/appicons.png');
+	background-size: 500px;
+	background-repeat: no-repeat;
+	background-position: -295px -112px;
 }
 
 .change_status_green_after {
-	width: 150px;
+	width: 75px;
 	text-align: center;
 	background-color: #65be6e !important;
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/appicons.png');
+	background-size: 500px;
+	background-repeat: no-repeat;
+	background-position: -295px -112px;
 }
 
 .change_status_green_after:hover {
@@ -876,16 +884,24 @@ textarea {
 }
 
 .change_status_red_before, .admin_change_status_red {
-	width: 150px;
+	width: 75px;
 	background-color: #e85151;
 	text-align: center;
 	margin: 0px !important;
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/appicons.png');
+	background-size: 500px;
+	background-repeat: no-repeat;
+	background-position: -295px -207px;
 }
 
 .change_status_red_after {
-	width: 150px;
+	width: 75px;
 	text-align: center;
 	background-color: #e85151 !important;
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/appicons.png');
+	background-size: 500px;
+	background-repeat: no-repeat;
+	background-position: -295px -207px;
 }
 
 .change_status_red_after:hover {
@@ -900,14 +916,14 @@ textarea {
 	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	width: 150px;
+	width: 75px;
 }
 
 .change_status_red_before a, .admin_change_status_red a {
 	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	width: 150px;
+	width: 75px;
 	margin: 0px !important;
 }
 
@@ -915,14 +931,14 @@ textarea {
 	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	width: 150px;
+	width: 75px;
 }
 
 .change_status_red_after a {
 	display: block;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	width: 150px;
+	width: 75px;
 	margin: 0px !important;
 }
 
@@ -1076,6 +1092,69 @@ textarea {
 	color: #444444;
 }
 
+.note_wrapper {
+	position: fixed;
+	z-index: 99999999999999;
+	width: 600px;
+	height: 450px;
+	top: 50%;
+	left: 50%;
+	margin-left: -300px;
+	margin-top: -225px;
+	background-color: #f1f1f1;
+	border: 5px solid #fffdae;
+	opacity: 0;
+	display: none;
+	box-shadow: 0px 0px 0px 500000px rgba(0,0,0,.6);
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.note_header {
+	width: 100%;
+	background-color: #fffdae;
+	position: absolute;
+	top: 0;
+	text-align:left;
+}
+
+.note_step {
+	font-size: 32px;
+	color: #333333;
+	display: inline;
+	vertical-align: middle;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.note_title {
+	display: inline;
+	vertical-align: middle;
+}
+
+.note_close {
+	color: #e85151;
+	position: absolute;
+	top: -16px;
+	right: 0;
+	background-color: #f1f1f1;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.note_close:hover {
+	color: white;
+	background-color: #e85151;
+}
+
 .open {
 	max-height: 300px;
 	opacity: 1;
@@ -1087,6 +1166,14 @@ textarea {
 	margin-left: 20px !important;
 }
 
+.doublt_td {
+	padding: 0;
+	margin: 0;
+	background-color: blue;
+	text-align: right;
+	width: 150px;
+}
+
 .click_for_more {
 	opacity: 1;
 	position: absolute;
@@ -1095,6 +1182,48 @@ textarea {
 	right: 20px;
 	font-size: 14px;
 	color: #444444;
+}
+
+.click_note {
+	color: white;
+	width: 100%;
+	text-align: center;
+	background-color: #999999;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	cursor: pointer;
+	border-bottom:1px solid rgba(0,0,0,.1);
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.click_note:hover {
+	background-color: rgb(251, 196, 148);
+}
+
+.click_description {
+	color: white;
+	width: 100%;
+	text-align: center;
+	background-color: #999999;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	cursor: pointer;
+	border-top:1px solid rgba(255,255,255,.1);
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.click_description:hover {
+	background-color: rgb(125, 177, 220);
 }
 
 .change_password {

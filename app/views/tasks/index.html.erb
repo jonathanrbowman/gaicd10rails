@@ -27,9 +27,31 @@
                                 <tbody>
                                         <tr class="task_row">
                                                 <td class="step"><%= task.position %></td>
-                                                <td class="task_title" id="title_<%= @task_ids %>"><%= task.title %><p class="click_for_more"><i>more info >></i></p></td>
+                                                <td class="task_title" id="title_<%= @task_ids %>"><%= task.title %>
+                                                	</td>
+                                                	<td class="doublt_td">
+	                                                		<p class="click_note" id="click_note_<%= @task_ids %>">Modify Note</p>
+	                                                		<p class="click_description" id="click_description_<%= @task_ids %>">Read Description</p>
+													        <div class="note_wrapper" id="note_<%= @task_ids %>">
+															<div class="note_header">
+																<p class="note_step"><%= task.position %></p>
+																<p class="note_title"><%= task.title %></p>
+																<p class="note_close" id="note_close<%= @task_ids %>">X</p>
+															</div>
+														</div>
+														<script>
+																	$("#click_note_<%= @task_ids %>").click(function () {
+																	 $("#note_<%= @task_ids %>").css({"display" : "block"});
+																	 setTimeout(function(){$("#note_<%= @task_ids %>").css({"opacity" : "1"});}, 150);
+																		});
+																	$("#note_close<%= @task_ids %>").click(function () {
+																	 $("#note_<%= @task_ids %>").css({"opacity" : "0"});
+																	 setTimeout(function(){$("#note_<%= @task_ids %>").css({"display" : "none"});}, 150);
+																		});
+														</script>
+                                                	</td>
                                                 <% if task.status == true%>
-                                        <td class="change_status_green_before" id="status_<%= @task_ids %>"><%= link_to 'Completed!', status_change_task_path(task.id), :remote => true %></td>
+                                        <td class="change_status_green_before" id="status_<%= @task_ids %>"><%= link_to '', status_change_task_path(task.id), :remote => true %></td>
 					<script>
 
 					$("#status_<%= @task_ids %>").click(function () {
@@ -41,7 +63,7 @@
 
 					</script>
                                                 <% else %>
-                                        <td class="change_status_red_before" id="status_<%= @task_ids %>"><%= link_to 'Click to Complete', status_change_task_path(task.id), :remote => true %></td>
+                                        <td class="change_status_red_before" id="status_<%= @task_ids %>"><%= link_to '', status_change_task_path(task.id), :remote => true %></td>
 					<script>
 
 					$("#status_<%= @task_ids %>").click(function () {
@@ -65,6 +87,9 @@
 					</div>
 					<script>
 					
+					$("#click_description_<%= @task_ids %>").click(function () {
+   					 $("#description_<%= @task_ids %>").toggleClass("open");
+						});
 					$("#title_<%= @task_ids %>").click(function () {
    					 $("#description_<%= @task_ids %>").toggleClass("open");
 						});
