@@ -30,6 +30,10 @@
                                                 <td class="task_title" id="title_<%= @task_ids %>"><%= task.title %>
                                                 	</td>
                                                 	<td class="doublt_td">
+	                                                		<p class="click_note_text" id="click_note_text<%= @task_ids %>">Add/Modify Note</p>
+	                                                		<p class="click_description_text" id="click_description_text<%= @task_ids %>">View Description</p>
+                                                	</td>
+                                                	<td class="doublt_td">
 	                                                		<p class="click_note" id="click_note_<%= @task_ids %>"></p>
 	                                                		<p class="click_description" id="click_description_<%= @task_ids %>"></p>
 													        <div class="note_wrapper" id="note_<%= @task_ids %>">
@@ -77,6 +81,21 @@
 
 					</script>
                                                 <% end %>
+                                                <script>
+                                                					$("#click_note_<%= @task_ids %>").mouseenter(function () {
+																	 $("#click_note_text<%= @task_ids %>").css({"background-color" : "rgb(251, 196, 148)", "opacity" : "1"});
+																		});
+                                                					$("#click_note_<%= @task_ids %>").mouseleave(function () {
+																	 $("#click_note_text<%= @task_ids %>").css({"background-color" : "#7777777", "opacity" : "0"});
+																		});
+																		
+                                                					$("#click_description_<%= @task_ids %>").mouseenter(function () {
+																	 $("#click_description_text<%= @task_ids %>").css({"background-color" : "rgb(125, 177, 220)", "opacity" : "1"});
+																		});
+                                                					$("#click_description_<%= @task_ids %>").mouseleave(function () {
+																	 $("#click_description_text<%= @task_ids %>").css({"background-color" : "#7777777", "opacity" : "0"});
+																		});
+                                                </script>
                                         </tr>
         </div>
         

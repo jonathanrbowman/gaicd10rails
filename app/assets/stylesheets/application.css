@@ -1217,6 +1217,27 @@ textarea {
 	background-color: rgb(251, 196, 148);
 }
 
+.click_note_text {
+	color: white;
+	width: 140px;
+	height: 19px;
+	text-align: right;
+	background-color: #777777;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	cursor: pointer;
+	overflow:hidden;
+	border-bottom:1px solid rgba(0,0,0,.1);
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+	float:right;
+	opacity:0;
+}
+
 .click_description {
 	color: white;
 	width: 100%;
@@ -1241,6 +1262,27 @@ textarea {
 
 .click_description:hover {
 	background-color: rgb(125, 177, 220);
+}
+
+.click_description_text {
+	color: white;
+	width: 130px;
+	height: 19px;
+	text-align: right;
+	background-color: #777777;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	cursor: pointer;
+	overflow:hidden;
+	border-top:1px solid rgba(255,255,255,.1);
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+	float:right;
+	opacity:0;
 }
 
 .click_description_open {
