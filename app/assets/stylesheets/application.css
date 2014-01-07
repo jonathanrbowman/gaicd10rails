@@ -102,7 +102,7 @@ textarea {
 }
 
 #logo:hover {
-	background-color: #444444;
+	background-color: white;
 }
 
 #site_title {
@@ -1160,7 +1160,7 @@ textarea {
 }
 
 .note_save {
-	font-size:18px;
+	font-size: 18px;
 	color: rgb(101, 190, 110);
 	border: none;
 	position: absolute;
