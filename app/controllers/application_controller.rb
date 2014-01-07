@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   require 'rails_autolink'
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
-  before_filter :authenticate_user!
+ # before_filter :authenticate_user!
   
   def after_sign_in_path_for(resource_or_scope)
     if current_user.admin?
