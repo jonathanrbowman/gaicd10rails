@@ -160,6 +160,7 @@ class TasksController < ApplicationController
     
     @task.update_attributes(:note => @note_entered)
     
+    redirect_to request.referrer
     flash[:notice] = 'Note has successfully been updated!'
     
   end
