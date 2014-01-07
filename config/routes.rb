@@ -3,6 +3,7 @@ Gaicd10rails::Application.routes.draw do
   resources :tasks do
     member do
       post 'status_change'
+      post 'save_note'
     end
   end
   

@@ -153,6 +153,16 @@ class TasksController < ApplicationController
      end
     
   end
+  
+  def save_note
+    @note_entered = params[:note_change]
+    @task = Task.find(params[:id])
+    
+    @task.update_attributes(:note => @note_entered)
+    
+    flash[:notice] = 'Note has successfully been updated!'
+    
+  end
 
   private
 
@@ -163,6 +173,6 @@ class TasksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def task_params
-    params.require(:task).permit(:position, :title, :description, :status, :t_parent)
+    params.require(:task).permit(:position, :title, :description, :status, :t_parent, :note)
   end
 end

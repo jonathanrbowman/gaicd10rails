@@ -30,7 +30,7 @@
                                                 <td class="task_title" id="title_<%= @task_ids %>"><%= task.title %>
                                                 	</td>
                                                 	<td class="doublt_td">
-	                                                		<p class="click_note_text" id="click_note_text<%= @task_ids %>">Add/Modify Note</p>
+	                                                		<p class="click_note_text" id="click_note_text<%= @task_ids %>">View/Modify Note</p>
 	                                                		<p class="click_description_text" id="click_description_text<%= @task_ids %>">View Description</p>
                                                 	</td>
                                                 	<td class="doublt_td">
@@ -42,6 +42,11 @@
 																<p class="note_title"><%= task.title %></p>
 																<p class="note_close" id="note_close<%= @task_ids %>">X</p>
 															</div>
+															<%= form_tag save_note_task_path(task.id), method: 'post' do %>
+																<%= text_area_tag(:note_change, task.note, class: "note_textbox", placeholder: "Enter your note for this task here and don't forget to save with the green 'O' button when you're finished.") %>
+																<%= button_to "O", { :action => "save_note", :id => task.id }, method: :get, class: "note_save" %>
+															<% end %>
+															<!-- <textarea class="note_textbox" id="note_text_<%= @task_ids %> autofocus="true" placeholder="Enter your note for this task here and don't forget to save with the green 'O' button when you're finished."><%= task.note %></textarea>-->
 														</div>
 														<script>
 																	$("#click_note_<%= @task_ids %>").click(function () {
