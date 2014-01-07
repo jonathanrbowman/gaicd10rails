@@ -34,7 +34,7 @@
 	                                                		<p class="click_description_text" id="click_description_text<%= @task_ids %>">View Description</p>
                                                 	</td>
                                                 	<td class="double_td">
-                                                		<% if task.note != '' %>
+                                                		<% if task.note != nil %>
 	                                                		<p class="click_note note_present" id="click_note_<%= @task_ids %>"></p>
 	                                                		<% else %>
 	                                                		<p class="click_note" id="click_note_<%= @task_ids %>"></p>

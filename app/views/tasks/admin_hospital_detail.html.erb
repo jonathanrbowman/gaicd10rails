@@ -1,6 +1,4 @@
 <% if user_signed_in? && current_user.admin?%>
-<% @admin_hospital_list = Task.where('user_id = ?', params[:hospital_id]).pluck(:id) %>
-<% @hospital_id = params[:hospital_id] %>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
 		<div id="page_header">
@@ -35,7 +33,7 @@
 	                                                		<p class="click_description_text" id="click_description_text<%= task %>">View Description</p>
                                                 	</td>
 						<td class="double_td">
-	                                                		                                                		<% if Task.find(task).note != '' %>
+	                                                	<% if Task.find(task).note != nil %>
 	                                                		<p class="click_note note_present" id="click_note_<%= task %>"></p>
 	                                                		<% else %>
 	                                                		<p class="click_note" id="click_note_<%= task %>"></p>

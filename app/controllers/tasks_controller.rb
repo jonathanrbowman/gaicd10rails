@@ -16,6 +16,11 @@ class TasksController < ApplicationController
   def admin_task_overview
     @task_list_overview = current_user.tasks
   end
+  
+  def admin_hospital_detail
+    @admin_hospital_list = Task.where('user_id = ?', params[:hospital_id]).pluck(:id)
+    @hospital_id = params[:hospital_id]
+  end
 
   # GET /tasks/1
   def show
