@@ -29,7 +29,33 @@
 				<tbody>
 					<tr class="task_row">
 						<td class="step"><%= Task.find(task).position %></td>
-						<td class="task_title" id="title_<%= task %>"><%= Task.find(task).title %><p class="click_for_more"><i>more info >></i></p></td>
+						<td class="task_title" id="title_<%= task %>"><%= Task.find(task).title %><p class="click_for_more"><i></i></p></td>
+						<td class="double_td">
+	                                                		<p class="click_note_text" id="click_note_text<%= task %>">Read User's Note</p>
+	                                                		<p class="click_description_text" id="click_description_text<%= task %>">View Description</p>
+                                                	</td>
+						<td class="double_td">
+	                                                		<p class="click_note" id="click_note_<%= task %>"></p>
+	                                                		<p class="click_description" id="click_description_<%= task %>"></p>
+													        <div class="note_wrapper" id="note_<%= task %>">
+															<div class="note_header">
+																<p class="note_step"><%= Task.find(task).position %></p>
+																<p class="note_title"><%= Task.find(task).title %></p>
+																<p class="note_close" id="note_close<%= task %>">X</p>
+															</div>
+															<textarea readonly class="note_textbox" id="note_text_<%= task %> autofocus="true" placeholder="No note has been entered for this task."><%= Task.find(task).note %></textarea>
+														</div>
+														<script>
+																	$("#click_note_<%= task %>").click(function () {
+																	 $("#note_<%= task %>").css({"display" : "block"});
+																	 setTimeout(function(){$("#note_<%= task %>").css({"opacity" : "1"});}, 150);
+																		});
+																	$("#note_close<%= task %>").click(function () {
+																	 $("#note_<%= task %>").css({"opacity" : "0"});
+																	 setTimeout(function(){$("#note_<%= task %>").css({"display" : "none"});}, 150);
+																		});
+														</script>
+                                                	</td>
 					</tr>
 					
 					</tbody>
@@ -40,13 +66,32 @@
 					</div>
 					<script>
 					
+					$("#click_description_<%= task %>").click(function () {
+   					 $("#description_<%= task %>").toggleClass("open");
+   					 $("#click_description_<%= task %>").toggleClass("click_description_open");
+						});
 					$("#title_<%= task %>").click(function () {
    					 $("#description_<%= task %>").toggleClass("open");
+   					 $("#click_description_<%= task %>").toggleClass("click_description_open");
 						});
 
 					</script>
+	                    <script>
+						$("#click_note_<%= task %>").mouseenter(function () {
+						 $("#click_note_text<%= task %>").css({"background-color" : "rgb(251, 196, 148)", "opacity" : "1"});
+							});
+						$("#click_note_<%= task %>").mouseleave(function () {
+						 $("#click_note_text<%= task %>").css({"background-color" : "#7777777", "opacity" : "0"});
+							});
+							
+						$("#click_description_<%= task %>").mouseenter(function () {
+						 $("#click_description_text<%= task %>").css({"background-color" : "rgb(125, 177, 220)", "opacity" : "1"});
+							});
+						$("#click_description_<%= task %>").mouseleave(function () {
+						 $("#click_description_text<%= task %>").css({"background-color" : "#7777777", "opacity" : "0"});
+							});
+	</script>
 					<% end %>
-	<!--		<%= link_to 'Add New Task', new_task_path, class: 'add_task' %> -->
 	</div>
 </div>
 <br>
