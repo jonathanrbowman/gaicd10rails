@@ -35,7 +35,11 @@
 	                                                		<p class="click_description_text" id="click_description_text<%= task %>">View Description</p>
                                                 	</td>
 						<td class="double_td">
+	                                                		                                                		<% if Task.find(task).note != '' %>
+	                                                		<p class="click_note note_present" id="click_note_<%= task %>"></p>
+	                                                		<% else %>
 	                                                		<p class="click_note" id="click_note_<%= task %>"></p>
+                                                		<% end %>
 	                                                		<p class="click_description" id="click_description_<%= task %>"></p>
 													        <div class="note_wrapper" id="note_<%= task %>">
 															<div class="note_header">

@@ -34,7 +34,11 @@
 	                                                		<p class="click_description_text" id="click_description_text<%= @task_ids %>">View Description</p>
                                                 	</td>
                                                 	<td class="double_td">
+                                                		<% if task.note != '' %>
+	                                                		<p class="click_note note_present" id="click_note_<%= @task_ids %>"></p>
+	                                                		<% else %>
 	                                                		<p class="click_note" id="click_note_<%= @task_ids %>"></p>
+                                                		<% end %>
 	                                                		<p class="click_description" id="click_description_<%= @task_ids %>"></p>
 													        <div class="note_wrapper" id="note_<%= @task_ids %>">
 															<div class="note_header">
@@ -46,7 +50,6 @@
 																<%= text_area_tag(:note_change, task.note, class: "note_textbox", placeholder: "Enter your note for this task here and don't forget to save with the green 'O' button when you're finished.") %>
 																<%= button_to "O", { :action => "save_note", :id => task.id }, method: :get, class: "note_save" %>
 															<% end %>
-															<!-- <textarea class="note_textbox" id="note_text_<%= @task_ids %> autofocus="true" placeholder="Enter your note for this task here and don't forget to save with the green 'O' button when you're finished."><%= task.note %></textarea>-->
 														</div>
 														<script>
 																	$("#click_note_<%= @task_ids %>").click(function () {

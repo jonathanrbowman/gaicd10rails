@@ -1237,6 +1237,10 @@ textarea {
 	background-color: rgb(251, 196, 148);
 }
 
+.note_present {
+	background-color: rgb(251, 196, 148);
+}
+
 .click_note_text {
 	color: white;
 	width: 140px;

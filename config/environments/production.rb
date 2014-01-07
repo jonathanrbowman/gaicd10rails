@@ -78,7 +78,7 @@ Gaicd10rails::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   
-  config.action_mailer.default_url_options = { :host => 'http://icd10tracking.com/' }
+  config.action_mailer.default_url_options = { :host => 'http://icd10pm.com/' }
   
     config.action_mailer.smtp_settings = {
     :address   => "smtp.mandrillapp.com",
