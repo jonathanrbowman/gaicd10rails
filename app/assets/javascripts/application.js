@@ -22,37 +22,6 @@ $(document).ready(function() {
 setTimeout(function(){$(".notice, .alert").css({"opacity" : "1", "top" : "0"});}, 300);	
 setTimeout(function(){$(".notice, .alert").css({"opacity" : "0", "top" : "-60px"});}, 4000);
 
-$('#headerOverview').click(function() {
-     window.location.href='/tasks';
-});
-$('#headerIssuesOverview').click(function() {
-     window.location.href='/issues';
-});
-$('#adminheaderIssuesOverview').click(function() {
-     window.location.href='/admin_issue_index';
-});
-$('#headerAccountModify').click(function() {
-     window.location.href='/users/edit';
-});
-$('#headerHospitalIndex').click(function() {
-     window.location.href='/admin_view';
-});
-$('#headerMasterTask').click(function() {
-     window.location.href='/admin_task_overview';
-});
-$('#headerEnrollHospital').click(function() {
-     window.location.href='/users/sign_up';
-});
-$('#logo').click(function() {
-     window.location.href='/users/edit';
-});
-$('#headerSignOut').click(function() {
-     window.location.href='/users/sign_out';
-});
-$('#headerHelp').click(function() {
-     window.location.href='/pages/help';
-});
-
       if(window.location.href.indexOf("tasks") > -1) {
         $("#headerOverview").css({"background-color" : "rgba(105,157,200, 1)"});
         $("#headerMasterTask").css({"background-color" : "rgba(105,157,200, 1)"});
