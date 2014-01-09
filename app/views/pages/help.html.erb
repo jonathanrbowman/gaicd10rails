@@ -4,8 +4,8 @@
 	<div class="hospital_overview_header_in">
 		<div id="page_header">
 			<p id="page_header_title">Oh no! :(</p>
-			<h3 id="page_header_subtitle">If you're here, then we can only assume that you either found an oops on our end made one of your own. No worries, though, because either way we'll do everything we can to get things resolved and back on track as promptly as possible.</h3>
-			<p>Unfortunately, as this is still an alpha build (early in-progress version), we don't have any of the help resources available quite yet. However, we would urge you to start with an email to the person who granted you access to this application.</p>
+			<h3 id="page_header_subtitle">If you're here, then we can only assume that you either found an oops on our end or made one of your own. No worries, though, because either way we'll do everything we can to get things resolved and back on track as promptly as possible.</h3>
+			<p>Unfortunately, as this is still an alpha build (early in-progress version), we don't have any of the online help resources available quite yet. However, we would urge you to start with an email to the person who granted you access to this application.</p>
 		</div>
 	</div>
 </div>
@@ -16,15 +16,12 @@
 	<div class="hospital_overview_header_in">
 		<div id="page_header">
 			<p id="page_header_title">Oh no! :(</p>
-			<h3 id="page_header_subtitle">If you're here, then we can only assume that you either found an oops on our end made one of your own. No worries, though, because either way we'll do everything we can to get things resolved and back on track as promptly as possible.</h3>
-			<p>Unfortunately, as this is still an alpha build (early in-progress version), we don't have any of the help resources available quite yet. However, we would urge you to start with an email to the person who granted you access to this application.</p>
+			<h3 id="page_header_subtitle">If you're here, then we can only assume that you either found an oops on our end or made one of your own. No worries, though, because either way we'll do everything we can to get things resolved and back on track as promptly as possible.</h3>
+			<p>Unfortunately, as this is still an alpha build (early in-progress version), we don't have any of the online help resources available quite yet. However, we would urge you to start with an email to the person who granted you access to this application.</p>
+			<% @parent_user = User.where('organization = ?', current_user.u_parent) %>
+			<p>It appears that your admin is <%= User.find(@parent_user).p_fname %> <%= User.find(@parent_user).p_lname %>, who may be reached either by email at <%= User.find(@parent_user).email %>, or by phone at <%= User.find(@parent_user).p_phone %></p>
 		</div>
 	</div>
 </div>
-
-<% else %>
-
-<h1>Welcome, Admin!</h1>
-<p>This page doesn't have anything to do with the functionality of the app, but serves as an avenue through which you can learn more about its creators. Consider this, then, the "credit roll".</p>
 
 <% end %>

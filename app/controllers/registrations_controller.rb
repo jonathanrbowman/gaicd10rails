@@ -1,6 +1,7 @@
 class RegistrationsController < DeviseController
   prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
   prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
+  prepend_before_filter :test_if_user_signed_in_and_is_admin, :only => [:new, :create, :destroy]
   # GET /resource/sign_up
   def new
     build_resource({})
@@ -9,6 +10,7 @@ class RegistrationsController < DeviseController
 
   # POST /resource
   def create
+    
     build_resource(sign_up_params)
     resource.update_attributes(:u_parent => current_user.u_parent)
 
@@ -16,8 +18,10 @@ class RegistrationsController < DeviseController
     
 
       if resource.active_for_authentication?
-        set_flash_message :notice, :signed_up if is_navigational_format?
-        #sign_up(resource_name, resource)
+        @current_user_count = User.where('u_parent = ?', current_user.u_parent).where('admin = ?', false).count
+        flash[:notice] = "Hospital successfully added. You have created #{@current_user_count} out of your allotted 4."
+        # set_flash_message :notice, :signed_up if is_navigational_format?
+        # sign_up(resource_name, resource)
         respond_with resource, :location => new_user_registration_path #after_sign_up_path_for(resource)
       else
         set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_navigational_format?

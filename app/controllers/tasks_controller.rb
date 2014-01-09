@@ -1,6 +1,9 @@
 class TasksController < ApplicationController
   
+  before_action :test_if_user_signed_in_and_owns_task, only: [:show, :set_task]
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :test_if_user_signed_in_and_is_admin, only: [:new, :create]
+  
   # GET /tasks
   def index
     @tasks = current_user.tasks
@@ -24,6 +27,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/1
   def show
+    redirect_to root_url
   end
 
   # GET /tasks/new
@@ -149,6 +153,10 @@ class TasksController < ApplicationController
   end
 
   def status_change
+    
+    flash[:notice] = 'You may only change the status of tasks you own.'
+    return redirect_to root_url unless user_signed_in? && (current_user.id == Task.find(params[:id]).user_id || current_user.admin?)
+    
     @task = Task.find(params[:id])
 
      if @task.status == false
@@ -174,11 +182,12 @@ class TasksController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_task
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def task_params
     params.require(:task).permit(:position, :title, :description, :status, :t_parent, :note)
   end
+  
 end

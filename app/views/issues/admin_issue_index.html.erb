@@ -3,7 +3,7 @@
 	<div class="hospital_overview_header_in">
 		<div id="page_header">
 			<p id="page_header_title">Current Potential Issues</p>
-			<h3 id="page_header_subtitle">The red bars represent what percentage of your hospitals are experiencing said issue.</h3>
+			<h3 id="page_header_subtitle">Issues are potential risks that you've identified. Your hospitals will be able to see these risks and report to you if they encounter them. As you add issues and hospitals report them, red bars will represent what percentage of your hospitals are experiencing said issues.</h3>
 		</div>
     <% @parent_issues.each do |issue| %>
     <% @parent_issue_total = Issue.where('title = ?', issue).where('i_parent = ?', current_user.u_parent).count %>

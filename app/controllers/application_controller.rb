@@ -32,5 +32,17 @@ class ApplicationController < ActionController::Base
   end
 
   protect_from_forgery with: :exception
+  
+  def test_if_user_signed_in_and_is_admin
+    redirect_to root_url unless user_signed_in? && current_user.admin?
+  end
+  
+  def test_if_user_signed_in_and_owns_task
+    redirect_to root_url unless user_signed_in? && current_user.id == Task.find(params[:id]).user_id
+  end
+  
+  def test_if_user_signed_in_and_owns_task_or_is_admin
+    redirect_to root_url unless user_signed_in? && (current_user.id == Task.find(params[:id]).user_id || current_user.admin?)
+  end
 
 end

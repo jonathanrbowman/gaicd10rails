@@ -80,6 +80,14 @@ textarea {
 	padding-bottom: 10px
 }
 
+.text_link {
+	color: #65be6e;
+}
+
+.text_link:hover {
+	color: rgba(72,189,160, 1);
+}
+
 #logo {
 	background-color: rgba(255,255,255,.7);
 	font-size: 28px;

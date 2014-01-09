@@ -20,20 +20,17 @@
   
 <div>
 	<%= f.label "Step:", class: "field_label" %>
-	<br />
 	<% @next_task = (Task.where('t_parent = ?', current_user.u_parent).pluck(:position).uniq.count.to_i + 1) %>
 	<%= f.number_field :position, class: "field_input_position", :value =>  @next_task %>
 </div>
   <br />  
 <div>
 	<%= f.label "Task Title", class: "field_label" %>
-	<br />
 	<%= f.text_field :title, class: "field_input_general", :placeholder => 'Place the cart.', :autofocus => true %>
 </div>
   <br />
 <div>
 	<%= f.label "Task Description", class: "field_label" %>
-	<br />
 	<%= f.text_area :description, class: "field_input_general", :placeholder => 'Make sure this is always done after the horse and not before.' %>
 </div>
   <br />
