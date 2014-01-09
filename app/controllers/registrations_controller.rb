@@ -1,7 +1,7 @@
 class RegistrationsController < DeviseController
   prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
   prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
-  prepend_before_filter :test_if_user_signed_in_and_is_admin, :only => [:new, :create, :destroy]
+  prepend_before_filter :test_if_user_signed_in_and_is_admin, :only => [:new, :create, :destroy, :admin_destroy_user]
   # GET /resource/sign_up
   def new
     build_resource({})
@@ -64,11 +64,18 @@ class RegistrationsController < DeviseController
   end
 
   # DELETE /resource
+  #def destroy
+  #  resource.destroy
+  #  Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
+  #  set_flash_message :notice, :destroyed if is_navigational_format?
+  #  respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
+  #end
+  
   def destroy
-    resource.destroy
-    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
-    set_flash_message :notice, :destroyed if is_navigational_format?
-    respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
+    @user_to_destroy = User.find(params[:format])
+    User.destroy(@user_to_destroy)
+    flash[:notice] = 'User has been deleted.'    
+    redirect_to root_url
   end
 
   # GET /resource/cancel

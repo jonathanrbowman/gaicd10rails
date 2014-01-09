@@ -94,6 +94,7 @@
 							});
 	</script>
 					<% end %>
+					<%= link_to 'Delete Hospital Account', user_registration_path(User.find(params[:hospital_id])), class: "delete_hospital_btn", :confirm => 'Deleting this hospital will remove all notes and task data associated with it - are you ABSOLUTELY sure?', :method => :delete %>
 	</div>
 </div>
 <br>

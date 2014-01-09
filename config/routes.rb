@@ -18,7 +18,6 @@ Gaicd10rails::Application.routes.draw do
   root 'pages#home'
   get '/pages/about' => 'pages#about'
   get '/pages/help' => 'pages#help'
-
   get '/tasks/:id/status_change' => "tasks#status_change"
   get '/issues/:id/status_change' => "issues#status_change"
   get '/admin_view' => "tasks#admin_index"

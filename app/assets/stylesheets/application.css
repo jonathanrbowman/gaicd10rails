@@ -483,6 +483,35 @@ textarea {
 	right: 0;
 }
 
+.delete_hospital_btn {
+	display:block;
+	position:static;
+	width: 200px;
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 35px;
+	padding-right: 35px;
+	background-color: rgb(186, 103, 107);
+	border-bottom: 4px solid #82373e;
+	color: white;
+	margin: 0;
+	margin-top:20px;
+	margin-left:auto;
+	cursor: pointer;
+	border-top: 2px solid rgba(255,255,255,.2);
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.delete_hospital_btn:hover {
+	background-color: rgb(206, 123, 127);
+}
+
 .submit_btn {
 	font-family: 'Lato', sans-serif;
 	font-size: 18px;
@@ -491,7 +520,7 @@ textarea {
 	padding-bottom: 15px;
 	padding-left: 55px;
 	padding-right: 55px;
-	background-color: #65BE6E;
+	background-color: rgb(101, 190, 110);
 	border: none;
 	border-bottom: 4px solid #37843f;
 	color: white;
@@ -509,7 +538,7 @@ textarea {
 
 .submit_btn:hover {
 	border-bottom: 2px solid #37843f;
-	background-color: #5da860;
+	background-color: rgb(121, 210, 130);
 }
 
 .submit_btn:active {
@@ -524,7 +553,7 @@ textarea {
 	padding-bottom: 15px;
 	width: 100%;
 	text-align: center;
-	background-color: #65BE6E;
+	background-color: rgb(101, 190, 110);
 	border: none;
 	border-bottom: 4px solid #37843f;
 	color: white;
@@ -548,7 +577,7 @@ textarea {
 	padding-bottom: 15px;
 	width: 100%;
 	text-align: center;
-	background-color: #65BE6E;
+	background-color: rgb(101, 190, 110);
 	border: none;
 	border-bottom: 4px solid #37843f;
 	color: white;
@@ -563,11 +592,11 @@ textarea {
 }
 
 .add_task_btn:hover {
-	background-color: #5da860;
+	background-color: rgb(121, 210, 130);
 }
 
 .enroll_btn:hover {
-	background-color: #5da860;
+	background-color: rgb(121, 210, 130);
 }
 
 .cancel_btn {
@@ -578,7 +607,7 @@ textarea {
 	padding-bottom: 15px;
 	padding-left: 35px;
 	padding-right: 35px;
-	background-color: #ba676b;
+	background-color: rgb(186, 103, 107);
 	border: none;
 	border-bottom: 4px solid #82373e;
 	color: white;
@@ -596,7 +625,7 @@ textarea {
 
 .cancel_btn:hover {
 	border-bottom: 2px solid #82373e;
-	background-color: #994a53;
+	background-color: rgb(206, 123, 127);
 }
 
 .back_btn {
@@ -608,7 +637,7 @@ textarea {
 	padding-bottom: 15px;
 	width: 100%;
 	text-align: center;
-	background-color: #ba676b;
+	background-color: rgb(186, 103, 107);
 	border: none;
 	border-bottom: 4px solid #82373e;
 	position: relative;
@@ -623,7 +652,7 @@ textarea {
 }
 
 .back_btn:hover {
-	background-color: #994a53;
+	background-color: rgb(206, 123, 127);
 }
 
 #page_content {
