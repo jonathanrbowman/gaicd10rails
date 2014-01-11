@@ -6,7 +6,7 @@
 			<% if User.find(params[:hospital_id]).sign_in_count == 0 %>
 			<h3 style="text-align: left;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> has not signed in yet.</h3>
 			<% else %>
-			<h3 style="text-align: left;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> last signed in on <%= User.find(params[:hospital_id]).last_sign_in_at.to_s(:short) %></h3>
+			<h3 style="text-align: left;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> last signed in on <%= User.find(params[:hospital_id]).last_sign_in_at.strftime("%B %m at %I:%M %p") %></h3>
 			<% end %>
 		</div>
 		<% if Task.where('t_parent = ?', current_user.u_parent).count.to_i == 0 %>
