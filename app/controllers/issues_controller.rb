@@ -1,5 +1,9 @@
 class IssuesController < ApplicationController
+  
+  before_action :test_if_user_signed_in
+  before_action :test_if_user_signed_in_and_owns_issue, only: [:show, :set_issue]
   before_action :set_issue, only: [:show, :edit, :update, :destroy]
+  before_action :test_if_user_signed_in_and_is_admin, only: [:new, :create, :admin_issue_index]
 
   # GET /issues
   # GET /issues.json
@@ -77,17 +81,8 @@ end
   end
   
 def status_change
+  
     @issue = Issue.find(params[:id])
-#     
-      # respond_to do |format|
-    # format.json {
-       # if @issue.status == false
-        # @issue.update_attributes(:status => true)
-     # else
-        # @issue.update_attributes(:status => false)
-     # end
-    # }
-    # end
     
      if @issue.status == false
       @issue.update_attributes(:status => true)

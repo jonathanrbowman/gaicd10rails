@@ -1,7 +1,7 @@
 class RegistrationsController < DeviseController
   prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
   prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
-  prepend_before_filter :test_if_user_signed_in_and_is_admin, :only => [:new, :create, :destroy, :admin_destroy_user]
+  before_action :test_if_user_signed_in_and_is_admin, :only => [:new, :create, :destroy, :admin_destroy_user]
   # GET /resource/sign_up
   def new
     build_resource({})

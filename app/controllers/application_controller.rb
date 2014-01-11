@@ -16,6 +16,41 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource_or_scope)
     new_user_session_path
   end
+  
+  def test_if_user_signed_in
+    if user_signed_in?
+    else
+      redirect_to new_user_session_path, :notice => "Please make sure you are signed in to access this application."
+    end
+  end
+  
+  def test_if_user_signed_in_and_is_admin
+    if user_signed_in? && current_user.admin?
+    else
+      redirect_to new_user_session_path, :notice => "Please sign in and make sure you have administrative access to view this page."
+    end
+  end
+  
+  def test_if_user_signed_in_and_owns_task
+    if user_signed_in? && current_user.id == Task.find(params[:id]).user_id
+    else
+      redirect_to new_user_session_path, :notice => "Please make sure you are signed in and authorized to make changes."
+    end
+  end
+  
+  def test_if_user_signed_in_and_owns_issue
+    if user_signed_in? && current_user.id == Issue.find(params[:id]).user_id
+    else
+      redirect_to new_user_session_path, :notice => "Please make sure you are signed in and authorized to make changes."
+    end
+  end
+  
+  def test_if_user_signed_in_and_owns_task_or_is_admin
+    if user_signed_in? && (current_user.id == Task.find(params[:id]).user_id || current_user.admin?)
+    else
+      redirect_to new_user_session_path, :notice => "Please make sure you are signed in and authorized to make changes."
+    end
+  end
 
   protected
 
@@ -32,17 +67,5 @@ class ApplicationController < ActionController::Base
   end
 
   protect_from_forgery with: :exception
-  
-  def test_if_user_signed_in_and_is_admin
-    redirect_to root_url unless user_signed_in? && current_user.admin?
-  end
-  
-  def test_if_user_signed_in_and_owns_task
-    redirect_to root_url unless user_signed_in? && current_user.id == Task.find(params[:id]).user_id
-  end
-  
-  def test_if_user_signed_in_and_owns_task_or_is_admin
-    redirect_to root_url unless user_signed_in? && (current_user.id == Task.find(params[:id]).user_id || current_user.admin?)
-  end
 
 end

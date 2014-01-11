@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
   
+  before_action :test_if_user_signed_in
   before_action :test_if_user_signed_in_and_owns_task, only: [:show, :set_task]
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :test_if_user_signed_in_and_is_admin, only: [:new, :create]
-  
+  before_action :test_if_user_signed_in_and_is_admin, only: [:new, :create, :admin_index]
+
   # GET /tasks
   def index
     @tasks = current_user.tasks
