@@ -20,6 +20,9 @@ class RegistrationsController < DeviseController
       if resource.active_for_authentication?
         @current_user_count = User.where('u_parent = ?', current_user.u_parent).where('admin = ?', false).count
         flash[:notice] = "Hospital successfully added. You have created #{@current_user_count} out of your allotted 4."
+        @resource = resource
+        @current_user = current_user
+        UserNotifications.new_user_created(@resource, @current_user).deliver
         # set_flash_message :notice, :signed_up if is_navigational_format?
         # sign_up(resource_name, resource)
         respond_with resource, :location => new_user_registration_path #after_sign_up_path_for(resource)

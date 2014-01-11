@@ -49,7 +49,6 @@ a, h1, h2, h3, h4, input, button, form, td, th, label, textarea {
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
-	-webkit-appearance: none;
 	border-radius: 0;
 }
 
