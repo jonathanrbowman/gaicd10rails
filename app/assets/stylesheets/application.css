@@ -13,7 +13,7 @@
  */
 
 /* font-family: 'Lato', sans-serif;
- * Green - #65be6e
+ * Green - #65be6e, rgb(101, 190, 110)
  */
 
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
@@ -224,7 +224,7 @@ textarea {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	padding-left: 55px;
-	vertical-align:middle;
+	vertical-align: middle;
 }
 
 .app_icon_container {
@@ -483,8 +483,8 @@ textarea {
 }
 
 .delete_hospital_btn {
-	display:block;
-	position:static;
+	display: block;
+	position: static;
 	width: 200px;
 	font-family: 'Lato', sans-serif;
 	font-size: 18px;
@@ -493,14 +493,13 @@ textarea {
 	padding-bottom: 15px;
 	padding-left: 35px;
 	padding-right: 35px;
-	background-color: rgb(186, 103, 107);
-	border-bottom: 4px solid #82373e;
-	color: white;
+	background-color: white;
+	color: rgb(186, 103, 107);
 	margin: 0;
-	margin-top:20px;
-	margin-left:auto;
+	margin-top: 20px;
+	margin-left: auto;
 	cursor: pointer;
-	border-top: 2px solid rgba(255,255,255,.2);
+	border: 4px solid rgb(186, 103, 107);
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
@@ -508,10 +507,12 @@ textarea {
 }
 
 .delete_hospital_btn:hover {
-	background-color: rgb(206, 123, 127);
+	background-color: rgb(186, 103, 107);
+	color: white;
 }
 
 .submit_btn {
+	background-color: white;
 	font-family: 'Lato', sans-serif;
 	font-size: 18px;
 	font-weight: 600;
@@ -519,16 +520,13 @@ textarea {
 	padding-bottom: 15px;
 	padding-left: 55px;
 	padding-right: 55px;
-	background-color: rgb(101, 190, 110);
-	border: none;
-	border-bottom: 4px solid #37843f;
-	color: white;
+	color: rgb(101, 190, 110);
 	margin: 0;
 	position: absolute;
 	bottom: 20px;
 	left: 20px;
 	cursor: pointer;
-	border-top: 2px solid rgba(255,255,255,.2);
+	border: 4px solid rgb(101, 190, 110);
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
@@ -536,15 +534,12 @@ textarea {
 }
 
 .submit_btn:hover {
-	border-bottom: 2px solid #37843f;
-	background-color: rgb(121, 210, 130);
-}
-
-.submit_btn:active {
-	border-bottom: 0px solid #37843f;
+	color: white;
+	background-color: rgb(101, 190, 110);
 }
 
 .enroll_btn {
+	background-color: white;
 	font-family: 'Lato', sans-serif;
 	font-size: 18px;
 	font-weight: 600;
@@ -552,16 +547,13 @@ textarea {
 	padding-bottom: 15px;
 	width: 100%;
 	text-align: center;
-	background-color: rgb(101, 190, 110);
-	border: none;
-	border-bottom: 4px solid #37843f;
-	color: white;
+	color: rgb(101, 190, 110);
 	margin: 0;
 	position: relative;
 	bottom: -15px;
 	left: 0;
 	cursor: pointer;
-	border-top: 2px solid rgba(255,255,255,.2);
+	border: 4px solid rgb(101, 190, 110);
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
@@ -569,6 +561,7 @@ textarea {
 }
 
 .add_task_btn {
+	background-color: white;
 	font-family: 'Lato', sans-serif;
 	font-size: 18px;
 	font-weight: 600;
@@ -576,14 +569,11 @@ textarea {
 	padding-bottom: 15px;
 	width: 100%;
 	text-align: center;
-	background-color: rgb(101, 190, 110);
-	border: none;
-	border-bottom: 4px solid #37843f;
-	color: white;
+	color: rgb(101, 190, 110);
 	margin: 0;
 	position: relative;
 	cursor: pointer;
-	border-top: 2px solid rgba(255,255,255,.2);
+	border: 4px solid rgb(101, 190, 110);
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
@@ -591,11 +581,13 @@ textarea {
 }
 
 .add_task_btn:hover {
-	background-color: rgb(121, 210, 130);
+	background-color: rgb(101, 190, 110);
+	color: white;
 }
 
 .enroll_btn:hover {
-	background-color: rgb(121, 210, 130);
+	background-color: rgb(101, 190, 110);
+	color: white;
 }
 
 .cancel_btn {
@@ -606,16 +598,14 @@ textarea {
 	padding-bottom: 15px;
 	padding-left: 35px;
 	padding-right: 35px;
-	background-color: rgb(186, 103, 107);
 	border: none;
-	border-bottom: 4px solid #82373e;
-	color: white;
+	border: 4px solid rgb(186, 103, 107);
+	color: rgb(186, 103, 107);
 	margin: 0;
 	position: absolute;
 	bottom: 20px;
 	right: 20px;
 	cursor: pointer;
-	border-top: 2px solid rgba(255,255,255,.2);
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
@@ -623,8 +613,8 @@ textarea {
 }
 
 .cancel_btn:hover {
-	border-bottom: 2px solid #82373e;
-	background-color: rgb(206, 123, 127);
+	color: white;
+	background-color: rgb(186, 103, 107);
 }
 
 .back_btn {
@@ -634,16 +624,13 @@ textarea {
 	font-weight: 600;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	width: 100%;
 	text-align: center;
-	background-color: rgb(186, 103, 107);
-	border: none;
-	border-bottom: 4px solid #82373e;
+	background-color: white;
 	position: relative;
-	color: white;
+	color: rgb(186, 103, 107);
 	margin-top: 10px;
 	cursor: pointer;
-	border-top: 2px solid rgba(255,255,255,.2);
+	border: 4px solid rgb(186, 103, 107);
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
@@ -651,7 +638,8 @@ textarea {
 }
 
 .back_btn:hover {
-	background-color: rgb(206, 123, 127);
+	background-color: rgb(186, 103, 107);
+	color: white;
 }
 
 #page_content {
@@ -1085,20 +1073,21 @@ textarea {
 }
 
 .add_task {
-	background-color: #65be6e;
-	border-bottom: 3px solid #357f3c;
+	border: 4px solid #65be6e;
+	color: #65be6e;
 	font-family: 'Lato', sans-serif;
 	margin-top: 10px;
 	font-size: 30px;
 	display: block;
-	width: 100%;
+	padding: 0;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	text-align: center;
 }
 
 .add_task:hover {
-	background-color: #78d181;
+	background-color: #65be6e;
+	color: white;
 }
 
 .task_description {
@@ -1432,6 +1421,101 @@ textarea {
 .issue_change_status_red a {
 	color: #e85151;
 }
+
+/* HOME PAGE RULES START HERE */
+
+#home_header {
+	width: 100%;
+	background-color: white;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	margin-top: -32px;
+	border-top: 10px solid rgba(105,157,200, 1);
+	border-bottom: 2px solid #d8d8d8;
+}
+
+#logo_wrapper {
+	max-width: 1000px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#home_sub_header {
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	color: rgba(105,157,200, 1);
+	margin-top: 30px;
+}
+
+#home_logo {
+	display: block;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#home_content_upper {
+	width: 90%;
+	max-width: 1200px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+#home_signin_text {
+	text-align: center;
+	font-size: 50px;
+	margin: 0;
+	margin-top: 10px;
+}
+
+.home_signin_button {
+	display: block;
+	width: 50%;
+	min-width: 100px;
+	max-width: 390px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 50px;
+	color: rgb(101, 190, 110);
+	border: 5px solid rgb(101, 190, 110);
+	font-weight: 300;
+}
+
+.home_signin_button:hover {
+	background-color: rgb(101, 190, 110);
+	color: #f1f1f1;
+}
+
+#home_content_lower {
+	background-color: white;
+	padding-top: 20px;
+	width: 100%;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	border-bottom: 2px solid #d8d8d8;
+}
+
+#home_email_link {
+	color: rgba(105,157,200, 1);
+}
+
+#home_email_link:hover {
+	color: rgba(135,187,230, 1);
+}
+
+/* HOME PAGE RULES END HERE */
 
 /* MOBILE CSS RULES START HERE */
 
