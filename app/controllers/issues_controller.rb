@@ -100,7 +100,7 @@ def status_change
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_issue
-      @issue = Issue.find(params[:id])
+      @issue = current_user.issues.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

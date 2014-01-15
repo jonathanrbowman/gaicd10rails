@@ -13,13 +13,23 @@
 
   <tbody>
 
-      <tr>
-        			 <% if issue.status == false%>
-				<td class="issue_change_status" id="issue_change"><a href='/issues/<%= issue.id %>/status_change'><%= issue.title %></a></td> 
-						<% else %>
-					<td class="issue_change_status_red" id="issue_change"><a href='/issues/<%= issue.id %>/status_change'><%= issue.title %></a></td>
-						<% end %> 
-      </tr>
+ 		 <tr class="issue_row">
+			<% if issue.status == false%>
+				<td class="issue_change_status" id="issue_change">
+					<a href='/issues/<%= issue.id %>/status_change'><%= issue.title %></a>
+				</td>
+				<td class="issue_change_status_icon" id="issue_change_icon">
+					<a href='/issues/<%= issue.id %>/status_change' class="issue_change_status_icon_link"></a>
+				</td>
+			<% else %>
+				<td class="issue_change_status_red" id="issue_change">
+					<a href='/issues/<%= issue.id %>/status_change'><%= issue.title %></a>
+				</td>
+				<td class="issue_change_status_icon_red" id="issue_change_icon">
+					<a href='/issues/<%= issue.id %>/status_change' class="issue_change_status_icon_link"></a>
+				</td>
+			<% end %> 
+		</tr>
 
   </tbody>
 </table>

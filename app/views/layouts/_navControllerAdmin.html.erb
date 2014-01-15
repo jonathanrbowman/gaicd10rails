@@ -1,5 +1,5 @@
 <div id="logo">
-<a href="/users/edit" id="logged_in_as">Logged in as <%= current_user.p_fname %> <%= current_user.p_lname %></a>
+<%= link_to "Logged in as #{current_user.p_fname} #{current_user.p_lname} > Sign Out?", destroy_user_session_path, method: :delete, id: "logged_in_as" %>
 </div>
 <div class="headerControlsWrapper">
 	<div class="header_logo_wrapper">
