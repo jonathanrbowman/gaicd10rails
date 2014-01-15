@@ -37,9 +37,9 @@
 		<% end %>
 	<% end %>
 <% end %>
-<% if User.where('u_parent = ?', current_user.u_parent).where('admin = ?', false).count.to_i <= 3 %>
-<% @users_remaining = 4 - (User.where('u_parent = ?', current_user.u_parent).where('admin = ?', false).count.to_i) %>
-<%= link_to "Enroll a New Hospital (#{@users_remaining} out of 4 remaining)", new_user_registration_path, class: "add_task" %>
+<% if User.where('u_parent = ?', current_user.u_parent).where('admin = ?', false).count.to_i <= 2 %>
+<% @users_remaining = 3 - (User.where('u_parent = ?', current_user.u_parent).where('admin = ?', false).count.to_i) %>
+<%= link_to "Enroll a New Hospital (#{@users_remaining} out of 3 remaining)", new_user_registration_path, class: "add_task" %>
 <% else %>
 <br />
 <a href="mailto:kprather@smalljumps.com" class="add_task">You appear to have reached the hospital limit for your account.<br />Click here to contact us to discuss upgrade options.</a>

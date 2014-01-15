@@ -15,11 +15,10 @@ class RegistrationsController < DeviseController
     resource.update_attributes(:u_parent => current_user.u_parent)
 
     if resource.save
-    
 
       if resource.active_for_authentication?
         @current_user_count = User.where('u_parent = ?', current_user.u_parent).where('admin = ?', false).count
-        flash[:notice] = "Hospital successfully added. You have created #{@current_user_count} out of your allotted 4."
+        flash[:notice] = "Hospital successfully added. You have created #{@current_user_count} out of your allotted 3."
         @resource = resource
         @current_user = current_user
         UserNotifications.new_user_created(@resource, @current_user).deliver
