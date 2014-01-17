@@ -1,5 +1,7 @@
 Gaicd10rails::Application.routes.draw do
   
+  get '/pages/help' => 'pages#help'
+  
   resources :pages do
     member do
       post 'submit_contact_request'
@@ -24,7 +26,6 @@ Gaicd10rails::Application.routes.draw do
   root 'pages#home'
   match '/submit_contact_request' => 'pages#submit_contact_request', :via => :post
   get '/pages/about' => 'pages#about'
-  get '/pages/help' => 'pages#help'
   get '/tasks/:id/status_change' => "tasks#status_change"
   get '/issues/:id/status_change' => "issues#status_change"
   get '/admin_view' => "tasks#admin_index"

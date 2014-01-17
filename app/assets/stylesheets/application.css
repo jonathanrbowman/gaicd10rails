@@ -1083,7 +1083,7 @@ textarea {
 }
 
 .add_task {
-	border: 4px solid #65be6e;
+	border: 2px solid #65be6e;
 	color: #65be6e;
 	font-family: 'Lato', sans-serif;
 	margin-top: 10px;
@@ -1397,7 +1397,6 @@ textarea {
 	width: 100%;
 	margin-top: 15px;
 	border-collapse: collapse;
-	height: 80px;
 	cursor: pointer;
 }
 
