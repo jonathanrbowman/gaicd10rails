@@ -10,15 +10,14 @@
 
 <div id="home_header">
 	<div id="logo_wrapper">
-		<img id="home_logo" src="https://s3.amazonaws.com/gaicd10rails/icd10logogrey.png" />
+		<img id="home_logo" src="https://s3.amazonaws.com/gaicd10rails/icd10logowhite.png" />
 		<h2 id="home_sub_header">Easy-to-use, online software to track, manage and succeed with ICD-10.</h2>
 	</div>
 </div>
 
 <div id="home_content_upper">
 	<h1 id="home_signin_text">Already a user?</h1>
-	<%= link_to 'Log In >', "http://www.icd10pm.com/users/sign_in", class: "home_signin_button" %>
-	<h2 id="home_signin_text">Otherwise, we invite you to keep reading.</h2>
+	<%= link_to 'Log In >', "http://www.icd10pm.com/users/sign_in", :data => { :no_turbolink => true }, class: "home_signin_button" %>
 </div>
 <div id="home_content_lower_wrapper">
 	<div id="home_content_lower">
