@@ -59,6 +59,74 @@ setTimeout(function(){$(".notice, .alert").css({"opacity" : "0", "top" : "-60px"
     }
 
 $('textarea').autosize();
+  
+$('#home_table_1').hover(
+    function () {
+        $("#home_row_1").css({"border" : "4px solid rgb(105, 157, 200)"});
+        $("#home_page_table_icon_1").css({"background-color" : "rgb(105, 157, 200)"});
+        $("#home_page_table_icon_link_1").css({"background-color" : "rgb(105, 157, 200)"});
+    }, 
+    function () {
+        $("#home_row_1").css({"border" : "4px solid #444444"});
+        $("#home_page_table_icon_1").css({"background-color" : "#444444"});
+        $("#home_page_table_icon_link_1").css({"background-color" : "#444444"});
+    }
+);
+
+$("#home_table_1").click(function () {
+	  $("#home_row_1").toggleClass("home_row_active");
+	  $("#home_page_table_icon_1").toggleClass("home_page_table_icon_active");
+	  $("#home_page_table_icon_link_1").toggleClass("home_page_table_icon_link_active");
+  });
+  
+  $('#home_table_2').hover(
+    function () {
+        $("#home_row_2").css({"border" : "4px solid rgb(105, 157, 200)"});
+        $("#home_page_table_icon_2").css({"background-color" : "rgb(105, 157, 200)"});
+        $("#home_page_table_icon_link_2").css({"background-color" : "rgb(105, 157, 200)"});
+    }, 
+    function () {
+        $("#home_row_2").css({"border" : "4px solid #444444"});
+        $("#home_page_table_icon_2").css({"background-color" : "#444444"});
+        $("#home_page_table_icon_link_2").css({"background-color" : "#444444"});
+    }
+);
+
+$("#home_table_2").click(function () {
+	  $("#home_row_2").toggleClass("home_row_active");
+	  $("#home_page_table_icon_2").toggleClass("home_page_table_icon_active");
+	  $("#home_page_table_icon_link_2").toggleClass("home_page_table_icon_link_active");
+  });
+
+  $('#home_table_3').hover(
+    function () {
+        $("#home_row_3").css({"border" : "4px solid rgb(105, 157, 200)"});
+        $("#home_page_table_icon_3").css({"background-color" : "rgb(105, 157, 200)"});
+        $("#home_page_table_icon_link_3").css({"background-color" : "rgb(105, 157, 200)"});
+    }, 
+    function () {
+        $("#home_row_3").css({"border" : "4px solid #444444"});
+        $("#home_page_table_icon_3").css({"background-color" : "#444444"});
+        $("#home_page_table_icon_link_3").css({"background-color" : "#444444"});
+    }
+);
+
+$("#home_table_3").click(function () {
+	  $("#home_row_3").toggleClass("home_row_active");
+	  $("#home_page_table_icon_3").toggleClass("home_page_table_icon_active");
+	  $("#home_page_table_icon_link_3").toggleClass("home_page_table_icon_link_active");
+  });
+
+$(".home_contact_us_button").click(function () {
+  $("#home_contact_form_wrapper").toggleClass("home_contact_form_wrapper_expanded");
+  });
+  
+$("#home_email_submit").click(function () {
+  $("#home_contact_form_confirmation").css({"display" : "block"});
+  setTimeout(function(){$("#home_contact_form_confirmation").css({"opacity" : "1"});}, 100);
+  setTimeout(function(){$("#home_contact_form_confirmation").css({"opacity" : "0"});}, 2000);
+  setTimeout(function(){$("#home_contact_form_confirmation").css({"display" : "none"});}, 2100);
+  });
 
 $("#change_password_button").click(function () {
   $(".change_password").toggleClass("passchange");

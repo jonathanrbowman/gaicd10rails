@@ -1,5 +1,11 @@
 Gaicd10rails::Application.routes.draw do
-
+  
+  resources :pages do
+    member do
+      post 'submit_contact_request'
+    end
+  end
+  
   resources :tasks do
     member do
       post 'status_change'
@@ -16,6 +22,7 @@ Gaicd10rails::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations", :devise => "devise"}, :helpers => {:devise => "devise"}
   
   root 'pages#home'
+  match '/submit_contact_request' => 'pages#submit_contact_request', :via => :post
   get '/pages/about' => 'pages#about'
   get '/pages/help' => 'pages#help'
   get '/tasks/:id/status_change' => "tasks#status_change"

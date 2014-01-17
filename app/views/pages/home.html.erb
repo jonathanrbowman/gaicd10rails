@@ -18,10 +18,67 @@
 <div id="home_content_upper">
 	<h1 id="home_signin_text">Already a user?</h1>
 	<%= link_to 'Log In >', "http://www.icd10pm.com/users/sign_in", class: "home_signin_button" %>
-	<h2 id="home_signin_text">Otherwise, <a href="mailto:kprather@smalljumps.com?subject=Requesting Information About ICD-10" id="home_email_link">send us an email</a> for more information.</h2>
+	<h2 id="home_signin_text">Otherwise, we invite you to keep reading.</h2>
 </div>
-
-<div id="home_content_lower">
+<div id="home_content_lower_wrapper">
+	<div id="home_content_lower">
+		<h1 class="home_title_text" style="color: rgb(105, 157, 200);">Consider the following statements and click any that apply to you:</h1>
+		<table class="home_table" id="home_table_1">
+			<tbody>
+				<tr class="home_row" id="home_row_1">
+					<td>
+						<h3 class="home_page_table_text">You are assisting a large number of hospitals or providers through the ICD-10 transition.</h3>
+					</td>
+					<td class="home_page_table_icon" id="home_page_table_icon_1">
+						<div class="home_page_table_icon_link" id="home_page_table_icon_link_1"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="home_table" id="home_table_2">
+			<tbody>
+				<tr class="home_row" id="home_row_2">
+					<td>
+						<h3 class="home_page_table_text">You currently offer ICD-10 education and would like to offer project tracking as well.</h3>
+					</td>
+					<td class="home_page_table_icon" id="home_page_table_icon_2">
+						<div class="home_page_table_icon_link" id="home_page_table_icon_link_2"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="home_table" id="home_table_3">
+			<tbody>
+				<tr class="home_row" id="home_row_3">
+					<td>
+						<h3 class="home_page_table_text">You send out surveys to determine hospitals' or providers' status in the ICD-10 transition.</h3>
+					</td>
+					<td class="home_page_table_icon" id="home_page_table_icon_3">
+						<div class="home_page_table_icon_link" id="home_page_table_icon_link_3"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br />
+		<h1 class="home_title_text">If you checked any of these, we would love to chat.</h1>
+		<p class="home_contact_us_button">Contact Us to Start, Absolutely Free ></p>
+		<div id="home_contact_form_wrapper">
+			<h1 class="home_title_text">Enter your email below and one of us will be in touch shortly</h1>
+			<%= form_tag({controller: "pages", action: "submit_contact_request"}, method: "post", :id => "home_contact_form", :remote => true) do %>
+				<%= email_field_tag(:contact_email, nil, :placeholder => "jsmith@yourcompany.com", :id => "home_email_field") %>
+				<%= submit_tag("Submit", :id => "home_email_submit") %>
+			<% end %>
+			<div id="home_contact_form_confirmation">
+				<h1>Thanks much and we'll be in touch!</h1>
+			</div>
+		</div>
+	</div>
+	<br />
+</div>
+<div id="home_footer_content_wrapper">
+	<div id="home_footer_content">
+		<h2 class="home_footer_text">We've taken our collective experiences and worked hard to develop a platform to simplify the ICD-10 transition process. We're proud to give away as much as we can, for free, and you can get started right now.</h2>
+	</div>
 </div>
 
 

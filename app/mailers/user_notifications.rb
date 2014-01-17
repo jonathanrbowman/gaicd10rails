@@ -10,4 +10,13 @@ class UserNotifications < ActionMailer::Base
          :from    => @current_user.email
   end
   
+  def new_signup(contact_result)
+    
+    @contact_result = contact_result
+    
+    mail :subject => "Contact Requesting Information",
+         :to      => ("kprather@smalljumps.com, jonathan@bestpracticestore.com, twallace@smalljumps.com"),
+         :from    => "support@smalljumps.com"
+  end
+  
 end
