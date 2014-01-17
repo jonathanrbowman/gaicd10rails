@@ -509,7 +509,7 @@ textarea {
 	margin-top: 20px;
 	margin-left: auto;
 	cursor: pointer;
-	border: 3px solid rgb(186, 103, 107);
+	border: 2px solid rgb(186, 103, 107);
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
@@ -1577,7 +1577,6 @@ textarea {
 	margin-right: auto;
 	position: relative;
 	background-color: white;
-	border-bottom: 2px solid #d8d8d8;
 }
 
 #home_content_lower {
@@ -1772,6 +1771,16 @@ textarea {
 	-moz-transition: .15s ease-in-out;
 	-o-transition: .15s ease-in-out;
 	transition: .15s ease-in-out;
+}
+
+#blue_corner_bottom_right {
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/bluecornerbottomright.png');
+	background-size: contain;
+	position: absolute;
+	bottom: -5px;
+	right: 0px;
+	width: 70px;
+	height: 70px;
 }
 
 #home_footer_content_wrapper {
