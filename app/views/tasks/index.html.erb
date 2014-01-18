@@ -34,7 +34,7 @@
 	                                                		<p class="click_description_text" id="click_description_text<%= @task_ids %>">View Description</p>
                                                 	</td>
                                                 	<td class="double_td">
-                                                		<% if task.note == nil %>
+                                                		<% if task.note == nil || task.note == "" %>
 	                                                		<p class="click_note" id="click_note_<%= @task_ids %>"></p>
 	                                                		<% else %>
 	                                                		<p class="click_note note_present" id="click_note_<%= @task_ids %>"></p>
@@ -44,11 +44,10 @@
 															<div class="note_header">
 																<p class="note_step"><%= task.position %></p>
 																<p class="note_title"><%= task.title %></p>
-																<p class="note_close" id="note_close<%= @task_ids %>">X</p>
 															</div>
 															<%= form_tag save_note_task_path(task.id), method: 'post' do %>
-																<%= text_area_tag(:note_change, task.note, class: "note_textbox", placeholder: "Enter your note for this task here and don't forget to save with the green 'O' button when you're finished.") %>
-																<%= button_to "O", { :action => "save_note", :id => task.id }, method: :get, class: "note_save" %>
+																<%= text_area_tag(:note_change, task.note, class: "note_textbox", placeholder: "Enter your note for this task here and click 'Save and Close' when finished. Notes are viewable by your administrator.") %>
+																<%= button_to "Save and Close", { :action => "save_note", :id => task.id }, method: :get, class: "note_save", id: "note_close#{@task_ids}" %>
 															<% end %>
 														</div>
 														<script>

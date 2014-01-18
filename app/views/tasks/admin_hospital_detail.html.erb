@@ -34,7 +34,7 @@
 	                                                		<p class="click_description_text" id="click_description_text<%= task %>">View Description</p>
                                                 	</td>
 						<td class="double_td">
-	                                                	<% if Task.find(task).note == nil %>
+	                                                	<% if Task.find(task).note == nil || Task.find(task).note == "" %>
 	                                                		<p class="click_note" id="click_note_<%= task %>"></p>
 	                                                		<% else %>
 	                                                		<p class="click_note note_present" id="click_note_<%= task %>"></p>
@@ -44,7 +44,7 @@
 															<div class="note_header">
 																<p class="note_step"><%= Task.find(task).position %></p>
 																<p class="note_title"><%= Task.find(task).title %></p>
-																<p class="note_close" id="note_close<%= task %>">X</p>
+																<p class="note_close" id="note_close<%= task %>">X Close</p>
 															</div>
 															<textarea readonly class="note_textbox" id="note_text_<%= task %> autofocus="true" placeholder="No note has been entered for this task."><%= Task.find(task).note %></textarea>
 														</div>
