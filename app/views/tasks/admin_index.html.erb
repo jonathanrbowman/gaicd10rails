@@ -2,8 +2,8 @@
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
 		<div id="page_header">
-			<p id="page_header_title">Hospital Index</p>
-			<h3 id="page_header_subtitle">Here you can view every hospital you've enrolled along with their current progress.</h3>
+			<p id="page_header_title">User Overview</p>
+			<h3 id="page_header_subtitle">Here you can view every user you've enrolled along with their current progress.</h3>
 		</div>
 		<% if @users_of_same_parent.where('admin = ?', false).count.to_i == 0 %>
 		<h1 style="text-align:center;">There aren't any hospitals yet!</h1>
@@ -42,7 +42,7 @@
 <%= link_to "Enroll a New Hospital (#{@users_remaining} out of 3 remaining)", new_user_registration_path, class: "add_task" %>
 <% else %>
 <br />
-<a href="mailto:kprather@smalljumps.com" class="add_task">You appear to have reached the hospital limit for your account.<br />Click here to contact us to discuss upgrade options.</a>
+<a href="mailto:kprather@smalljumps.com" class="add_task">You appear to have reached the user limit for your account.<br />Click here to contact us to discuss upgrade options.</a>
 <% end %>
 	</div>
 </div>

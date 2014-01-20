@@ -494,6 +494,7 @@ textarea {
 
 .delete_hospital_btn {
 	display: block;
+	text-align: center;
 	position: static;
 	width: 200px;
 	font-family: 'Lato', sans-serif;

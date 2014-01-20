@@ -2,11 +2,11 @@
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
 				<div id="page_header">
-			<p id="page_header_title">Enroll New Hospital</p>
+			<p id="page_header_title">Enroll New User</p>
 <% if User.where('u_parent = ?', current_user.u_parent).where('admin = ?', false).count.to_i >= 3 %>
-<h2>It appears that you have reached your limit of 3 hospitals. Either remove a hospital or contact <a href="mailto:kprather@smalljumps.com" class="text_link">kprather@smalljumps.com</a> to discuss upgrading.</h2>
+<h2>It appears that you have reached your limit of 3 users. Either remove a user or contact <a href="mailto:kprather@smalljumps.com" class="text_link">kprather@smalljumps.com</a> to discuss upgrading.</h2>
 <% else %>
-		<h3 id="page_header_subtitle">Adding a new hospital will allow them to log in and begin working through the task list you've created.</h3>
+		<h3 id="page_header_subtitle">Adding a new user will allow them to log in and begin working through the task list you've created.</h3>
 		</div>
 	<h1 style="text-align: left;">Primary Contact Information</h1>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
