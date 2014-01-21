@@ -23,6 +23,19 @@ class User < ActiveRecord::Base
 
   after_create :generate_tasks
   after_create :generate_issues
+  
+  before_destroy :destroy_users_tasks
+  after_destroy :destroy_users_tasks
+  
+  def destroy_users_tasks
+    @user_id = self.id
+    @tasks_to_destroy = Task.where('user_id = ?', @user_id).pluck(:id)
+    
+    @tasks_to_destroy.each do |x|
+      Task.destroy(x)
+    end
+    
+  end
 
   def generate_tasks
     

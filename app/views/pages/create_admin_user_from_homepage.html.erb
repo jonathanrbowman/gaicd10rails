@@ -18,7 +18,7 @@
 <div id="blue_corner"></div>
 <div id="home_content_upper">
 	<h1 id="home_signin_text">Already a user?</h1>
-	<%= link_to 'Log In >', new_user_session_path, :data => { :no_turbolink => true }, class: "home_signin_button" %>
+	<%= link_to 'Log In >', "http://www.icd10pm.com/users/sign_in", :data => { :no_turbolink => true }, class: "home_signin_button" %>
 </div>
 <div id="home_content_lower_wrapper">
 	<div id="home_content_lower">
@@ -69,7 +69,7 @@
 				<%= text_field_tag(:homepage_lname, nil, :placeholder => "Last Name", :id => "home_email_field") %>
 				<%= text_field_tag(:homepage_organization, nil, :placeholder => "Your Organization", :id => "home_email_field") %>
 				<%= email_field_tag(:homepage_email, nil, :placeholder => "Email Address", :id => "home_email_field") %>
-				<%= password_field_tag(:homepage_password, nil, :placeholder => "Password (8 characters, contains a letter and a number)", :id => "home_email_field") %>
+				<%= password_field_tag(:homepage_password, nil, :placeholder => "Password", :id => "home_email_field") %>
 				<%= password_field_tag(:homepage_password_confirm, nil, :placeholder => "Confirm Password", :id => "home_email_field") %>
 				<%= text_field_tag(:homepage_phone, nil, :placeholder => "Phone Number", :id => "home_email_field") %>
 				<%= submit_tag("Sign Up", :id => "home_email_submit") %>

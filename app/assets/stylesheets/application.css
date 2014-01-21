@@ -1712,7 +1712,7 @@ textarea {
 }
 
 .home_contact_form_wrapper_expanded {
-	max-height: 390px !important;
+	max-height: 600px !important;
 }
 
 #home_contact_form {
@@ -1733,7 +1733,12 @@ textarea {
 	outline: 0;
 	padding: 10px;
 	border: none;
+	border-bottom: 2px solid #e8e8e8;
 	background-color: #f1f1f1;
+}
+
+#home_email_field:focus {
+	background-color: white;
 }
 
 #home_email_submit {

@@ -9,6 +9,7 @@ class RegistrationsController < DeviseController
   end
 
   # POST /resource
+  
   def create
     
     build_resource(sign_up_params)
@@ -75,6 +76,7 @@ class RegistrationsController < DeviseController
   
   def destroy
     @user_to_destroy = User.find(params[:format])
+    
     User.destroy(@user_to_destroy)
     flash[:notice] = 'User has been deleted.'    
     redirect_to root_url

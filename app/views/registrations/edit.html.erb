@@ -52,26 +52,6 @@
 	<%= f.password_field :current_password, class: "field_input_general", :placeholder => 'Required to make any changes to your account', :style => 'border:2px solid white; border-top:2px solid #e85151; border-bottom:2px solid #e85151;' %>
 </div>
 <br />
-<h1 style="text-align: left;">Secondary Contact Information</h1>
-<div>
-	<%= f.label "First Name", class: "field_label" %>
-	<%= f.text_field :s_fname, class: "field_input_general", :placeholder => 'Jane' %>
-</div>
-	<br />
-<div>
-	<%= f.label "Last Name", class: "field_label" %>
-	<%= f.text_field :s_lname, class: "field_input_general", :placeholder => 'Doe' %>
-</div>
-	<br />
-<div>
-	<%= f.label "Email", class: "field_label" %>
-	<%= f.email_field :s_email, class: "field_input_general", :placeholder => 'jane@mycompany.com' %>
-</div>
-	<br />
-	<div>
-	<%= f.label "Phone Number", class: "field_label" %>
-	<%= f.text_field :s_phone, class: "field_input_general", class: "field_input_fname", :placeholder => 'xxx-xxx-xxxx' %>
-</div>
 <div>
 	<%= f.submit "Update User Information", class: "enroll_btn" %>
 </div>

@@ -4,7 +4,7 @@ Gaicd10rails::Application.routes.draw do
   
   resources :pages do
     member do
-      post 'submit_contact_request'
+      post 'create_admin_user_from_homepage'
     end
   end
   
@@ -24,7 +24,7 @@ Gaicd10rails::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations", :devise => "devise"}, :helpers => {:devise => "devise"}
   
   root 'pages#home'
-  match '/submit_contact_request' => 'pages#submit_contact_request', :via => :post
+  match '/create_admin_user_from_homepage' => 'pages#create_admin_user_from_homepage', :via => :post
   get '/pages/about' => 'pages#about'
   get '/tasks/:id/status_change' => "tasks#status_change"
   get '/issues/:id/status_change' => "issues#status_change"
