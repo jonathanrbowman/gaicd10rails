@@ -34,14 +34,14 @@ class ApplicationController < ActionController::Base
   def test_if_user_signed_in_and_owns_task
     if user_signed_in? && current_user.id == Task.find(params[:id]).user_id
     else
-      redirect_to new_user_session_path, :notice => "Please make sure you are signed in and authorized to make changes."
+      redirect_to "/"
     end
   end
   
   def test_if_user_signed_in_and_owns_issue
     if user_signed_in? && current_user.id == Issue.find(params[:id]).user_id
     else
-      redirect_to new_user_session_path, :notice => "Please make sure you are signed in and authorized to make changes."
+      redirect_to "/"
     end
   end
   

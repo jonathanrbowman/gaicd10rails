@@ -2,6 +2,12 @@ class PagesController < ApplicationController
   def home
   end
   
+  def sign_in_count_bump
+    @sign_in_bump = current_user.sign_in_count.to_i
+    @sign_in_bump_result = @sign_in_bump + 1
+    User.find(current_user.id).update_attributes(:sign_in_count => @sign_in_bump_result)
+  end
+  
   def create_admin_user_from_homepage
     @homepage_fname = params[:homepage_fname]
     @homepage_lname = params[:homepage_lname]

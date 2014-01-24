@@ -5,6 +5,7 @@ Gaicd10rails::Application.routes.draw do
   resources :pages do
     member do
       post 'create_admin_user_from_homepage'
+      post 'sign_in_count_bump'
     end
   end
   
@@ -25,6 +26,7 @@ Gaicd10rails::Application.routes.draw do
   
   root 'pages#home'
   match '/create_admin_user_from_homepage' => 'pages#create_admin_user_from_homepage', :via => :post
+  match '/sign_in_count_bump' => 'pages#sign_in_count_bump', :via => :post
   get '/pages/about' => 'pages#about'
   get '/tasks/:id/status_change' => "tasks#status_change"
   get '/issues/:id/status_change' => "issues#status_change"

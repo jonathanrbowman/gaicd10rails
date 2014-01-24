@@ -11,6 +11,7 @@
 	<body>
 
 		<% if user_signed_in? %>
+			<%= render "pages/helpIntro" %>
 			<% if current_user.admin? %>
 				<%= render "layouts/navControllerAdmin" %>
 			<% else %>

@@ -1,0 +1,96 @@
+<% if current_user.sign_in_count <= 1 %>
+<div id="help_box_wrapper">
+	<%= link_to 'X Close Tutorial', sign_in_count_bump_path, method: "post", :id => 'help_box_close_btn', :remote => true %>
+	<div id="help_box_inner_welcome" class="help_box_inner help_box_inner_active">
+		<div id="help_box_title_wrapper"><div id="help_box_title_image_welcome" class="help_box_title_image"></div><h1 class="help_box_title">Welcome to our app, <%= current_user.p_fname %>!</h1></div>
+		<p class="help_box_body">Though we couldn't be more thrilled that you're using our ICD-10 management program, we understand that using a new system can sometimes be daunting. So, we've put together this little introduction to help you hit the ground running.
+			<br /><br />
+			You can use the arrows at the bottom to go back or forward through these tutorial screens or, whenever you feel ready to dive in, simply click the <span style="color: #e85151">'Close Tutorial'</span> button at the top right to leave this tutorial and get started. Finally, should you ever wish to view this again, you will be able to do so from the 'Help Me' button that you'll find on the left side of the screen once this tutorial is over.
+			<br /><br />
+			When you're ready to advance to the next part of the tutorial, click the right arrow at the bottom of this window to move to page 2. You can also click any of the circles along the bottom to go directly to the corresponding section.
+		</p>
+	</div>
+	<div id="help_box_inner_overview" class="help_box_inner">
+		<div id="help_box_title_wrapper"><div id="help_box_title_image_overview" class="help_box_title_image"></div><h1 class="help_box_title">User Overview</h1></div>
+		<p class="help_box_body help_box_body_overview">You are an admin. As an admin, you are able to create, modify and delete tasks from a master task list that you maintain. You are also able to flag any potential issues you foresee for  your current project. These tasks and flagged issues are what your users will be able to see and work through.
+			<br /><br />
+			When you first log in, you'll see the 'User Overview' page. This page lists every user you've created, along with their current progress (you may add users by using the 'Enroll New Users' button, covered later). Clicking on any of their names (typically listed as their organization) will give you a more in-depth breakdown of which tasks they've completed, as well as who is responsible and the last time they logged in.
+			<br /><br />
+			As your users check off tasks, you'll see the progress bars to the right of their names begin to fill. This gives you a quick, simple overview of how everyone in your project is getting along.
+		</p>
+	</div>
+	<div id="help_box_inner_tasks" class="help_box_inner">
+		<div id="help_box_title_wrapper"><div id="help_box_title_image_tasks" class="help_box_title_image"></div><h1 class="help_box_title">Master Task List</h1></div>
+		<p class="help_box_body">The task list is where you'll add, edit or remove tasks. In this application, tasks are comprised of a position (step), a title and a description. When one of your users logs in, they'll see the task list you created. In addition to checking off tasks as 'completed', users will also be able to leave notes attached to specific tasks. Though you, as an admin, are unable to edit their notes, these can offer valuable information and insight if you train your users to properly use them.
+			<br /><br />
+			Some of our projects, such as this one for ICD-10, begin with a base set of tasks. This one, in particular, has 30 tasks that were written by a member of our staff who is an experienced ICD-10 and healthcare project management veteran. They're meant to be used as a jumping off point, and you're welcome to keep as many or as little as you choose.
+		</p>
+	</div>
+	<div id="help_box_inner_enroll" class="help_box_inner">
+		<div id="help_box_title_wrapper"><div id="help_box_title_image_enroll" class="help_box_title_image"></div><h1 class="help_box_title">Enrolling New Users</h1></div>
+		<p class="help_box_body">Depending on your subscription tier, from free to enterprise, you have a certain number of alotted users that you may have active, concurrently. Use either the button at the bottom of the 'User Overview' page or the 'Enroll New User' button in the navigation bar on the side to create new users.
+			<br /><br />
+			Once you fill out all of their information, they'll get a welcome email informing them that you have granted them access to this application. The email will contain their login information (username and password) as well as a link to the application. When creating user accounts, you may give them any password you wish (as long as it's at least 8 characters in length) and then have them change it upon logging in. Users will get a tutorial similar to this upon logging in wherein we'll urge them to change their password to something of their choosing.
+			<br /><br />
+			Deleting users is a simple task of clicking on their name, from the 'User Overview' page, and scrolling down to the bottom. There, you should find a button labeled 'Delete User Account'. Be careful, though, as once a user is deleted there is no way of recovering their data.
+		</p>
+	</div>
+	<div id="help_box_inner_issues" class="help_box_inner">
+		<div id="help_box_title_wrapper"><div id="help_box_title_image_issues" class="help_box_title_image"></div><h1 class="help_box_title">Issue Reporting</h1></div>
+		<p class="help_box_body">We define an issue as anything that you've isolated as a potential risk or impediment to the success of your project. Rather than having your users either email you or log their own issues, we believe it will reduce redundancy and raise awareness to give you full control over what issues are visible and how they are worded.
+			<br /><br />
+			When a user logs in, they'll be able to view any of the potential issues you've flagged and mark them if it's something that's currently being experienced in their organization. From the 'Issue Reporting' page, you'll be able to see bars listing the prevalance of each issue across all of your users. When used correctly, this information can be vital in directing the allocation of your resources to best address common, project-wide issues.
+		</p>
+	</div>
+	<div id="help_box_inner_help" class="help_box_inner">
+		<div id="help_box_title_wrapper"><div id="help_box_title_image_help" class="help_box_title_image"></div><h1 class="help_box_title">Getting Help</h1></div>
+		<p class="help_box_body">We are constantly working to improve our level of support and documentation. Whenever we make updates to these resources, you'll be able to find them in the 'Help Me' page.
+			<br /><br />
+			In addition to documentation, you'll also find our contact information so you can reach out to us with any questions or problems you may have. Your users, upon going to the help section, will be given your contact information. As much as we'd like to be able to take questions from everyone, we find it much more efficient if you ask your users to relay any feedback directly to you. You can then pass it along to us, as an admin, to keep our communication lines organized.
+			<br /><br />
+			Lastly, if you just can't get enough of this little tutorial, you're welcome to view it any time you like from the 'Help Me' section, as well.
+		</p>
+	</div>
+	<div id="help_box_inner_modify" class="help_box_inner">
+		<div id="help_box_title_wrapper"><div id="help_box_title_image_modify" class="help_box_title_image"></div><h1 class="help_box_title">Modifying Your Account</h1></div>
+		<p class="help_box_body">At some point, you may need to change your account information. This is everything from your email (also your login) to your phone number, and it is all done through the 'Modify Account' button. Please note that any change to your account information will need to be authenticated by entering your password in the red 'password' field. You'll see it when you visit the page. It's outlined in red so you can't miss it.
+			<br /><br />
+			That does it for our mini-tutorial. Again, if you'd like to revisit any of this, simply head over to the 'Help Me' section. Good luck and let us know if we can be of further service!
+		</p>
+	</div>
+	<table id="help_box_nav_wrapper">
+		<tbody>
+			<tr>
+				<td id="help_box_nav_back" class="help_box_nav_cell">
+					<div class="help_box_nav_cell_circle"><</div>
+				</td>
+				<td class="help_box_nav_cell">
+					<div id="help_box_nav_welcome" class="help_box_nav_cell_circle help_box_nav_cell_circle_active">1</div>
+				</td>
+				<td class="help_box_nav_cell">
+					<div id="help_box_nav_overview" class="help_box_nav_cell_circle">2</div>
+				</td>
+				<td class="help_box_nav_cell">
+					<div id="help_box_nav_tasks" class="help_box_nav_cell_circle">3</div>
+				</td>
+				<td class="help_box_nav_cell">
+					<div id="help_box_nav_enroll" class="help_box_nav_cell_circle">4</div>
+				</td>
+				<td class="help_box_nav_cell">
+					<div id="help_box_nav_issues" class="help_box_nav_cell_circle">5</div>
+				</td>
+				<td class="help_box_nav_cell">
+					<div id="help_box_nav_help" class="help_box_nav_cell_circle">6</div>
+				</td>
+				<td class="help_box_nav_cell">
+					<div id="help_box_nav_modify" class="help_box_nav_cell_circle">7</div>
+				</td>
+				<td id="help_box_nav_forward" class="help_box_nav_cell">
+					<div class="help_box_nav_cell_circle">></div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<% else %>
+<% end %>

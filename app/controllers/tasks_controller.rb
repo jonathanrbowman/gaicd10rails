@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   
   before_action :test_if_user_signed_in
-  before_action :test_if_user_signed_in_and_owns_task, only: [:show, :set_task]
+  before_action :test_if_user_signed_in_and_owns_task, only: [:show, :set_task, :status_change]
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :test_if_user_signed_in_and_is_admin, only: [:new, :create, :admin_index]
 
@@ -154,8 +154,7 @@ class TasksController < ApplicationController
   end
 
   def status_change
-    
-    flash[:notice] = 'You may only change the status of tasks you own.'
+   
     return redirect_to root_url unless user_signed_in? && (current_user.id == Task.find(params[:id]).user_id || current_user.admin?)
     
     @task = Task.find(params[:id])

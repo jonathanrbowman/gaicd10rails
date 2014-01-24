@@ -101,7 +101,7 @@ textarea {
 	padding-left: 20px;
 	padding-right: 20px;
 	margin: 0px;
-	z-index: 99999999;
+	z-index: 10;
 	vertical-align: middle;
 	-webkit-transition: .15s ease-in-out;
 	-moz-transition: .15s ease-in-out;
@@ -153,7 +153,7 @@ textarea {
 	width: 100%;
 	padding: 0px;
 	margin: 0px;
-	z-index: 9999;
+	z-index: 5;
 	padding-top: 15px;
 }
 
@@ -281,7 +281,7 @@ textarea {
 	position: fixed;
 	top: 0px;
 	left: 0;
-	z-index: 99999999999;
+	z-index: 9;
 	border-right: 10px solid white;
 }
 
@@ -345,7 +345,7 @@ textarea {
 	color: white;
 	position: fixed;
 	top: 0;
-	z-index: 99999999999;
+	z-index: 11;
 	background-color: rgba(0,0,0,.5);
 	-webkit-transition: .25s ease-in-out;
 	-moz-transition: .25s ease-in-out;
@@ -1134,7 +1134,7 @@ textarea {
 
 .note_wrapper {
 	position: fixed;
-	z-index: 99999999999999;
+	z-index: 11;
 	width: 600px;
 	height: 450px;
 	top: 50%;
@@ -1527,7 +1527,7 @@ textarea {
 	width: 63px;
 	height: 63px;
 	position: absolute;
-	top:0;
+	top: 0;
 	right: 325px;
 	background-image: url('https://s3.amazonaws.com/gaicd10rails/bluecorner.png');
 }
@@ -1770,7 +1770,7 @@ textarea {
 	position: absolute;
 	right: 0;
 	top: 0;
-	opacity:0;
+	opacity: 0;
 	display: none;
 	padding-top: 80px;
 	-webkit-transition: .15s ease-in-out;
@@ -1814,6 +1814,244 @@ textarea {
 
 /* HOME PAGE RULES END HERE */
 
+/* HELP BOX RULES START HERE */
+
+#help_box_wrapper, #help_box_wrapper_after {
+	width: 90%;
+	max-width: 900px;
+	height: 80%;
+	max-height: 700px;
+	min-height: 500px;
+	top: 40px;
+	left: 80px;
+	position: fixed;
+	z-index: 11;
+	margin: 0;
+	padding: 0;
+	border: 20px solid rgb(105, 157, 200);
+	background-color: white;
+	box-shadow: 0px 0px 0px 10000px rgba(0,0,0,.6);
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+#help_box_wrapper_after {
+	display: none;
+	opacity: 0;
+}
+
+#help_box_close_btn {
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: white;
+	position: absolute;
+	top: 26px;
+	right: 0px;
+	color: #e85151;
+	font-family: 'Lato', sans-serif;
+	z-index: 12;
+	cursor: pointer;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+#help_box_close_btn:hover {
+	color: white;
+	background-color: #e85151;
+}
+
+.help_box_inner {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.help_box_inner_active {
+	display: block !important;
+}
+
+#help_box_title_wrapper {
+	height: 55px;
+	width: 100%;
+	background-color: rgb(105, 157, 200);
+	margin: 0;
+	padding: 0;
+	padding-bottom: 10px;
+	position: relative;
+	display: block;
+}
+
+.help_box_title_image {
+	width: 55px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/appicons.png');
+	background-size: 300px;
+}
+
+#help_box_title_image_welcome {
+	background-position: -5px -7px;
+}
+
+#help_box_title_image_overview {
+	background-position: -5px -65px;
+}
+
+#help_box_title_image_tasks {
+	background-position: -63px -7px;
+}
+
+#help_box_title_image_enroll {
+	background-position: -238px -7px;
+}
+
+#help_box_title_image_issues {
+	background-position: -120px -7px;
+}
+
+#help_box_title_image_help {
+	background-position: -120px -64px;
+}
+
+#help_box_title_image_modify {
+	background-position: -63px -64px;
+}
+
+.help_box_title {
+	color: white;
+	padding: 0;
+	margin: 0;
+	padding-top: 7px;
+	position: absolute;
+	left: 65px;
+}
+
+.help_box_body {
+	position: relative;
+	font-size: 18px;
+	top: 0px;
+	left: 0;
+	padding: 20px;
+	margin: 0;
+	height: 100%;
+	background-color: rgba(255,255,255,.8);
+}
+
+#help_box_inner_overview {
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/help_images/adminintrooverview.png');
+	background-repeat: no-repeat;
+	background-position: -85px 305px;
+}
+
+#help_box_inner_tasks {
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/help_images/adminintrotasks.png');
+	background-repeat: no-repeat;
+	background-position: -85px 305px;
+}
+
+#help_box_inner_enroll {
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/help_images/adminintroenroll.png');
+	background-repeat: no-repeat;
+	background-position: -85px 305px;
+}
+
+#help_box_inner_issues {
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/help_images/adminintroissues.png');
+	background-repeat: no-repeat;
+	background-position: -85px 305px;
+}
+
+#help_box_inner_help {
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/help_images/adminintrohelp.png');
+	background-repeat: no-repeat;
+	background-position: -85px 305px;
+}
+
+#help_box_inner_modify {
+	background-image: url('https://s3.amazonaws.com/gaicd10rails/help_images/adminintromodify.png');
+	background-repeat: no-repeat;
+	background-position: -85px 305px;
+}
+
+#help_box_nav_wrapper {
+	width: 100%;
+	height: 60px;
+	position: absolute;
+	bottom: 20px;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+}
+
+.help_box_nav_cell {
+	margin: 0;
+	padding: 0;
+}
+
+.help_box_nav_cell_circle {
+	height: 30px;
+	width: 30px;
+	border-radius: 100%;
+	background-color: rgb(105, 157, 200);
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-weight: 800;
+	font-size: 23px;
+	cursor: pointer;
+	border: 2px solid white;
+	box-shadow: 0px 0px 0px 2px #ffffff;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+	transition: .15s ease-in-out;
+}
+
+.help_box_nav_cell_circle:hover {
+	background-color: #65be6e;
+	box-shadow: 0px 0px 0px 2px #65be6e;
+}
+
+.help_box_nav_cell_circle_active {
+	box-shadow: 0px 0px 0px 2px #65be6e;
+	background-color: #65be6e;
+}
+
+/* HELP BOX RULES END HERE */
+
+#view_tutorial_btn {
+	color: rgb(105, 157, 200);
+	border: 3px solid rgb(105, 157, 200);
+	display: block;
+	padding: 20px;
+	width: 300px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#view_tutorial_btn:hover {
+	color: white;
+	background-color: rgb(105, 157, 200);
+}
+
 /* MOBILE CSS RULES START HERE */
 
 @media only screen and (max-width: 569px) {
@@ -1829,11 +2067,11 @@ textarea {
 	#home_email_field {
 		font-size: 16px;
 	}
-	
+
 	#white_corner, #blue_corner, #blue_corner_bottom_right {
 		display: none;
 	}
-	
+
 	#home_header {
 		padding-top: 70px;
 	}

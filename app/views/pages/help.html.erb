@@ -1,5 +1,5 @@
 <% if user_signed_in? && current_user.admin? %>
-
+<%= render "pages/helpIntroAfter" %>
 <div class="hospital_overview_header_out">
 	<div class="hospital_overview_header_in">
 		<div id="page_header">
@@ -7,6 +7,7 @@
 			<h3 id="page_header_subtitle">If you're here, then we can only assume that you either found an oops on our end or made one of your own. No worries, though, because either way we'll do everything we can to get things resolved and back on track as promptly as possible.</h3>
 			<p>Unfortunately, as this is still an alpha build (early in-progress version), we don't have any of the online help resources available quite yet. However, we would urge you to start with an email to the person who granted you access to this application.</p>
 		</div>
+		<h2 id="view_tutorial_btn">View Tutorial Again</h2>
 	</div>
 </div>
 
