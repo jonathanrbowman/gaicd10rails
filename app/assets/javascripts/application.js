@@ -119,6 +119,7 @@ $("#home_table_3").click(function () {
 
 $(".home_contact_us_button").click(function () {
   $("#home_contact_form_wrapper").toggleClass("home_contact_form_wrapper_expanded");
+  $(".home_contact_focus").focus()
   });
 
 $("#change_password_button").click(function () {

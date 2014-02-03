@@ -3,6 +3,7 @@
 	<div class="hospital_overview_header_in">
 		<div id="page_header">
 			<p id="page_header_title"><%= User.find(params[:hospital_id]).organization %></p>
+			<%= link_to 'Modify Their Account', sign_in_count_bump_path, method: "get" %>
 			<% if User.find(params[:hospital_id]).sign_in_count == 0 %>
 			<h3 style="text-align: left;"><%= User.find(params[:hospital_id]).p_fname %> <%= User.find(params[:hospital_id]).p_lname %> has not signed in yet.</h3>
 			<% else %>

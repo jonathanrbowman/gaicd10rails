@@ -65,7 +65,7 @@
 		<div id="home_contact_form_wrapper">
 			<h1 class="home_title_text">You're just one quick form away from getting started!</h1>
 			<%= form_tag({controller: "pages", action: "create_admin_user_from_homepage"}, method: "post", :id => "home_contact_form") do %>
-				<%= text_field_tag(:homepage_fname, nil, :placeholder => "First Name", :id => "home_email_field") %>
+				<%= text_field_tag(:homepage_fname, nil, :placeholder => "First Name", :id => "home_email_field", :class => "home_contact_focus") %>
 				<%= text_field_tag(:homepage_lname, nil, :placeholder => "Last Name", :id => "home_email_field") %>
 				<%= text_field_tag(:homepage_organization, nil, :placeholder => "Your Organization", :id => "home_email_field") %>
 				<%= email_field_tag(:homepage_email, nil, :placeholder => "Email Address", :id => "home_email_field") %>
